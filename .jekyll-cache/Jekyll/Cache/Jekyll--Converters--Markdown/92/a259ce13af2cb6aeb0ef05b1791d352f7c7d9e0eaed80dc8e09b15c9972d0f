@@ -1,0 +1,46 @@
+I"
+<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.</p>
+
+<h2 id="install-python-and-pandas">Install Python and Pandas</h2>
+
+<p>Anaconda is an open source platform used widely by Python programmers and data scientists. Installing this platform installs Python, the Jupyter notebook application, and hundreds of libraries. 
+The following are the steps you need to follow for installing the Anaconda distribution.</p>
+
+<ol>
+  <li>
+    <p>Open the following URL: <a href="https://www.anaconda.com/products/individual">Anaconda</a>.</p>
+  </li>
+  <li>
+    <p>Click the installer for your operating system, as shown in the following figure.
+The installer gets downloaded to your system.</p>
+  </li>
+</ol>
+
+<p><img src="img/W1/1.png" alt="Figure 1-1" /></p>
+
+<ol>
+  <li>
+    <p>Open the installer (file downloaded in the previous step) and run it.</p>
+  </li>
+  <li>
+    <p>Open the Jupyter Notebook on your computer.</p>
+  </li>
+</ol>
+
+<h2 id="install-r-and-rstudio">Install R and Rstudio</h2>
+
+<ol>
+  <li>
+    <p>Installing R is very straightforward. The easiest way is to install it through CRAN, which stands for The Comprehensive R Archive Network. Just visit the CRAN downloads page and follow the links: <a href="https://cran.r-project.org/">CTRAN</a>.</p>
+  </li>
+  <li>
+    <p>Once R is installed, you can proceed to install the RStudio IDE to have a much-improved environment to work in your R scripts. It includes a console that supports direct code execution and tools for plotting and keeping track of your variables in the workspace, among other features. <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio</a>.</p>
+  </li>
+</ol>
+
+<h3 id="installing-packages-in-r">Installing Packages in R</h3>
+<p>Now you have base R installed on your system and a nice IDE to begin your R programming journey. However, base R is rather limited in the things that it can do, which is why we have R packages such as dplyr for enhanced data-wrangling capabilities or ggplot2 for improved data visualizations. There are two simple ways to install R packages using RStudio. The first is to execute the following line of code in the console:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"dplyr"</span><span class="p">,</span><span class="s2">"ggplot2"</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+:ET

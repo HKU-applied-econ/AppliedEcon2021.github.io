@@ -1,18 +1,10 @@
 ---
-layout: default
+layout: home
+feature_image: 4
+title: MECON Applied Econometrics
+desc: 
+include_cta_btn: true
+cta_text: Syllabus
+cta_link: /about/
+cta_icon: fa-cat
 ---
-
-<nav id='sidebar'>
-	{% include nav.html %}
-</nav>
-
-<section id='content'>
-{% for post in site.posts %}
-  <article class='{{ post.type }}'>
-    <a name='{{ post.url }}' href='#{{ post.url }}'><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.url_path }}</code> {% endif %}{{ post.title }}</h2></a>
-    <section class='body'>
-      {{ post.content }}
-    </section>
-  </article>
-{% endfor %}
-</section>

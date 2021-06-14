@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writer Theme</title>
+    <description></description>
+    <link>/about/</link>
+    <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 14 Jun 2021 00:08:15 -0700</pubDate>
+    <lastBuildDate>Mon, 14 Jun 2021 00:08:15 -0700</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Python Basics</title>
+        <description>&lt;p&gt;After we configure the environment, we start with basic dataset. For this section, we show the basic data analysis using the dataset. 
+&lt;strong&gt;Content&lt;/strong&gt;&lt;/p&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#python-basics&quot; id=&quot;markdown-toc-python-basics&quot;&gt;Python Basics&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#comments&quot; id=&quot;markdown-toc-comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#printing&quot; id=&quot;markdown-toc-printing&quot;&gt;Printing&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;python-basics&quot;&gt;Python Basics&lt;/h1&gt;
+&lt;p&gt;In this section, we get familiar with the syntax of Python, commenting, conditional
+statements, loops, and functions.&lt;/p&gt;
+&lt;h2 id=&quot;comments&quot;&gt;Comments&lt;/h2&gt;
+&lt;p&gt;A comment explains what a line of code does, and is used by programmers to help others understand the code they have written. In Python, a comment starts with the # symbol.&lt;/p&gt;
+&lt;h2 id=&quot;printing&quot;&gt;Printing&lt;/h2&gt;
+&lt;p&gt;The print function prints content to the screen or any other output device.
+Generally, we pass a combination of strings and variables as arguments to the print
+function. Arguments are the values included within the parenthesis of a function, which
+the function uses for producing the result. In the following statement, “Hello!” is the
+argument to the print function.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'''Today is a lovely day.
+It will be warm and sunny.
+It is ideal for hiking.'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Today is a lovely day.
+It will be warm and sunny.
+It is ideal for hiking.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that we do not use semicolons in Python to end statements, unlike some other languages.
+The format method can be used in conjunction with the print method for embedding
+variables within a string. It uses curly braces as placeholders for variables that are passed
+as arguments to the method.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 11 Jun 2021 00:00:00 -0700</pubDate>
+        <link>/about/week1-2</link>
+        <guid isPermaLink="true">/about/week1-2</guid>
+        
+        
+        <category>MECON</category>
+        
+      </item>
+    
+      <item>
+        <title>Configure Data Analysis Environment</title>
+        <description>&lt;p&gt;To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+We mainly use two languages for this course, R and Python. You can pick one favorate language to use.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/p&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-python-and-pandas&quot; id=&quot;markdown-toc-install-python-and-pandas&quot;&gt;Install Python and Pandas&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-packages-in-python&quot; id=&quot;markdown-toc-install-packages-in-python&quot;&gt;Install Packages in Python&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#start-jupyter-notebook&quot; id=&quot;markdown-toc-start-jupyter-notebook&quot;&gt;Start Jupyter Notebook&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-r-and-rstudio&quot; id=&quot;markdown-toc-install-r-and-rstudio&quot;&gt;Install R and Rstudio&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#installing-packages-in-r&quot; id=&quot;markdown-toc-installing-packages-in-r&quot;&gt;Installing Packages in R&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;install-python-and-pandas&quot;&gt;Install Python and Pandas&lt;/h1&gt;
+
+&lt;p&gt;Anaconda is an open source platform used widely by Python programmers and data scientists. Installing this platform installs Python, the Jupyter notebook application, and hundreds of libraries. 
+The following are the steps you need to follow for installing the Anaconda distribution.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the following URL: &lt;a href=&quot;https://www.anaconda.com/products/individual&quot;&gt;Anaconda&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Click the installer for your operating system, as shown in the following figure.
+The installer gets downloaded to your system.
+&lt;img src=&quot;img/W1/1.png&quot; alt=&quot;Figure 1-1&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Open the installer (file downloaded in the previous step) and run the graphic installer. Simply follow the steps indicated.&lt;/li&gt;
+  &lt;li&gt;Open the Jupyter Notebook on your computer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;install-packages-in-python&quot;&gt;Install Packages in Python&lt;/h2&gt;
+
+&lt;p&gt;Open a terminal on your operation system. If you have a PC, search for a cmd window. If you have a Mac, search for terminal.&lt;/p&gt;
+
+&lt;p&gt;For example, if we want to install the &lt;a href=&quot;https://bashtage.github.io/linearmodels/&quot;&gt;linearmodels package&lt;/a&gt; in Python, simply type:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;linearmodels
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;start-jupyter-notebook&quot;&gt;Start Jupyter Notebook&lt;/h2&gt;
+
+&lt;p&gt;Find the App Jupyter Notebook and open the program. It should automatically start in your browser. 
+&lt;img src=&quot;img/W1/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By clicking the “New” button on the upper right corner, we can start a new Python Instance. 
+For more details in Jupyter Notebook, see the &lt;a href=&quot;https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html&quot;&gt;introduction&lt;/a&gt; and practice using the jupyter notebook.&lt;/p&gt;
+
+&lt;h1 id=&quot;install-r-and-rstudio&quot;&gt;Install R and Rstudio&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Installing R is very straightforward. The easiest way is to install it through CRAN, which stands for The Comprehensive R Archive Network. Just visit the CRAN downloads page and follow the links: &lt;a href=&quot;https://cran.r-project.org/&quot;&gt;CTRAN&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once R is installed, you can proceed to install the RStudio IDE to have a much-improved environment to work in your R scripts. It includes a console that supports direct code execution and tools for plotting and keeping track of your variables in the workspace, among other features. &lt;a href=&quot;https://www.rstudio.com/products/rstudio/download/#download&quot;&gt;RStudio&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;installing-packages-in-r&quot;&gt;Installing Packages in R&lt;/h2&gt;
+&lt;p&gt;Now you have base R installed on your system and a nice IDE to begin your R programming journey. However, base R is rather limited in the things that it can do, which is why we have R packages such as dplyr for enhanced data-wrangling capabilities or ggplot2 for improved data visualizations. There are two simple ways to install R packages using RStudio. The first is to execute the following line of code in the console:&lt;/p&gt;
+
+&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;install.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dplyr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ggplot2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 11 Jun 2021 00:00:00 -0700</pubDate>
+        <link>/about/week1-1</link>
+        <guid isPermaLink="true">/about/week1-1</guid>
+        
+        
+        <category>MECON</category>
+        
+      </item>
+    
+  </channel>
+</rss>

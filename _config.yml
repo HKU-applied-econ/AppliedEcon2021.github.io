@@ -1,6 +1,23 @@
----
-exclude: ['README.markdown']
-permalink: ':title'
-highlighter: pygments
-safe: false
-title: 'Carte'
+# Site settings
+title: Writer Theme
+email: haojasmine@gmail.com
+description: 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "/about" # the base hostname & protocol for your site
+enable_retina: false
+permalink: :title
+nav_list:
+  About : ['Outline', '/about', 'fa-anchor']
+  Home : ['Sections', '/', 'fa-file']
+  # Home_Alt : ['Home Alt', '/home-alt', 'fa-home']
+  # Home_Alt_2 : ['Home Alt 2', '/home-alt-2/', 'fa-home']
+  # Contact : ['Contact', '/contact', 'fa-plane']
+  # Author : ['Author', '/author/michelle', 'fa-user']
+single_footer: ''
+footer_links:
+    About: ['Outline', '/about']
+    # Writer: ['Writer 2016', '/about']
+
+
+# Build settings
+markdown: kramdown
