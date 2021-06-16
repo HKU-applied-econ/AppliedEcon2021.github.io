@@ -14,7 +14,7 @@ nav_list:
   # Author : ['Author', '/author/michelle', 'fa-user']
 single_footer: ''
 footer_links:
-    About: ['Outline', '/about']
+    # About: ['Outline', '/about']
     # Writer: ['Writer 2016', '/about']
 
 
