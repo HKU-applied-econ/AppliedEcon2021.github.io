@@ -24,6 +24,15 @@ Students are encouraged to check out student resources the publisher provides on
 
 Since the course is intended to give students hands-on experiences of data analysis, it is very important for students to learn and get familiar with statistical software. The main software program for the course is R and Python.
 
+## Resources 
+
+https://www.econometrics-with-r.org
+
+https://python.quantecon.org/intro.html
+https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
+https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf
+https://mixtape.scunning.com/
+https://www.kevinsheppard.com/teaching/python/
 
 ## Course Outline 
 
