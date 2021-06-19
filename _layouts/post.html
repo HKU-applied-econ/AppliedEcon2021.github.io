@@ -12,24 +12,6 @@ layout: default
     {% include nav.html %}
 </header> -->
 
-<div class="sidebar__right">
-
-    <span class="menu-trigger animated fadeInDown">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </span>
-    {% include nav.html %}
-
-    <p>&nbsp;</p>
-
-    {% if page.toc == true %}
-    <div id="table-of-contents">
-        {{ content | toc_only }}
-    </div>
-    {% endif %}
-</div>
-
 
 <main class="container">
     
@@ -48,7 +30,24 @@ layout: default
             <h1>{{ page.title }}</h1>
 
             <div>
+                <div class="sidebar">
                 
+                    <span class="menu-trigger animated fadeInDown">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </span>
+                    {% include nav.html %}
+                
+                    <p>&nbsp;</p>
+                
+                    {% if page.toc == true %}
+                    <div id="table-of-contents">
+                        {{ content | toc_only }}
+                    </div>
+                    {% endif %}
+                </div>
+
                 <div id="markdown-content">
                     {{ content  }}
                 </div>
