@@ -13,14 +13,10 @@ layout: default
 </header> -->
 
 
+
 <main class="container">
     
-        
-    
     <div class="row">
-        
-
-
         <div class="col-xs-12 single-content">
             
             <p class="meta">
@@ -30,7 +26,7 @@ layout: default
             <h1>{{ page.title }}</h1>
 
             <div>
-                <!-- <div class="sidebar">
+                <div class="sidebar">
                 
                     <span class="menu-trigger animated fadeInDown">
                         <span class="bar"></span>
@@ -38,14 +34,11 @@ layout: default
                         <span class="bar"></span>
                     </span>
                     {% include nav.html %}
-                
                     <p>&nbsp;</p>
-                 -->
-                <nav class="toc" markdown="1">
-                    * Auto generated table of contents
-                    {:toc .toc__menu}
-                </nav>
-                <!-- </div> -->
+                    <div id="markdown-content"></div>
+                    {% toc %}
+                    </div>
+                </div>
 
                 <div id="markdown-content">
                     {{ page.content  }}

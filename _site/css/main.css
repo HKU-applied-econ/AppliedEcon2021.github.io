@@ -3669,6 +3669,10 @@ ul li, ol li { margin: 5px 0; }
 
 .sidebar .site-info .secondary-info p { margin: 20px 0 0; font-family: "Cormorant Garamond SemiBold", sans-serif; font-size: 14px; font-size: 1.4rem; }
 
+.toc { font-family: "Cormorant Garamond SemiBold", sans-serif; }
+
+.toc .nav__title { color: #fff; }
+
 .main-content { padding: 30px; }
 
 @media (min-width: 768px) { .main-content { padding: 60px 120px; } }
