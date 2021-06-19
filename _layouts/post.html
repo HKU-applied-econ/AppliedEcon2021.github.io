@@ -41,11 +41,10 @@ layout: default
                 
                     <p>&nbsp;</p>
                  -->
-                    {% if page.toc == true %}
-                    <div id="table-of-contents">
-                        {{ page.content | toc_only }}
-                    </div>
-                    {% endif %}
+                <nav class="toc" markdown="1">
+                    * Auto generated table of contents
+                    {:toc .toc__menu}
+                </nav>
                 <!-- </div> -->
 
                 <div id="markdown-content">
