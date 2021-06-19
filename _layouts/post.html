@@ -12,7 +12,7 @@ layout: default
     {% include nav.html %}
 </header> -->
 
-<div class="sidebar">
+<div class="sidebar__right">
 
     <span class="menu-trigger animated fadeInDown">
         <span class="bar"></span>
@@ -23,23 +23,17 @@ layout: default
 
     <p>&nbsp;</p>
 
-    <!-- {% if page.toc == true %}
-        <div id="table-of-contents">
-            {{ content | toc_only }}
-        </div>
-        {% endif %} -->
-    <div>
-
-        <nav aria-label="Table of Contents">
-            {{ content | toc_only }}
-        </nav>
-
+    {% if page.toc == true %}
+    <div id="table-of-contents">
+        {{ content | toc_only }}
     </div>
+    {% endif %}
 </div>
+
 
 <main class="container">
     
-    
+        
     
     <div class="row">
         
