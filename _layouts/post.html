@@ -27,7 +27,7 @@ layout: default
         
         {% if page.toc == true %}
         <div id="table-of-contents">
-            {{ content | toc_only }}
+            {% toc %}
         </div>
         {% endif %}
     </div>
