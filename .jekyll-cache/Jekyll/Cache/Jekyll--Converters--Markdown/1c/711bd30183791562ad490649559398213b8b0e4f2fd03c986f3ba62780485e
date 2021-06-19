@@ -1,0 +1,119 @@
+I"w<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+We mainly use two languages for this course, R and Python. You can pick one favorate language to use.</p>
+
+<h2 id="course-description">Course Description</h2>
+
+<p>This course studies how practical problems can be solved by applying econometric methods. 
+The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software. 
+Topics include multilinear regressions, limited dependent variable, panel data, experiments and quasi-experiments, instrumental variables, time series and forecasting, and basics of machine learning.</p>
+
+<p>Pre-requisites:</p>
+<ul>
+  <li>solid knowledge of statistics</li>
+  <li>introductory level econometric methods</li>
+  <li>linear algebra</li>
+</ul>
+
+<h2 id="course-outline">Course Outline</h2>
+
+<ul>
+  <li>Week 1
+    <ul>
+      <li>Introduction: Evidence and Policy / Causality and Validity Probability and Statistical Theory Review (SW Ch. 2 -3)</li>
+    </ul>
+  </li>
+  <li>Week 2
+    <ul>
+      <li>Bivariate Regression I &amp; II (Single regressor) (SW Ch. 4 – 5)</li>
+    </ul>
+  </li>
+  <li>Week 3
+    <ul>
+      <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)</li>
+      <li>Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) Threats to (Internal / External) Validity (SW, Ch. 9)</li>
+    </ul>
+  </li>
+  <li>Week 4
+    <ul>
+      <li>Regressions with binary dependent variables (SW, Ch. 11)</li>
+      <li>Experiments and Quasi-Experiments (Chapter 13) Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)</li>
+    </ul>
+  </li>
+  <li>Week 5</li>
+  <li>Week 6</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Week 7</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>Lecture 1</p>
+
+<p>Lecture 2 Bivariate Regression I &amp; II (Single regressor) (SW Ch. 4 – 5)</p>
+
+<p>Lecture 3 Multivariate Regression I &amp; II (SW Ch. 6 - 7)</p>
+
+<p>Lecture	4 Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) Threats to (Internal / External) Validity (SW, Ch. 9)</p>
+
+<p>Lecture 5 Regressions with binary dependent variables (SW, Ch. 11)</p>
+
+<p>Lecture 6 Experiments and Quasi-Experiments (Chapter 13) Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)</p>
+
+<p>Topic	7  Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)</p>
+
+<p>Topic	8	Times series regressions and forecasting (SW, Ch. 14)</p>
+
+<p>Topic	9	Machine Learning (material will be distributed by instructors.)</p>
+
+<h2 id="course-materials">Course Materials</h2>
+
+<p>Main textbook:</p>
+<ul>
+  <li>Stock, James and Mark Watson (2018), Introduction to Econometrics, Global Edition, 4th ed., Pearson.</li>
+</ul>
+
+<p>Supplementary textbook:</p>
+<ul>
+  <li>Jeffrey Wooldridge , Introductory Econometrics: A Modern Approach, Ohio : South-Western Cengage Learning.</li>
+</ul>
+
+<p>Students are encouraged to check out student resources the publisher provides on the Internet. Lecture slides will be posted on the course website.</p>
+
+<h2 id="statistical-software-and-data">Statistical Software and Data</h2>
+
+<p>The main software program for the course is R and Python.</p>
+
+<h2 id="resources">Resources</h2>
+
+<h3 id="datasets">Datasets</h3>
+
+<ul>
+  <li><a href="http://fmwww.bc.edu/ec-p/data/stockwatson/datasets.list.html">Datasets used in Stock &amp; Watson Textbook</a></li>
+</ul>
+
+<h3 id="r-tutorial">R-tutorial</h3>
+
+<ul>
+  <li><a href="https://www.econometrics-with-r.org">Econometrics with R</a></li>
+</ul>
+
+<h3 id="python--tutorial">Python  Tutorial</h3>
+
+<ul>
+  <li><a href="https://python.quantecon.org/intro.html">Quantecon Python Introduction</a></li>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html">Pandas Introduction</a></li>
+</ul>
+
+<h3 id="python-for-econometrics">Python for Econometrics</h3>
+
+<ul>
+  <li><a href="https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf">Python for Econometrics</a></li>
+  <li><a href="https://mixtape.scunning.com/">Mixtape by Scrunning</a></li>
+  <li><a href="https://www.kevinsheppard.com/teaching/python/">Python by Keven Sheppard</a></li>
+</ul>
+:ET

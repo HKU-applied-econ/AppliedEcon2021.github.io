@@ -1,18 +1,5 @@
-I"'<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+I"f<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
 We mainly use two languages for this course, R and Python. You can pick one favorate language to use.</p>
-
-<p><strong>Content</strong></p>
-<ul id="markdown-toc">
-  <li><a href="#install-python-and-pandas" id="markdown-toc-install-python-and-pandas">Install Python and Pandas</a>    <ul>
-      <li><a href="#install-packages-in-python" id="markdown-toc-install-packages-in-python">Install Packages in Python</a></li>
-      <li><a href="#start-jupyter-notebook" id="markdown-toc-start-jupyter-notebook">Start Jupyter Notebook</a></li>
-    </ul>
-  </li>
-  <li><a href="#install-r-and-rstudio" id="markdown-toc-install-r-and-rstudio">Install R and Rstudio</a>    <ul>
-      <li><a href="#installing-packages-in-r" id="markdown-toc-installing-packages-in-r">Installing Packages in R</a></li>
-    </ul>
-  </li>
-</ul>
 
 <h1 id="install-python-and-pandas">Install Python and Pandas</h1>
 

@@ -35,13 +35,13 @@
 </noscript>
 <!-- end no script -->
 
-    <header class="hero-image" style="background-image: url(/img/3.jpg);">
+    <!-- <header class="hero-image"
+        style="background-image: url(/img/3.jpg);">
     <span class="menu-trigger animated fadeInDown">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </span>
-
     <div id="menu-target">
     <ul>
         
@@ -52,34 +52,69 @@
     </ul>
 </div>
 
-</header>
+</header> -->
 
 <main class="container">
+    
+    <div class="sidebar sticky">
+        
+            <span class="menu-trigger animated fadeInDown">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+            <div id="menu-target">
+    <ul>
+        
+            <li><i class="fa fa-anchor"></i><a href="/about">Outline</a></li>
+        
+            <li><i class="fa fa-file"></i><a href="/">Sections</a></li>
+        
+    </ul>
+</div>
+
+            
+        <p>&nbsp;</p>
+        
+        
+        <div id="table-of-contents">
+            <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#install-python-and-pandas">Install Python and Pandas</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#install-packages-in-python">Install Packages in Python</a></li>
+<li class="toc-entry toc-h2"><a href="#start-jupyter-notebook">Start Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#install-r-and-rstudio">Install R and Rstudio</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#installing-packages-in-r">Installing Packages in R</a></li>
+</ul>
+</li>
+</ul>
+        </div>
+        
+    </div>
+    
     <div class="row">
+        
+
+
         <div class="col-xs-12 single-content">
+            
             <p class="meta">
                 <a href="/author/jasmine">Jasmine Hao</a> in <a href='/category/AppliedEconometrics'>AppliedEconometrics</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 30 minutes
             </p>
 
             <h1>Configure Data Analysis Environment</h1>
 
-            <p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+            <div>
+                
+                <div id="markdown-content">
+                    <p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
 We mainly use two languages for this course, R and Python. You can pick one favorate language to use.</p>
 
-<p><strong>Content</strong></p>
-<ul id="markdown-toc">
-  <li><a href="#install-python-and-pandas" id="markdown-toc-install-python-and-pandas">Install Python and Pandas</a>    <ul>
-      <li><a href="#install-packages-in-python" id="markdown-toc-install-packages-in-python">Install Packages in Python</a></li>
-      <li><a href="#start-jupyter-notebook" id="markdown-toc-start-jupyter-notebook">Start Jupyter Notebook</a></li>
-    </ul>
-  </li>
-  <li><a href="#install-r-and-rstudio" id="markdown-toc-install-r-and-rstudio">Install R and Rstudio</a>    <ul>
-      <li><a href="#installing-packages-in-r" id="markdown-toc-installing-packages-in-r">Installing Packages in R</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="install-python-and-pandas">Install Python and Pandas</h1>
+<h1 id="install-python-and-pandas">
+<a class="anchor" href="#install-python-and-pandas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Python and Pandas</h1>
 
 <p>Anaconda is an open source platform used widely by Python programmers and data scientists. Installing this platform installs Python, the Jupyter notebook application, and hundreds of libraries. 
 The following are the steps you need to follow for installing the Anaconda distribution.</p>
@@ -88,12 +123,14 @@ The following are the steps you need to follow for installing the Anaconda distr
   <li>Open the following URL: <a href="https://www.anaconda.com/products/individual">Anaconda</a>.</li>
   <li>Click the installer for your operating system, as shown in the following figure.
 The installer gets downloaded to your system.
-<img src="img/W1/1.png" alt="Figure 1-1" /></li>
+<img src="img/W1/1.png" alt="Figure 1-1">
+</li>
   <li>Open the installer (file downloaded in the previous step) and run the graphic installer. Simply follow the steps indicated.</li>
   <li>Open the Jupyter Notebook on your computer.</li>
 </ol>
 
-<h2 id="install-packages-in-python">Install Packages in Python</h2>
+<h2 id="install-packages-in-python">
+<a class="anchor" href="#install-packages-in-python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Packages in Python</h2>
 
 <p>Open a terminal on your operation system. If you have a PC, search for a cmd window. If you have a Mac, search for terminal.</p>
 
@@ -101,15 +138,17 @@ The installer gets downloaded to your system.
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>linearmodels
 </code></pre></div></div>
 
-<h2 id="start-jupyter-notebook">Start Jupyter Notebook</h2>
+<h2 id="start-jupyter-notebook">
+<a class="anchor" href="#start-jupyter-notebook" aria-hidden="true"><span class="octicon octicon-link"></span></a>Start Jupyter Notebook</h2>
 
 <p>Find the App Jupyter Notebook and open the program. It should automatically start in your browser. 
-<img src="img/W1/2.png" alt="" /></p>
+<img src="img/W1/2.png" alt=""></p>
 
 <p>By clicking the “New” button on the upper right corner, we can start a new Python Instance. 
 For more details in Jupyter Notebook, see the <a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html">introduction</a> and practice using the jupyter notebook.</p>
 
-<h1 id="install-r-and-rstudio">Install R and Rstudio</h1>
+<h1 id="install-r-and-rstudio">
+<a class="anchor" href="#install-r-and-rstudio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install R and Rstudio</h1>
 
 <ol>
   <li>
@@ -120,12 +159,15 @@ For more details in Jupyter Notebook, see the <a href="https://jupyter-notebook-
   </li>
 </ol>
 
-<h2 id="installing-packages-in-r">Installing Packages in R</h2>
+<h2 id="installing-packages-in-r">
+<a class="anchor" href="#installing-packages-in-r" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Packages in R</h2>
 <p>Now you have base R installed on your system and a nice IDE to begin your R programming journey. However, base R is rather limited in the things that it can do, which is why we have R packages such as dplyr for enhanced data-wrangling capabilities or ggplot2 for improved data visualizations. There are two simple ways to install R packages using RStudio. The first is to execute the following line of code in the console:</p>
 
 <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s2">"dplyr"</span><span class="p">,</span><span class="s2">"ggplot2"</span><span class="p">))</span><span class="w">
 </span></code></pre></div></div>
 
+                </div>
+            </div>
 
         </div><!-- main-content/col -->
     </div> <!--/row -->

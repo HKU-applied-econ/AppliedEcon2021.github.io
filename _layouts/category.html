@@ -7,7 +7,7 @@ layout: with-sidebar
 </div>
 
 <div class="category-page-posts animated fadeIn ">
-    {% for post in site.categories[page.category] %}
+    {% for post in site.categories[page.category] reversed %}
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
 

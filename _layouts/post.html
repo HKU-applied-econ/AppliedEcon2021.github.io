@@ -2,26 +2,54 @@
 layout: default
 ---
 
-<header class="hero-image" style="background-image: url({{ site.baseurl }}/img/{{page.feature_image}}.jpg);">
+<!-- <header class="hero-image"
+        style="background-image: url({{ site.baseurl }}/img/{{page.feature_image}}.jpg);">
     <span class="menu-trigger animated fadeInDown">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </span>
-
     {% include nav.html %}
-</header>
+</header> -->
 
 <main class="container">
+    
+    <div class="sidebar sticky">
+        
+            <span class="menu-trigger animated fadeInDown">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </span>
+            {% include nav.html %}
+            
+        <p>&nbsp;</p>
+        
+        {% if page.toc == true %}
+        <div id="table-of-contents">
+            {{ content | toc_only }}
+        </div>
+        {% endif %}
+    </div>
+    
     <div class="row">
+        
+
+
         <div class="col-xs-12 single-content">
+            
             <p class="meta">
                 <a href="{{ page.author_url | prepend: site.baseurl }}">{{ page.author_name }}</a> in <a href='{{ "/category/" | append: page.categories.first | prepend: site.baseurl }}'>{{ page.categories[0] | uppercase }}</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> {{ page.read_time }} minutes
             </p>
 
             <h1>{{ page.title }}</h1>
 
-            {{ content }}
+            <div>
+                
+                <div id="markdown-content">
+                    {{ content | inject_anchors }}
+                </div>
+            </div>
 
         </div><!-- main-content/col -->
     </div> <!--/row -->

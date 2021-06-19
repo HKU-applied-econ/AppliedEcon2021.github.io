@@ -1,5 +1,5 @@
 # Site settings
-title: ECON6001
+title: 
 email: haojasmine@gmail.com
 description: 
 url: "/about" # the base hostname & protocol for your site
@@ -17,6 +17,14 @@ footer_links:
     # About: ['Outline', '/about']
     # Writer: ['Writer 2016', '/about']
 
+defaults:
+- scope:
+    path: ""
+  values:
+    toc: true
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-toc

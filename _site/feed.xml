@@ -5,21 +5,13 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Jun 2021 08:59:31 -0700</pubDate>
-    <lastBuildDate>Mon, 14 Jun 2021 08:59:31 -0700</lastBuildDate>
+    <pubDate>Fri, 18 Jun 2021 17:31:44 -0700</pubDate>
+    <lastBuildDate>Fri, 18 Jun 2021 17:31:44 -0700</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Python Basics</title>
-        <description>&lt;p&gt;After we configure the environment, we start with basic dataset. For this section, we show the basic data analysis using the dataset. 
-&lt;strong&gt;Content&lt;/strong&gt;&lt;/p&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#python-basics&quot; id=&quot;markdown-toc-python-basics&quot;&gt;Python Basics&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#comments&quot; id=&quot;markdown-toc-comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#printing&quot; id=&quot;markdown-toc-printing&quot;&gt;Printing&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+        <description>&lt;p&gt;After we configure the environment, we start with basic dataset. For this section, we show the basic data analysis using the dataset.&lt;/p&gt;
 
 &lt;h1 id=&quot;python-basics&quot;&gt;Python Basics&lt;/h1&gt;
 &lt;p&gt;In this section, we get familiar with the syntax of Python, commenting, conditional
@@ -64,19 +56,6 @@ as arguments to the method.&lt;/p&gt;
         <title>Configure Data Analysis Environment</title>
         <description>&lt;p&gt;To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
 We mainly use two languages for this course, R and Python. You can pick one favorate language to use.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/p&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#install-python-and-pandas&quot; id=&quot;markdown-toc-install-python-and-pandas&quot;&gt;Install Python and Pandas&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#install-packages-in-python&quot; id=&quot;markdown-toc-install-packages-in-python&quot;&gt;Install Packages in Python&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#start-jupyter-notebook&quot; id=&quot;markdown-toc-start-jupyter-notebook&quot;&gt;Start Jupyter Notebook&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#install-r-and-rstudio&quot; id=&quot;markdown-toc-install-r-and-rstudio&quot;&gt;Install R and Rstudio&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#installing-packages-in-r&quot; id=&quot;markdown-toc-installing-packages-in-r&quot;&gt;Installing Packages in R&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h1 id=&quot;install-python-and-pandas&quot;&gt;Install Python and Pandas&lt;/h1&gt;
 
@@ -128,6 +107,130 @@ For more details in Jupyter Notebook, see the &lt;a href=&quot;https://jupyter-n
         <pubDate>Fri, 11 Jun 2021 00:00:00 -0700</pubDate>
         <link>/about/week1-1</link>
         <guid isPermaLink="true">/about/week1-1</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
+    
+      <item>
+        <title>Syllabus</title>
+        <description>&lt;p&gt;To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+We mainly use two languages for this course, R and Python. You can pick one favorate language to use.&lt;/p&gt;
+
+&lt;h2 id=&quot;course-description&quot;&gt;Course Description&lt;/h2&gt;
+
+&lt;p&gt;This course studies how practical problems can be solved by applying econometric methods. 
+The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software. 
+Topics include multilinear regressions, limited dependent variable, panel data, experiments and quasi-experiments, instrumental variables, time series and forecasting, and basics of machine learning.&lt;/p&gt;
+
+&lt;p&gt;Pre-requisites:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Solid knowledge of statistics&lt;/li&gt;
+  &lt;li&gt;Introductory level econometric methods&lt;/li&gt;
+  &lt;li&gt;Linear algebra&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;course-outline&quot;&gt;Course Outline&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Week 1
+    &lt;ul&gt;
+      &lt;li&gt;Introduction: Evidence and Policy&lt;/li&gt;
+      &lt;li&gt;Causality and Validity Probability(&lt;a href=&quot;ECON6001/1_probability.pdf&quot;&gt;Slides&lt;/a&gt;) and Statistical Theory Review (&lt;a href=&quot;ECON6001/2_statistics.pdf&quot;&gt;Slides&lt;/a&gt;) (SW Ch. 2 -3)&lt;/li&gt;
+      &lt;li&gt;Introduction to Programming Language
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;week1-1&quot;&gt;Set up the programming environment&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;week1-2&quot;&gt;Python Basics&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;ECON6001/W1_assignment.pdf&quot;&gt;Assignment(due Sep 14th)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Week 2
+    &lt;ul&gt;
+      &lt;li&gt;Bivariate Regression I &amp;amp; II (Single regressor) (SW Ch. 4 – 5)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Week 3
+    &lt;ul&gt;
+      &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)&lt;/li&gt;
+      &lt;li&gt;Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) Threats to (Internal / External) Validity (SW, Ch. 9)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Week 4
+    &lt;ul&gt;
+      &lt;li&gt;Regressions with binary dependent variables (SW, Ch. 11)&lt;/li&gt;
+      &lt;li&gt;Experiments and Quasi-Experiments (Chapter 13) Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Week 5
+    &lt;ul&gt;
+      &lt;li&gt;Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Week 6
+    &lt;ul&gt;
+      &lt;li&gt;Times series regressions and forecasting (SW, Ch. 14)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Week 7
+    &lt;ul&gt;
+      &lt;li&gt;Machine Learning (material will be distributed by instructors.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;Main textbook:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Stock, James and Mark Watson (2018), Introduction to Econometrics, Global Edition, 4th ed., Pearson.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Supplementary textbook:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jeffrey Wooldridge , Introductory Econometrics: A Modern Approach, Ohio : South-Western Cengage Learning.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Students are encouraged to check out student resources the publisher provides on the Internet. Lecture slides will be posted on the course website.&lt;/p&gt;
+
+&lt;h2 id=&quot;statistical-software-and-data&quot;&gt;Statistical Software and Data&lt;/h2&gt;
+
+&lt;p&gt;The main software program for the course is R and Python.&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;h3 id=&quot;datasets&quot;&gt;Datasets&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://fmwww.bc.edu/ec-p/data/stockwatson/datasets.list.html&quot;&gt;Datasets used in Stock &amp;amp; Watson Textbook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;r-tutorial&quot;&gt;R-tutorial&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org&quot;&gt;Econometrics with R&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;python--tutorial&quot;&gt;Python  Tutorial&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://python.quantecon.org/intro.html&quot;&gt;Quantecon Python Introduction&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html&quot;&gt;Pandas Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;python-for-econometrics&quot;&gt;Python for Econometrics&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf&quot;&gt;Python for Econometrics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mixtape.scunning.com/&quot;&gt;Mixtape by Scrunning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.kevinsheppard.com/teaching/python/&quot;&gt;Python by Keven Sheppard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 01 Jun 2021 00:00:00 -0700</pubDate>
+        <link>/about/week1-0</link>
+        <guid isPermaLink="true">/about/week1-0</guid>
         
         
         <category>AppliedEconometrics</category>

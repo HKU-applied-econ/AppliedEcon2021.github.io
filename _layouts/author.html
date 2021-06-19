@@ -16,7 +16,7 @@ layout: with-sidebar
 
 <div class="posts-block animated fadeIn ">
 
-    {% for post in author_posts %}
+    {% for post in author_posts reversed%}
         <article class="post">
           <div class="post-preview">
             <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>

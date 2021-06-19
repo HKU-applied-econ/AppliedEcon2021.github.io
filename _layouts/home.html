@@ -9,7 +9,7 @@ layout: with-sidebar
 
 <div class="home-page-posts animated fadeIn ">
     {% assign sortedPosts = site.posts | sort: 'title' %}
-    {% for post in sortedPosts%}
+    {% for post in sortedPosts reversed%}
 
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
