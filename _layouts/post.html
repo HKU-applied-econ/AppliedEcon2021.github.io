@@ -30,6 +30,12 @@ layout: default
             {{ content | toc_only }}
         </div>
         {% endif %} -->
+        <div>
+        
+            <div id="markdown-content">
+                {{ toc }}
+            </div>
+        </div>
     </div>
     
     <div class="row">
@@ -47,7 +53,7 @@ layout: default
             <div>
                 
                 <div id="markdown-content">
-                    {{ content | inject_anchors }}
+                    {{ content  }}
                 </div>
             </div>
 
