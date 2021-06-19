@@ -32,9 +32,10 @@ layout: default
         {% endif %} -->
         <div>
         
-            <div id="markdown-content">
-                {%toc%}
-            </div>
+        <nav aria-label="Table of Contents">
+            {{ content | toc_only }}
+        </nav>
+
         </div>
     </div>
     
