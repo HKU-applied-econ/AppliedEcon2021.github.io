@@ -1,0 +1,232 @@
+I"�<!-- **THE UNIVERSITY OF HONG KONG**
+
+**FACULTY OF BUSINESS AND ECONOMICS**
+
+**School of Economics and Finance**
+
+
+
+**ECON6001A/B – Applied Econometrics**
+
+**Fall 2020** -->
+
+<h2 id="information-on-instructor-and-tutor"><strong>Information on Instructor and Tutor</strong></h2>
+
+<p>Lecture Days: Wednesday &amp; Saturday</p>
+
+<p>Lecture Dates: Sept 1, 4, 8, 11, 15, 18, 25, 29, Oct 2, 6, 9, 13
+Lecture Time: 9:30am – 12:30noon (Session A); 2:00pm – 5:00pm (Session B)</p>
+
+<p>Venue: Cyberport Campus</p>
+
+<p>Instructor: Dr. Yu Hao
+Email: haoyu@hku.hk
+Office: TBA
+Office hours: TBA</p>
+
+<p>Tutor: TBA
+Email: TBA
+Tutor office: TBA
+Tutor office hours: TBA</p>
+
+<p>Course website: A Moodle course on the HKU portal. Students are encouraged to visit the course website at least once a week.</p>
+
+<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+We mainly use two languages for this course, R and Python. You can pick one favorate language to use.</p>
+
+<h2 id="course-description">Course Description</h2>
+
+<p>This course studies how practical problems can be solved by applying econometric methods.
+The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software.
+Topics include multilinear regressions, limited dependent variable, panel data, experiments and quasi-experiments, instrumental variables, time series and forecasting, and basics of machine learning.</p>
+
+<p>Pre-requisites:</p>
+<ul>
+  <li>Solid knowledge of statistics</li>
+  <li>Introductory level econometric methods</li>
+  <li>Linear algebra</li>
+</ul>
+
+<p>## <strong>Course Materials</strong></p>
+
+<p>Main textbook:</p>
+
+<ul>
+  <li>Stock, James and Mark Watson (2018), <em>Introduct**ion to</em> <em>Econometrics</em>, Global Edition, 4th ed., Pearson. (It is perfectly fine if you use the 3rd edition of this textbook.)</li>
+  <li>Hanck, Christoph, Martin Arnold, Alexander Gerber, and Martin Schmelzer. “Introduction to Econometrics with R.” University of Duisburg-Essen (2019).
+    <ul>
+      <li>Online course notes: https://www.econometrics-with-r.org/</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Supplementary textbook:</p>
+
+<ul>
+  <li>
+    <p>Jeffrey Wooldridge , <em>Introductory Econometrics: A Modern Approach</em>, Ohio : South-Western Cengage Learning.</p>
+  </li>
+  <li>
+    <p>Cunningham, Scott. “Causal Inference.” <em>The Mixtape</em> 1 (2020).</p>
+
+    <ul>
+      <li>Online course notes: https://mixtape.scunning.com/index.html</li>
+    </ul>
+  </li>
+  <li>
+    <p>Sheppard, Kevin. “Introduction to Python for econometrics, statistics and data analysis.” <em>Self-published, University of Oxford, version</em> 2 (2012).</p>
+
+    <ul>
+      <li>Online course notes: https://www.kevinsheppard.com/teaching/python/notes/#notes</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Students are encouraged to check out student resources the publisher provides on the Internet. Lecture slides will be posted on the course website. Additional handouts will be distributed when needed to supplement the textbook.</p>
+
+<p>## <strong>Course Objectives</strong></p>
+
+<ol>
+  <li>To provide knowledge of econometric methods for analysis of economic data</li>
+  <li>To provide hands-on experiences of data analysis using statistical software</li>
+</ol>
+
+<p>## <strong>Learning Outcomes</strong></p>
+
+<p>By the end of this course, students are expected to:</p>
+
+<p>CLO1. Be familiar with the basics of statistics and econometrics</p>
+
+<p>CLO2. Be able to build an econometric model for a problem and choose an appropriate econometric method to estimate the model</p>
+
+<p>CLO3. Be able to do estimation and hypothesis testing of the econometric model using statistical software</p>
+
+<p>CLO4. Be able to interpret results</p>
+
+<p>## <strong>Alignment of Program and Course Outcomes</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Program Learning Outcomes</strong></th>
+      <th><strong>Alignment</strong> <strong>with CLOs</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PLO1. Understanding  of fundamental theories and new development in economics</td>
+      <td>CLO1</td>
+    </tr>
+    <tr>
+      <td>PLO2. Mastering of skills  in analyzing economic data</td>
+      <td>CLO1 and CLO2</td>
+    </tr>
+    <tr>
+      <td>PLO3. Demonstration  of ability to apply economic knowledge and analytical skills to address  policy and business problems</td>
+      <td>CLO3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="course-outline">Course Outline</h2>
+
+<ul>
+  <li>Week 1
+    <ul>
+      <li>Introduction: Evidence and Policy</li>
+      <li>Causality and Validity Probability(<a href="ECON6001/1_probability.pdf">Slides</a>) and Statistical Theory Review (<a href="ECON6001/2_statistics.pdf">Slides</a>) (SW Ch. 2 -3)</li>
+      <li>Introduction to Programming Language
+        <ul>
+          <li><a href="week1-1">Set up the programming environment</a></li>
+          <li><a href="week1-2">Python Basics</a></li>
+          <li><a href="https://www.econometrics-with-r.org/1-2-a-very-short-introduction-to-r-and-rstudio.html">R Basics</a></li>
+        </ul>
+      </li>
+      <li><a href="ECON6001/W1_assignment.pdf">Assignment(due Sep 14th)</a></li>
+    </ul>
+  </li>
+  <li>Week 2
+    <ul>
+      <li>Bivariate Regression (<a href="../ECON6001/3_Regression.pdf">Slides</a>) (SW Ch. 4 – 5)
+        <ul>
+          <li><a href="https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html">R tutorial for CA school example</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Week 3
+    <ul>
+      <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)</li>
+      <li>Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) Threats to (Internal / External) Validity (SW, Ch. 9)</li>
+    </ul>
+  </li>
+  <li>Week 4
+    <ul>
+      <li>Regressions with binary dependent variables (SW, Ch. 11)</li>
+      <li>Experiments and Quasi-Experiments (Chapter 13) Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)</li>
+    </ul>
+  </li>
+  <li>Week 5
+    <ul>
+      <li>Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)</li>
+    </ul>
+  </li>
+  <li>Week 6
+    <ul>
+      <li>Times series regressions and forecasting (SW, Ch. 14)</li>
+    </ul>
+  </li>
+  <li>Week 7
+    <ul>
+      <li>Machine Learning (material will be distributed by instructors.)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<p>Main textbook:</p>
+<ul>
+  <li>Stock, James and Mark Watson (2018), Introduction to Econometrics, Global Edition, 4th ed., Pearson.</li>
+</ul>
+
+<p>Supplementary textbook:</p>
+<ul>
+  <li>Jeffrey Wooldridge , Introductory Econometrics: A Modern Approach, Ohio : South-Western Cengage Learning.</li>
+</ul>
+
+<p>Students are encouraged to check out student resources the publisher provides on the Internet. Lecture slides will be posted on the course website.</p>
+
+<h2 id="statistical-software-and-data">Statistical Software and Data</h2>
+
+<p>The main software program for the course is R and Python.</p>
+
+<h2 id="resources">Resources</h2>
+
+<h3 id="datasets">Datasets</h3>
+
+<ul>
+  <li><a href="http://fmwww.bc.edu/ec-p/data/stockwatson/datasets.list.html">Datasets used in Stock &amp; Watson Textbook</a></li>
+</ul>
+
+<h3 id="r-tutorial">R-tutorial</h3>
+
+<ul>
+  <li><a href="https://www.econometrics-with-r.org">Econometrics with R</a></li>
+</ul>
+
+<h3 id="python--tutorial">Python  Tutorial</h3>
+
+<ul>
+  <li><a href="https://python.quantecon.org/intro.html">Quantecon Python Introduction</a></li>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html">Pandas Introduction</a></li>
+</ul>
+
+<h3 id="python-for-econometrics">Python for Econometrics</h3>
+
+<ul>
+  <li><a href="https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf">Python for Econometrics</a></li>
+  <li><a href="https://mixtape.scunning.com/">Mixtape by Scrunning</a></li>
+  <li><a href="https://www.kevinsheppard.com/teaching/python/">Python by Keven Sheppard</a></li>
+</ul>
+:ET

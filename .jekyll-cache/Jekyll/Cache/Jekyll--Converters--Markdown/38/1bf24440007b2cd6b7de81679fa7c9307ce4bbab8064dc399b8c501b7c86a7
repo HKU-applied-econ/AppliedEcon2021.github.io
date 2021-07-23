@@ -1,0 +1,22 @@
+I"@<h2 id="what-is-causal-inference">What is causal inference?</h2>
+
+<p>I could feel that econometrics was indispensable, and yet I was missing something. But what? It was a theory of causality. I had been orbiting that theory ever since seeing that difference-in-differences table in Levine (2004). But I needed more. So, desperate, I did what I always do when I want to learn something new—I developed a course on causality to force myself to learn all the things I didn’t know.</p>
+
+<h3 id="so-how-would-i-define-causal-inference">So how would I define causal inference?</h3>
+
+<ul>
+  <li>Causal inference is the leveraging of theory and deep knowledge of institutional details to estimate the impact of events and choices on a given outcome of interest.</li>
+  <li>It is not a new field; humans have been obsessing over causality since antiquity. But what is new is the progress we believe we’ve made in estimating causal effects both inside and outside the laboratory.</li>
+  <li>Some date the beginning of this new, modern causal inference to Fisher (1935), Haavelmo (1943), or Rubin (1974). Some connect it to the work of early pioneers like John Snow.</li>
+  <li>It’s sometimes reviewed in a lengthy chapter on “program evaluation” in econometrics textbooks (Wooldridge 2010), or even given entire book-length treatments.</li>
+</ul>
+
+<h3 id="correlation-with-causality">Correlation with causality</h3>
+
+<h2 id="reading">Reading</h2>
+
+<ul>
+  <li><a href="https://mixtape.scunning.com/introduction.html#what-is-causal-inference">Mixtape Chapter 1</a></li>
+  <li>SW Chapter 1</li>
+</ul>
+:ET

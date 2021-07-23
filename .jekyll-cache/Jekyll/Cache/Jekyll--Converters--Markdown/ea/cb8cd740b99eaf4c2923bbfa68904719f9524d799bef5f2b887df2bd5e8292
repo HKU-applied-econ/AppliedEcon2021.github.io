@@ -1,10 +1,43 @@
-I"�<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+I"Z<!-- **THE UNIVERSITY OF HONG KONG**
+
+**FACULTY OF BUSINESS AND ECONOMICS**
+
+**School of Economics and Finance**
+
+
+
+**ECON6001A/B – Applied Econometrics**
+
+**Fall 2020** -->
+
+<h2 id="information-on-instructor-and-tutor"><strong>Information on Instructor and Tutor</strong></h2>
+
+<p>Lecture Days: Wednesday &amp; Saturday</p>
+
+<p>Lecture Dates: Sept 1, 4, 8, 11, 15, 18, 25, 29, Oct 2, 6, 9, 13
+Lecture Time: 9:30am – 12:30noon (Session A); 2:00pm – 5:00pm (Session B)</p>
+
+<p>Venue: Cyberport Campus</p>
+
+<p>Instructor: Dr. Yu Hao
+Email: haoyu@hku.hk
+Office: TBA
+Office hours: TBA</p>
+
+<p>Tutor: TBA
+Email: TBA
+Tutor office: TBA
+Tutor office hours: TBA</p>
+
+<p>Course website: A Moodle course on the HKU portal. Students are encouraged to visit the course website at least once a week.</p>
+
+<p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
 We mainly use two languages for this course, R and Python. You can pick one favorate language to use.</p>
 
 <h2 id="course-description">Course Description</h2>
 
-<p>This course studies how practical problems can be solved by applying econometric methods. 
-The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software. 
+<p>This course studies how practical problems can be solved by applying econometric methods.
+The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software.
 Topics include multilinear regressions, limited dependent variable, panel data, experiments and quasi-experiments, instrumental variables, time series and forecasting, and basics of machine learning.</p>
 
 <p>Pre-requisites:</p>
@@ -25,6 +58,7 @@ Topics include multilinear regressions, limited dependent variable, panel data, 
         <ul>
           <li><a href="week1-1">Set up the programming environment</a></li>
           <li><a href="week1-2">Python Basics</a></li>
+          <li><a href="https://www.econometrics-with-r.org/1-2-a-very-short-introduction-to-r-and-rstudio.html">R Basics</a></li>
         </ul>
       </li>
       <li><a href="ECON6001/W1_assignment.pdf">Assignment(due Sep 14th)</a></li>
@@ -32,7 +66,11 @@ Topics include multilinear regressions, limited dependent variable, panel data, 
   </li>
   <li>Week 2
     <ul>
-      <li>Bivariate Regression I &amp; II (Single regressor) (SW Ch. 4 – 5)</li>
+      <li>Bivariate Regression (<a href="../ECON6001/3_Regression.pdf">Slides</a>) (SW Ch. 4 – 5)
+        <ul>
+          <li><a href="https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html">R tutorial for CA school example</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>Week 3

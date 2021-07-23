@@ -1,0 +1,82 @@
+I"�<h2 id="economic-questions-and-data">Economic Questions and Data</h2>
+
+<p>Many decisions in economics, business, and government hinge on understanding relationships among variables in the world around us. These decisions require quantitative answers to quantitative questions.</p>
+
+<ul>
+  <li>Question #1: Does Reducing Class Size Improve Elementary School Education?</li>
+  <li>Question #2: Is There Racial Discrimination in the Market for Home Loans?</li>
+  <li>Question #3: Does Healthcare Spending Improve Health Outcomes?</li>
+</ul>
+
+<h2 id="what-is-causal-inference">What is causal inference?</h2>
+
+<h4 id="so-how-would-i-define-causal-inference">So how would I define causal inference?</h4>
+
+<ul>
+  <li>Causal inference is the leveraging of theory and deep knowledge of institutional details to estimate the impact of events and choices on a given outcome of interest.</li>
+  <li>It is not a new field; humans have been obsessing over causality since antiquity. But what is new is the progress we believe we’ve made in estimating causal effects both inside and outside the laboratory.</li>
+  <li>Some date the beginning of this new, modern causal inference to Fisher (1935), Haavelmo (1943), or Rubin (1974). Some connect it to the work of early pioneers like John Snow.</li>
+  <li>It’s sometimes reviewed in a lengthy chapter on “program evaluation” in econometrics textbooks (Wooldridge 2010), or even given entire book-length treatments.</li>
+</ul>
+
+<h4 id="correlation-with-causality">Correlation with causality</h4>
+
+<p>It is very common these days to hear someone say “correlation does not mean causality.”</p>
+
+<ul>
+  <li>When the rooster crows, the sun soon after rises, but we know the rooster didn’t cause the sun to rise. Had the rooster been eaten by the farmer’s cat, the sun still would have risen. Yet so often people make this kind of mistake when naively interpreting simple correlations.</li>
+  <li>But weirdly enough, sometimes there are causal relationships between two things and yet <em>no observable correlation</em>.
+    <ul>
+      <li>Consider a central bank reading tea leaves to discern when a recessionary wave is forming.</li>
+      <li>Seeing evidence that a recession is emerging, the bank enters into open-market operations, buying bonds and pumping liquidity into the economy.</li>
+      <li>These actions are done optimally, these open-market operations will show no relationship whatsoever with actual output.</li>
+      <li>In fact, in the ideal, banks may engage in aggressive trading in order to stop a recession, and we would be unable to see any evidence that it was working <em>even though it was</em>!</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="example-price-elasticity-of-demand">Example: Price Elasticity of Demand</h4>
+
+<ul>
+  <li>One of the cornerstones of scientific methodologies is empirical analysis - use data to test a theory or to estimate a relationship between variables.</li>
+  <li>The first step in conducting an empirical economic analysis is the careful formulation of the question we would like to answer.</li>
+  <li>In some cases, we would like to develop and test a formal economic model that describes mathematically a certain relationship, behavior, or process of interest.</li>
+</ul>
+
+<p>A model is the framework with which we describe the relationships we are interested in, the intuition for our results, and the hypotheses we would like to test</p>
+<ul>
+  <li>describe the phenomena of interest and</li>
+  <li>make falsifiable (testable) predictions.</li>
+</ul>
+
+<p>After we have specified a model, we turn it into what is called an econometric model, which</p>
+<ul>
+  <li>can be estimated directly with data.</li>
+  <li>how to describe the relationships of the variables we are interested in through an equation.</li>
+  <li>how we will deal with variables that cannot be directly or reasonably observed by the researcher, or that cannot be measured very well, but which play an important role in our model.</li>
+  <li>Comparative statics: theoretical descriptions of causal effects contained within the model.
+    <ul>
+      <li>idea of <em>ceteris paribus</em>—or “all else constant.”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>To illustrate this idea, let’s begin with a basic economic model: supply and demand equilibrium and the problems it creates for estimating the price elasticity of demand. Policy-makers and business managers have a natural interest in learning the price elasticity of demand because knowing it enables firms to maximize profits and governments to choose optimal taxes, and whether to restrict quantity altogether (Becker, Grossman, and Murphy <a href="https://mixtape.scunning.com/references.html#ref-Becker2006">2006</a>).</p>
+
+<p>But the problem is that we do not observe demand curves, because demand curves are theoretical objects. More specifically, a demand curve is a collection of paired potential outcomes of price and quantity. We observe <em>price and quantity equilibrium values</em>, not the potential price and potential quantities along the entire demand curve. Only by tracing out the potential outcomes along a demand curve can we calculate the elasticity.</p>
+
+<p>The demand price elasticity is the solution to 
+\(\epsilon = \frac{\partial \log Q}{\partial \log P}\)
+For instance, it holds supply fixed, the prices of other goods fixed, income fixed, preferences fixed, input costs fixed, and so on. In order to estimate the price elasticity of demand, we need changes in $P$ that are completely and utterly independent of the otherwise normal determinants of supply and the other determinants of demand.</p>
+
+<p>Otherwise we get shifts in either supply or demand, which creates new pairs of data for which any correlation between $P$​ and $Q$​ will not be a measure of the elasticity of demand.</p>
+
+<p>##</p>
+
+<h2 id="reading">Reading</h2>
+
+<ul>
+  <li><a href="https://mixtape.scunning.com/introduction.html#what-is-causal-inference">Mixtape Chapter 1</a></li>
+  <li>SW Chapter 1</li>
+</ul>
+:ET

@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> | Syllabus</title>
-    <meta name="description" content="To get started with this course, we need to set up the environment for data analysis on your PC/Mac.We mainly use two languages for this course, R and Python...">
+    <title> | Introduction</title>
+    <meta name="description" content="Economic Questions and Data">
 
     <link rel="stylesheet" href="/css/main.css">
 
@@ -73,7 +73,7 @@
 
     <p>&nbsp;</p>
     <div id="markdown-content"></div>
-    <ul><li><a href="#course-description">Course Description</a></li><li><a href="#course-outline">Course Outline</a></li><li><a href="#references">References</a></li><li><a href="#statistical-software-and-data">Statistical Software and Data</a></li><li><a href="#resources">Resources</a><ul><li><a href="#datasets">Datasets</a></li><li><a href="#r-tutorial">R-tutorial</a></li><li><a href="#python--tutorial">Python  Tutorial</a></li><li><a href="#python-for-econometrics">Python for Econometrics</a></li></ul></li></ul>
+    <ul><li><a href="#economic-questions-and-data">Economic Questions and Data</a></li><li><a href="#what-is-causal-inference">What is causal inference?</a><ul><li><a href="#so-how-would-i-define-causal-inference">So how would I define causal inference?</a></li><li><a href="#correlation-with-causality">Correlation with causality</a></li><li><a href="#example-price-elasticity-of-demand">Example: Price Elasticity of Demand</a></li></ul></li></ul></li><li><a href="#data">Data</a></li><li><a href="#reading">Reading</a></li></ul>
 
 </div>
 
@@ -87,123 +87,107 @@
                 <a href="/author/jasmine">Jasmine Hao</a> in <a href='/category/AppliedEconometrics'>AppliedEconometrics</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 30 minutes
             </p>
 
-            <h1>Syllabus</h1>
+            <h1>Introduction</h1>
 
             
                 
 
                 <div id="markdown-content">
-                    <p>To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
-We mainly use two languages for this course, R and Python. You can pick one favorate language to use.</p>
+                    <h2 id="economic-questions-and-data">Economic Questions and Data</h2>
 
-<h2 id="course-description">Course Description</h2>
+<p>Many decisions in economics, business, and government hinge on understanding relationships among variables in the world around us. These decisions require quantitative answers to quantitative questions.</p>
 
-<p>This course studies how practical problems can be solved by applying econometric methods. 
-The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software. 
-Topics include multilinear regressions, limited dependent variable, panel data, experiments and quasi-experiments, instrumental variables, time series and forecasting, and basics of machine learning.</p>
-
-<p>Pre-requisites:</p>
 <ul>
-  <li>Solid knowledge of statistics</li>
-  <li>Introductory level econometric methods</li>
-  <li>Linear algebra</li>
+  <li>Question #1: Does Reducing Class Size Improve Elementary School Education?</li>
+  <li>Question #2: Is There Racial Discrimination in the Market for Home Loans?</li>
+  <li>Question #3: Does Healthcare Spending Improve Health Outcomes?</li>
+  <li>Question #4: By How Much Will U.S. GDP Grow Next Year?</li>
 </ul>
 
-<h2 id="course-outline">Course Outline</h2>
+<h2 id="what-is-causal-inference">What is causal inference?</h2>
+
+<h4 id="so-how-would-i-define-causal-inference">So how would I define causal inference?</h4>
 
 <ul>
-  <li>Week 1
+  <li>Causal inference is the leveraging of theory and deep knowledge of institutional details to estimate the impact of events and choices on a given outcome of interest.</li>
+  <li>It is not a new field; humans have been obsessing over causality since antiquity. But what is new is the progress we believe we’ve made in estimating causal effects both inside and outside the laboratory.</li>
+  <li>Some date the beginning of this new, modern causal inference to Fisher (1935), Haavelmo (1943), or Rubin (1974). Some connect it to the work of early pioneers like John Snow.</li>
+  <li>It’s sometimes reviewed in a lengthy chapter on “program evaluation” in econometrics textbooks (Wooldridge 2010), or even given entire book-length treatments.</li>
+</ul>
+
+<h4 id="correlation-with-causality">Correlation with causality</h4>
+
+<p>It is very common these days to hear someone say “correlation does not mean causality.”</p>
+
+<ul>
+  <li>When the rooster crows, the sun soon after rises, but we know the rooster didn’t cause the sun to rise. Had the rooster been eaten by the farmer’s cat, the sun still would have risen. Yet so often people make this kind of mistake when naively interpreting simple correlations.</li>
+  <li>But weirdly enough, sometimes there are causal relationships between two things and yet <em>no observable correlation</em>.
     <ul>
-      <li>Introduction: Evidence and Policy</li>
-      <li>Causality and Validity Probability(<a href="ECON6001/1_probability.pdf">Slides</a>) and Statistical Theory Review (<a href="ECON6001/2_statistics.pdf">Slides</a>) (SW Ch. 2 -3)</li>
-      <li>Introduction to Programming Language
-        <ul>
-          <li><a href="week1-1">Set up the programming environment</a></li>
-          <li><a href="week1-2">Python Basics</a></li>
-        </ul>
-      </li>
-      <li><a href="ECON6001/W1_assignment.pdf">Assignment(due Sep 14th)</a></li>
-    </ul>
-  </li>
-  <li>Week 2
-    <ul>
-      <li>Bivariate Regression I &amp; II (Single regressor) (SW Ch. 4 – 5)</li>
-    </ul>
-  </li>
-  <li>Week 3
-    <ul>
-      <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)</li>
-      <li>Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) Threats to (Internal / External) Validity (SW, Ch. 9)</li>
-    </ul>
-  </li>
-  <li>Week 4
-    <ul>
-      <li>Regressions with binary dependent variables (SW, Ch. 11)</li>
-      <li>Experiments and Quasi-Experiments (Chapter 13) Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)</li>
-    </ul>
-  </li>
-  <li>Week 5
-    <ul>
-      <li>Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)</li>
-    </ul>
-  </li>
-  <li>Week 6
-    <ul>
-      <li>Times series regressions and forecasting (SW, Ch. 14)</li>
-    </ul>
-  </li>
-  <li>Week 7
-    <ul>
-      <li>Machine Learning (material will be distributed by instructors.)</li>
+      <li>Consider a central bank reading tea leaves to discern when a recessionary wave is forming.</li>
+      <li>Seeing evidence that a recession is emerging, the bank enters into open-market operations, buying bonds and pumping liquidity into the economy.</li>
+      <li>These actions are done optimally, these open-market operations will show no relationship whatsoever with actual output.</li>
+      <li>In fact, in the ideal, banks may engage in aggressive trading in order to stop a recession, and we would be unable to see any evidence that it was working <em>even though it was</em>!</li>
     </ul>
   </li>
 </ul>
 
-<h2 id="references">References</h2>
+<h4 id="example-price-elasticity-of-demand">Example: Price Elasticity of Demand</h4>
 
-<p>Main textbook:</p>
 <ul>
-  <li>Stock, James and Mark Watson (2018), Introduction to Econometrics, Global Edition, 4th ed., Pearson.</li>
+  <li>One of the cornerstones of scientific methodologies is empirical analysis - use data to test a theory or to estimate a relationship between variables.</li>
+  <li>The first step in conducting an empirical economic analysis is the careful formulation of the question we would like to answer.</li>
+  <li>In some cases, we would like to develop and test a formal economic model that describes mathematically a certain relationship, behavior, or process of interest.</li>
 </ul>
 
-<p>Supplementary textbook:</p>
+<p>A model is the framework with which we describe the relationships we are interested in, the intuition for our results, and the hypotheses we would like to test</p>
 <ul>
-  <li>Jeffrey Wooldridge , Introductory Econometrics: A Modern Approach, Ohio : South-Western Cengage Learning.</li>
+  <li>describe the phenomena of interest and</li>
+  <li>make falsifiable (testable) predictions.</li>
 </ul>
 
-<p>Students are encouraged to check out student resources the publisher provides on the Internet. Lecture slides will be posted on the course website.</p>
-
-<h2 id="statistical-software-and-data">Statistical Software and Data</h2>
-
-<p>The main software program for the course is R and Python.</p>
-
-<h2 id="resources">Resources</h2>
-
-<h3 id="datasets">Datasets</h3>
-
+<p>After we have specified a model, we turn it into what is called an econometric model, which</p>
 <ul>
-  <li><a href="http://fmwww.bc.edu/ec-p/data/stockwatson/datasets.list.html">Datasets used in Stock &amp; Watson Textbook</a></li>
+  <li>can be estimated directly with data.</li>
+  <li>how to describe the relationships of the variables we are interested in through an equation.</li>
+  <li>how we will deal with variables that cannot be directly or reasonably observed by the researcher, or that cannot be measured very well, but which play an important role in our model.</li>
+  <li>Comparative statics: theoretical descriptions of causal effects contained within the model.
+    <ul>
+      <li>idea of <em>ceteris paribus</em>—or “all else constant.”</li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="r-tutorial">R-tutorial</h3>
+<p>To illustrate this idea, let’s begin with a basic economic model: supply and demand equilibrium and the problems it creates for estimating the price elasticity of demand. Policy-makers and business managers have a natural interest in learning the price elasticity of demand because knowing it enables firms to maximize profits and governments to choose optimal taxes, and whether to restrict quantity altogether (Becker, Grossman, and Murphy <a href="https://mixtape.scunning.com/references.html#ref-Becker2006">2006</a>).</p>
+
+<p>But the problem is that we do not observe demand curves, because demand curves are theoretical objects. More specifically, a demand curve is a collection of paired potential outcomes of price and quantity. We observe <em>price and quantity equilibrium values</em>, not the potential price and potential quantities along the entire demand curve. Only by tracing out the potential outcomes along a demand curve can we calculate the elasticity.</p>
+
+<p>The demand price elasticity is the solution to
+\(\epsilon = \frac{\partial \log Q}{\partial \log P}\)
+For instance, it holds supply fixed, the prices of other goods fixed, income fixed, preferences fixed, input costs fixed, and so on. In order to estimate the price elasticity of demand, we need changes in $P$ that are completely and utterly independent of the otherwise normal determinants of supply and the other determinants of demand.</p>
+
+<p>Otherwise we get shifts in either supply or demand, which creates new pairs of data for which any correlation between $P$​ and $Q$​ will not be a measure of the elasticity of demand.</p>
+
+<h2 id="data">Data</h2>
 
 <ul>
-  <li><a href="https://www.econometrics-with-r.org">Econometrics with R</a></li>
+  <li>Experimental data come from experiments designed to evaluate a treatment or policy or to investigate a causal effect.
+    <ul>
+      <li>For example, the state of Tennessee financed a large randomized controlled experiment examining class size in the 1980s. In that experiment, which we examine in SW Chapter 13, thousands of students were randomly assigned to classes of different sizes for several years and were given standardized tests annually.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Data obtained by observing actual behavior outside an experimental setting are called <strong>observational data</strong>.</p>
+  </li>
+  <li>Cross-sectional data: Data on different entities—workers, consumers, firms, governmental units, etc for a single time period.</li>
+  <li><strong>Time series data</strong> are data for a single entity (person, firm, country) collected at multiple time periods. Our data set on the growth rate of GDP and the term spread in the United States is an example of a time series data set.</li>
+  <li>Panel data, also called longitudinal data, are data for multiple entities in which each entity is observed at two or more time periods.</li>
 </ul>
 
-<h3 id="python--tutorial">Python  Tutorial</h3>
+<h2 id="reading">Reading</h2>
 
 <ul>
-  <li><a href="https://python.quantecon.org/intro.html">Quantecon Python Introduction</a></li>
-  <li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html">Pandas Introduction</a></li>
-</ul>
-
-<h3 id="python-for-econometrics">Python for Econometrics</h3>
-
-<ul>
-  <li><a href="https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf">Python for Econometrics</a></li>
-  <li><a href="https://mixtape.scunning.com/">Mixtape by Scrunning</a></li>
-  <li><a href="https://www.kevinsheppard.com/teaching/python/">Python by Keven Sheppard</a></li>
+  <li><a href="https://mixtape.scunning.com/introduction.html#what-is-causal-inference">Mixtape Chapter 1</a></li>
+  <li>SW Chapter 1</li>
 </ul>
 
                 </div>
