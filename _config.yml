@@ -7,7 +7,7 @@ enable_retina: false
 permalink: :title
 nav_list:
   About : ['Outline', '/about', 'fa-anchor']
-  Home : ['Sections', '/', 'fa-file']
+  # Home : ['Sections', '/', 'fa-file']
   # Home_Alt : ['Home Alt', '/home-alt', 'fa-home']
   # Home_Alt_2 : ['Home Alt 2', '/home-alt-2/', 'fa-home']
   # Contact : ['Contact', '/contact', 'fa-plane']

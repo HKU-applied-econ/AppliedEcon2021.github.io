@@ -1,0 +1,347 @@
+\RequirePackage{currfile}
+\tolerance=5000
+\documentclass[10pt, xcolor=x11names,compress,usenames,dvipsnames]{beamer}
+
+\usepackage[english]{babel}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{amssymb,amsmath,amsfonts,eurosym,geometry,ulem,graphicx,caption,color,setspace,comment,footmisc,caption,pdflscape,subfigure,array,hyperref,upgreek,bbm,xcolor,float,amsthm,amsmath,verbatim,setspace,ulem,textpos,changepage,url,multirow,tikz,color, colortbl,numprint,mathrsfs,cancel,wrapfig,booktabs,threeparttable,ebgaramond,natbib}
+
+\usetikzlibrary{fit,shapes.geometric}
+
+\newcounter{nodemarkers}
+\newcommand\circletext[1]{%
+    \tikz[overlay,remember picture]
+        \node (marker-\arabic{nodemarkers}-a) at (0,1.5ex) {};%
+    #1%
+    \tikz[overlay,remember picture]
+        \node (marker-\arabic{nodemarkers}-b) at (0,0){};%
+    \tikz[overlay,remember picture,inner sep=2pt]
+        \node[draw,rectangle,red ,fit=(marker-\arabic{nodemarkers}-a.center) (marker-\arabic{nodemarkers}-b.center)] {};%
+    \stepcounter{nodemarkers}%
+}
+
+
+\setbeamertemplate{footline}[frame number]
+
+
+\normalem
+
+\newcommand{\tsout}[1]{\text{\sout{$#1$}}}
+\definecolor{Gray}{gray}{0.9}
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+
+\newtheorem{remark}{Remark}
+\def\mb{\mathbf}
+\def\iid{\mathrm{i.i.d.}}
+\def\bs{\boldsymbol}
+\def\tbf{\textbf}
+\def\t{^{\top}}
+\def\E{\mathbbm{E}}
+\def\bSig{\bs{\Sigma}}
+
+\newcommand{\mcitet}[1]{\mbox{\citet{#1}}}
+\newcommand{\mcitep}[1]{\mbox{\citep{#1}}}
+\newcommand{\ind}{\mathbbm{1}}
+
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator{\vecth}{vech}
+
+
+
+\newcommand{\R}{\mathbbm{R}}
+\newcommand{\prob}{\mathbbm{P}}
+\newcommand{\var}{\text{var}}
+
+\newtheorem{assumption}{Assumption}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\makeatletter
+\newenvironment<>{proofs}[1][\proofname]{%
+    \par
+    \def\insertproofname{#1\@addpunct{.}}%
+    \usebeamertemplate{proof begin}#2}
+  {\usebeamertemplate{proof end}}
+\makeatother
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\setbeamertemplate{theorems}[numbered]
+% Themes
+ \mode<presentation> {
+\usetheme{Hannover}
+ \usecolortheme{default}
+ \setbeamercovered{transparent}
+ }
+
+\setbeamercovered{transparent}
+
+\setbeamertemplate{itemize item}{$\triangleright$}
+\setbeamertemplate{itemize subitem}{$\diamond$}
+\setbeamertemplate{enumerate items}[default]
+\setbeamerfont{frametitle}{size=\large}
+\PassOptionsToPackage{height=1cm}{beamerouterthemesidebar}
+\usepackage{blindtext}
+
+% Title
+\title[Statistics]{Review of Statistics \footnote[frame]{This section is based on \cite{Stock2020}, Chapter 3.}
+}
+\date[]{\today}
+
+
+\author[Hao]{Jasmine(Yu) Hao}
+\institute[VSE]{Faculty of Business and Economics\\Hong Kong University}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\section{Estimators}
+\begin{frame}{Estimators}
+    Suppose you want to understand the distribution of $X$ in the population.
+    \begin{itemize}
+        \item When a statistic $\hat \theta = \hat \theta(X_1,\ldots, X_n)$ is a function of an i.i.d. sample, then the distribution is determined by the population distribution is $F$ and the sample size is $n$.
+        \item We call the distribution of $\hat \theta$ the \tbf{sample distribution}. 
+    \end{itemize}
+
+    The goal of an estimator $\hat \theta$ is to learn about the parameter $\theta$, we evaluate the 
+    \begin{itemize}
+        \item The exact bias and variance.
+        \item The distribution under normality.
+        \item The asymptotic distribution as $n\to\infty$.
+    \end{itemize}
+\end{frame}
+
+\subsection{BLUE}
+\begin{frame}{Goodness of Estimators}
+    Let $\hat \theta$ be an estimator of $\theta$. Then
+    \begin{itemize}
+        \item The bias of $ bias (\hat \theta)$ is $\hat \theta - \theta$.
+        \begin{itemize}
+            \item We say an estimator is \tbf{unbiased} if the bias is 0.
+        \end{itemize}
+        \item The \tbf{mean squared error} of an estimator $\hat\theta$ for $\theta$ is \[ mse(\hat \theta) = \E[ ( \hat\theta - \theta)^2]. \]
+        \begin{itemize}
+            \item The mean squared error is $mse(\hat \theta) = \var (\hat\theta) + (bias(\hat\theta))^2$.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Best Unbiased Estimator}
+\begin{definition}[Best Linear Unbiased Estimator (BLUE)]
+    If $\sigma^2 < \infty$ the sample mean $\bar X_n$ has the lowest variance among all linear unbiased estimators of $\mu$.
+\end{definition}
+
+\end{frame}
+% Sample analogue estimator Hiro's notes
+% MLE  \cite{Hansen2021a} Chapter 10
+% \subsection{Estimators}
+
+\section{Hypothesis Testing}
+\subsection{Hypothesis}
+\begin{frame}{Hypothesis}
+    \begin{itemize}
+        \item A point hypothesis is the statement that $\theta$ equals a specific value $\theta_0$. 
+        \item A common example is $\theta$ measures the effect the proposed policy. A typical question is whether $\theta = 0 $, which can be written as $\theta_0 = 0$.
+        \item The \tbf{null hypothesis}, written as $H_0 : \theta = \theta_0$, is the restriction $\theta = \theta_0$.
+        \item The \tbf{alternative hypothesis}, written as $H_A : \theta \neq \theta_0$, is the set $\{ \theta \in \Theta: \theta \neq \theta_0 \}$.
+        \begin{itemize}
+            \item \tbf{One-sided} hypothesis: $H_A : \theta > \theta_0$.
+            \item \tbf{Two-sided} hypothesis: $H_A : \theta \neq \theta_0$.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Acceptance and Rejection}
+    % p-value and sample statistics
+    \begin{itemize}
+        \item A hypothesis test is a decision based on data. We can either \tbf{fail to reject} the null hypothesis or \tbf{reject} the alternative hypothesis.
+        \item An alternative way to express a decision rule is to construct a real-valued function of the data called a \tbf{test statistics} \[  T = T(X_1,\ldots,X_n)\] together with a \tbf{critical region} $C$.
+        \item A hypothesis can be expressed as 
+        \begin{itemize}
+            \item Accept $H_0$ if $T \in C$.
+            \item Reject $H_0$ if $T \not\in C$.
+        \end{itemize}
+    \end{itemize}
+    Note: "Accept" $H_0$ does not mean $H_0$ is true.
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Example - Hypothesis Testing}
+    Consider the following examples:
+    \begin{itemize}
+        \item $2n$ adults who were raised in similar settings, $n$ attended early childhood education. 
+        Let $\bar{W}_1$ be the average wage in the early childhood education group, and let $\bar{W}_2$ be the average wage in the remaining sample. 
+        Null hypothesis $H_0 : \bar{W}_1 > \bar{W}_2$.
+
+        \item You ride each bus once and record the time it takes to travel from home to the university. Let $X_1$ and
+        $X_2$ be the two recorded travel times. 
+        You adopt the following decision rule: If the absolute difference in travel times is greater than B minutes you will reject the hypothesis that the average travel times are the same, otherwise you will accept the hypothesis.
+    \end{itemize}
+
+    \includegraphics[width=\linewidth]{../figure/W2_1.png}
+\end{frame}
+
+
+% Null and alternative hypothesis
+\subsection{Type I and Type II error}
+\begin{frame}{Type I and Type II error}
+    \begin{itemize}
+        \item A false rejection of the null hypothesis is a \tbf{Type I error}.
+        \item A false acceptance of the alternative hypothesis is a \tbf{Type II error}.
+    \end{itemize}
+    \begin{table}[]
+        \begin{tabular}{lll}
+        & Accept $H_0$                          & Reject $H_0$                          \\ \cline{2-3} 
+        \multicolumn{1}{l|}{$H_0$ true} & \multicolumn{1}{l|}{Correct Decision} & \multicolumn{1}{l|}{Type I Error}     \\ \cline{2-3} 
+        \multicolumn{1}{l|}{$H_1$ true} & \multicolumn{1}{l|}{Type II Error}    & \multicolumn{1}{l|}{Correct Decision} \\ \cline{2-3} 
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Size and Power}
+    The \tbf{power function} of a hypothesis test is the probability of rejection\[ \pi(F) = \prob (\text{Reject } H_0 | F) = \prob(T \in C | F). \]
+    \begin{itemize}
+        \item The \tbf{size} of a hypothesis test is the probability of a Type I error.
+        \item The \tbf{power} of a hypothesis test is the complement of the probability of the Type II error.
+    \end{itemize}
+\end{frame}
+\subsection{Statistical Significance}
+\begin{frame}{P-value}
+    Suppose we use a test which has the form: " Reject $H_0$ when $T > c$", how to report the results?
+
+    A simple choice is to report the "\tbf{p-value}", which is \[ p = 1 - G_0(T) ,\]
+    where $G_0(\cdot)$ is the null sampling distribution. 
+
+    If $G_0(c) = \alpha$, the decision is identical to "Reject $H_0$ if $p < \alpha$".
+    Reporting p-values is especially useful when $T$ has complicated or unusual distribution.
+
+
+\end{frame}
+% example
+\begin{frame}{Computing p-value}
+    \begin{itemize}
+        \item  Suppose we are interested in testing the null hypothesis in $H_0 : \E(X) = \mu$ with the alternative hypothesis $H_A: \E(X) \neq \mu$. 
+        \begin{itemize}
+            \item Two-sided test.
+        \end{itemize}
+        
+        \item We observe the realization of $X_1,\ldots,X_n$ as $x_1,\ldots, x_n$. 
+        
+        \item Note that $\bar X$ is a function of $X_1,\ldots, X_n$, which are i.i.d., therefore is a random variable.
+        
+        \begin{itemize}
+            \item Let $\bar X = \frac{1}{n}\sum_{i=1}^n X_i$
+            \item and  $\bar x = \frac{1}{n}\sum_{i=1}^n x_i$.
+        \end{itemize}
+        \item Under $H_0$, the distribution of $\frac{\bar X - \E(X)}{\sigma_{\bar X}} \sim N(0,1)$(CLT). 
+        
+        \item $p = 1 - \prob\left( |\frac{\bar X - \E(X)}{\sigma_{\bar X}}| < |\frac{\bar x - \E(X)}{\sigma_{\bar X}}| \right).$
+        
+    \end{itemize}
+Issue: $\sigma_{\bar X}$ unknown.
+\end{frame}
+
+\begin{frame}{Sample Variance}
+    If the following assumptions hold:
+    \begin{enumerate}
+        \item $X_1,\ldots,X_n$ are i.i.d.
+        \item $\E(X_i) < \infty$.
+    \end{enumerate}
+    The sample variance is computed  \[ \bar s^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar X)^2. \]
+    \begin{itemize}
+        \item $\mu$ is unknown, need to be estimated.
+        \item $\E ((X - \bar X )^2) \to \frac{n-1}{n} \sigma$.
+        \item The sample variance is a consistent estimator of the population variance.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{t-statistic}
+    The standardized sample average can be constructed using \[ t = \frac{\bar X - \mu }{ \sqrt{ \bar s^2}}.\]
+
+    With the sample of $x_1,\ldots,x_n$, we can compute the sample $t$-statistic $t^{sample}$.
+
+    The $p$-value is given by \[ p\text{-value} = 2 \Phi( - |t^{sample}|).\]
+\end{frame}
+% significance level
+\begin{frame}{Significance Level}
+    When construct hypothesis test, can fix a significance level.
+    \begin{itemize}
+        \item $\alpha$-significance test means the tolerance to make Type I error is $\alpha$.
+        \item $\alpha$ is referred to as the \tbf{size} of the test. 
+    \end{itemize}
+    Suppose the two-sided test has the \tbf{significance level} of $\alpha$, the rule is "Reject $H_0$ if $|t^{sample}| > 1 - \Phi^{-1}(\alpha/2)$". 
+    \begin{itemize}
+        \item $\alpha = 1 \%$, $1 - \Phi^{-1}(\alpha/2) = 2.58$. 
+        \item $\alpha = 5 \%$, $1 - \Phi^{-1}(\alpha/2) = 1.96$. 
+        \item $\alpha = 10 \%$, $1 - \Phi^{-1}(\alpha/2) = 1.64$. 
+    \end{itemize}
+\end{frame}
+\section{Confidence Interval}
+\begin{frame}[allowframebreaks]{Confidence Interval}
+    We are interested in learning a parameter of interest $\theta$ from i.i.d. random sample of $X_1,\ldots,X_n$.
+    \begin{itemize}
+        \item  With random sampling error, it's impossible to learn the exact value of the parameter of interest. 
+        \item Construct a \tbf{confidence set}: the parameter of interested has $1 - \alpha$ probability to fall into the confidence set.
+        \item The \tbf{coverage probability} of the interval estimator is the probability that the random interval contains the true parameter.
+        \begin{itemize}
+            \item An $1 - \alpha$ \tbf{asymptotic confidence interval} for a parameter has the \tbf{asymptotic coverage probability} $1 - \alpha$.
+        \end{itemize}
+
+        \pagebreak
+
+
+        A normal-based $1 - \alpha$ confidence interval is 
+        \[ CI = [ \hat\theta - Z_{1 - \alpha/2} s(\hat\theta), \hat\theta + Z_{1 - \alpha/2} s(\hat\theta) ], \]
+        where $\hat\theta$ is the estimator for $\theta$ and $se(\hat\theta)$ is the estimated standard deviation.
+        $ Z_{1 - \alpha/2}$ is the $1 - \alpha/2$-quantile of a normal distribution. 
+    \end{itemize}
+\end{frame}
+%Example : test of means
+% Confidence Intervals for the SampleMean under Normal Sampling
+% Estimated Parameters
+% Interval for the Variance
+\subsection{Example of Hypothesis Testing}
+\begin{frame}[allowframebreaks]{Test for Difference Between Two Groups}
+    Suppose we observe the i.i.d sample $W_{1},\ldots, W_{n_1},\ldots, W_{n}$.
+    \begin{itemize}
+        \item Sample $W_1,\ldots, W_{n_1}$ are the monthly wage of graduates with master's degree, let $\mu_1$ denote the population mean and $\sigma_1^2$ the population variance of group 1.
+        \item Sample $W_{n_1 + 1},\ldots, W_{n}$ are the monthly wage of graduates with bachelor's degree, let $\mu_2$ denote the population mean and $\sigma_2^2$ the population variance of group 2.
+        \item Let $n_2 = n - n_1$.
+        \item $H_0 : \mu_1 - \mu_2 > d_0$, $H_1 : \mu_1 - \mu_2 \le d_0$, with significance level of $\alpha$.
+    \end{itemize}
+
+    \pagebreak
+
+    \begin{itemize}
+        \item The parameter of interest is $\theta = \mu_1 - \mu_2$.
+        \item Let $\bar W_1$ and $\bar W_2$ be the estimated sample mean and $s_1^2$ and $s_2^2$ be the estimated sample variance for group 1 and group 2.
+        \item The standard error of $\hat\theta = \bar W_1 - \bar W_2$ is $se(\hat\theta) = \sqrt{ \frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} }$.
+        \item We construct the t-statistic as $t = \frac{\hat\theta - d_0}{se(\hat\theta)}$.
+        \item We reject $H_0$ if $t > Z_{1 - \alpha}$.
+    \end{itemize}
+\end{frame}
+\section{Test of Causal Effect}
+%Causal effect, use example, 
+% t-dist vs normal
+
+
+
+\begin{frame}[allowframebreaks,noframenumbering]
+  \frametitle{References}
+  \bibliographystyle{apalike}
+\bibliography{library}
+\end{frame}
+
+\end{document}

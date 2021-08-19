@@ -5,4 +5,4 @@ permalink: /about/
 feature_image: 3
 ---
 
-ECON 6001  [Applied Econometrics](/category/AppliedEconometrics)
+ECON 6001 Fall 2021  [Applied Econometrics](/category/AppliedEconometrics)

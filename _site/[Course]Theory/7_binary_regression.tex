@@ -1,0 +1,1134 @@
+\RequirePackage{currfile}
+\tolerance=5000
+\documentclass[10pt, xcolor=x11names,compress,usenames,dvipsnames]{beamer}
+
+\usepackage[english]{babel}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{amssymb,amsmath,amsfonts,eurosym,geometry,ulem,graphicx,caption,color,setspace,comment,footmisc,caption,pdflscape,subfigure,array,hyperref,upgreek,bbm,xcolor,float,amsthm,amsmath,verbatim,setspace,ulem,textpos,changepage,url,multirow,tikz,color, colortbl,numprint,mathrsfs,cancel,wrapfig,booktabs,threeparttable,ebgaramond,natbib}
+
+\usetikzlibrary{fit,shapes.geometric}
+
+\newcounter{nodemarkers}
+\newcommand\circletext[1]{%
+    \tikz[overlay,remember picture]
+        \node (marker-\arabic{nodemarkers}-a) at (0,1.5ex) {};%
+    #1%
+    \tikz[overlay,remember picture]
+        \node (marker-\arabic{nodemarkers}-b) at (0,0){};%
+    \tikz[overlay,remember picture,inner sep=2pt]
+        \node[draw,rectangle,red ,fit=(marker-\arabic{nodemarkers}-a.center) (marker-\arabic{nodemarkers}-b.center)] {};%
+    \stepcounter{nodemarkers}%
+}
+
+
+\setbeamertemplate{footline}[frame number]
+
+
+\normalem
+
+\newcommand{\tsout}[1]{\text{\sout{$#1$}}}
+\definecolor{Gray}{gray}{0.9}
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+
+\newtheorem{remark}{Remark}
+\def\mb{\mathbf}
+\def\iid{\mathrm{i.i.d.}}
+\def\bs{\boldsymbol}
+\def\tbf{\textbf}
+\def\t{^{\top}}
+\def\E{\mathbbm{E}}
+\def\bSig{\bs{\Sigma}}
+
+\newcommand{\mcitet}[1]{\mbox{\citet{#1}}}
+\newcommand{\mcitep}[1]{\mbox{\citep{#1}}}
+\newcommand{\ind}{\mathbbm{1}}
+
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator{\vecth}{vech}
+
+
+
+\newcommand{\R}{\mathbbm{R}}
+\newcommand{\prob}{\mathbbm{P}}
+\newcommand{\var}{\text{var}}
+
+\newtheorem{assumption}{Assumption}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\makeatletter
+\newenvironment<>{proofs}[1][\proofname]{%
+    \par
+    \def\insertproofname{#1\@addpunct{.}}%
+    \usebeamertemplate{proof begin}#2}
+  {\usebeamertemplate{proof end}}
+\makeatother
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\setbeamertemplate{theorems}[numbered]
+% Themes
+ \mode<presentation> {
+\usetheme{Hannover}
+ \usecolortheme{default}
+ \setbeamercovered{transparent}
+ }
+
+\setbeamercovered{transparent}
+
+\setbeamertemplate{itemize item}{$\triangleright$}
+\setbeamertemplate{itemize subitem}{$\diamond$}
+\setbeamertemplate{enumerate items}[default]
+\setbeamerfont{frametitle}{size=\large}
+\PassOptionsToPackage{height=1cm}{beamerouterthemesidebar}
+\usepackage{blindtext}
+
+% Title
+\title[Binary]{Regression with a Binary Dependent Variable \footnote[frame]{This section is based on \cite{Stock2020}, Chapter 11.}
+}
+\date[]{\today}
+
+
+\author[Hao]{Jasmine(Yu) Hao}
+\institute[VSE]{Faculty of Business and Economics\\Hong Kong University}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Example}
+
+\begin{itemize}
+\item
+  Two people, identical but for their race, walk into a bank and apply
+  for a mortgage, a large loan so that each can buy an identical house.
+  Does the bank treat them the same way? Are they both equally likely to
+  have their mortgage application accepted? By law, they must receive
+  identical treatment. But whether they actually do is a matter of great
+  concern among bank regulators.
+  \pagebreak
+\item
+  Loans are made and denied for many legitimate reasons.
+
+  \begin{itemize}
+  \item
+    if the proposed loan payments take up most or all of the applicant's
+    monthly income, a loan officer might justifiably deny the loan.
+  \item
+    loan officers are human and they can make honest mistakes, so the
+    denial of a single minority applicant does not prove anything about
+    discrimination.
+  \item
+    Many studies of discrimination thus look for statistical evidence of
+    discrimination, that is, evidence contained in large data sets
+    showing that whites and minorities are treated differently.
+  \end{itemize}
+  \pagebreak
+\item
+  But how, precisely, should one check for statistical evidence of
+  discrimination in the mortgage market?
+
+  \begin{itemize}
+  \item
+    A start is to compare the fraction of minority and white applicants
+    who were denied a mortgage. In the data examined in this chapter,
+    gathered from mortgage applications in 1990 in the Boston,
+    Massachusetts, area, 28\% of black applicants were denied mortgages
+    but only 9\% of white applicants were denied.
+  \item
+    But this comparison does not really answer the question that opened
+    this chapter because the black applicants and the white applicants
+    were not necessarily ``identical but for their race.'' Instead, we
+    need a method for comparing rates of denial, holding other applicant
+    characteristics constant.
+  \end{itemize}
+\item
+  This sounds like a job for multiple regression analysis, whether the
+  applicant is denie is \textbf{binary.}
+\item
+  When the dependent variable is binary, things are more difficult: What
+  does it mean to fit a line to a dependent variable that can take on
+  only two values, 0 and 1?
+\end{itemize}
+\end{frame}
+
+
+\section[LPM]{Binary Dependent Variables and the Linear Probability Model}
+\begin{frame}[allowframebreaks]{Binary Dependent}
+  
+Whether a mortgage application is accepted or denied is one example of a
+binary variable. Many other important questions also concern binary
+outcomes.
+
+\begin{itemize}
+\item
+  What is the effect of a tuition subsidy on an individual's decision to
+  go to college?
+\item
+  What determines whether a teenager takes up smoking? What determines
+  whether a country receives foreign aid? What determines whether a job
+  applicant is successful?
+\end{itemize}
+
+In all these examples, the outcome of interest is binary: The student
+does or does not go to college, the teenager does or does not take up
+smoking, a country does or does not receive foreign aid, the applicant
+does or does not get a job.
+\end{frame}
+\subsection{Binary Dependent Variables}
+\begin{frame}[allowframebreaks]{Binary Dependent Variable}
+\begin{itemize}
+\item
+  Whether race is a factor in denying a mortgage application; the binary
+  dependent variable is whether a mortgage application is denied. \\
+  The data are a subset of a larger data set compiled by researchers at
+  the Federal Reserve Bank of Boston under the Home Mortgage Disclosure
+  Act(HMDA) and relate to mortgage applications filed in the Boston,
+  Massachusetts, area in 1990.
+\item
+  Mortgage applications are complicated. During the period covered by
+  these data, the decision to approve a loan application typically was
+  made by a bank loan officer.\\
+  The loan officer must assess whether the applicant will make his or
+  her loan payments.\\
+  One important piece of information is the size of the required loan
+  payments relative to the applicant's income.
+\item
+  We therefore begin by looking at the relationship between two
+  variables: the binary dependent variable deny, which equals 1 if the
+  mortgage application was denied and equals 0 if it was accepted, and
+  the continuous variable P/I ratio, which is the ratio of the
+  applicant's anticipated total monthly loan payments to his or her
+  monthly income.\\
+  \includegraphics[width=\linewidth]{../figure/W4_1.png}\\
+  Figure 11.1 presents a scatterplot of deny versus P/I ratio for 127 of
+  the 2380 observations in the data set. \\
+  This scatterplot looks different from the scatterplots of Part II
+  because the variable deny is binary.
+\item
+  Few applicants with a payment-to-income ratio less than 0.3 have their
+  application denied, but most applicants with a payment-to-income ratio
+  exceeding 0.4 are denied.
+\item
+  This positive relationship between P/I ratio and deny (the higher the
+  P/I ratio, the greater the fraction of denials) is summarized in
+  Figure 11.1 by the OLS regression line estimated using these 127
+  observations. As usual, this line plots the predicted value of deny as
+  a function of the regressor, the payment-to-income ratio. For example,
+  when P/I ratio = 0.3, the predicted value of deny is 0.20. But what,
+  precisely, does it mean for the predicted value of the binary variable
+  deny to be 0.20?
+\end{itemize}
+
+\end{frame}
+\begin{frame}{Interpretation}
+This interpretation follows from two facts.
+
+\begin{itemize}
+\item
+  First, from Part II, the population regression function is the
+  expected value of Y given the regressors \(E[Y|X_1,\ldots,X_k]\).
+\item
+  Second, if Y is a 0--1 binary variable, its expected value (or mean)
+  is the probability that Y = 1; that is,
+  \(E[Y] = 0 * Pr(Y = 0) + 1 * Pr(Y = 1) = Pr(Y = 1)\). In the
+  regression context, the expected value is conditional on the value of
+  the regressors, so the probability is conditional on X. Thus for a
+  binary variable,
+\end{itemize}
+\end{frame}
+
+\subsection[LPM]{The Linear Probability Model}
+\begin{frame}[allowframebreaks]{The Linear Probability Model}
+	
+\begin{itemize}
+\item
+  The linear probability model is the name for the multiple regression
+  model of Part II when the dependent variable is binary rather than
+  continuous.
+\item
+  Because the dependent variable \(Y\) is binary, the population
+  regression function corresponds to the probability that the dependent
+  variable equals 1 given \(X\). The population coefficient b1 on a
+  regressor X is the change in the probability that \(Y = 1\) associated
+  with a unit change in \(X\).
+\item
+  Similarly, the OLS predicted value, \(\hat Y_i\), computed using the
+  estimated regression function, is the predicted probability that the
+  dependent variable equals 1, and the OLS estimator \(\hat \beta_1\)
+  estimates the change in the probability that \(Y = 1\) associated with
+  a unit change in \(X\).
+\item
+  The coefficients can be estimated by OLS. Ninety-five percent
+  confidence intervals can be formed as \(\pm 1.96\) standard errors,
+  hypotheses concerning several coefficients can be tested using the
+  F-statistic discussed
+\item
+  Because the errors of the linear probability model are always
+  heteroskedastic, \textbf{it is essential that
+  heteroskedasticity-robust standard errors be used for inference.}
+\item
+  One tool that does not carry over is the \(R^2\). When the dependent
+  variable is continuous, it is possible to imagine a situation in which
+  the \(R^2\) equals 1: All the data lie exactly on the regression line.
+  This is impossible when the dependent variable is binary unless the
+  regressors are also binary.
+\end{itemize}
+\end{frame}
+
+\subsection[Application]{Application to the Boston HMDA data}
+\begin{frame}[allowframebreaks]{Application to the Boston HMDA data}
+
+The OLS regression of the binary dependent variable, deny, against the
+payment-to-income ratio, P/I ratio, estimated using all 2380
+observations in our data set is
+
+\[\widehat{deny} = \underset{(0.032)}{-0.080} + \underset{(0.098)}{0.604} P/I~ratio.\]
+
+\begin{itemize}
+\item
+  The estimated coefficient on P/I ratio is positive, and the population
+  coefficient is statistically significantly different from 0 at the 1\%
+  level.
+\item
+  Thus applicants with higher debt payments as a fraction of income are
+  more likely to have their application denied. This coefficient can be
+  used to compute the predicted change in the probability of denial
+  given a change in the regressor.
+\item
+  For example if \(P/I\) ratio increases by \(0.1\), the probability of
+  denial increases by \(0.604 * 0.1 \approx =0.060\) that is, by 6.0
+  percentage points.
+\item
+  The estimated linear probability model can be used to compute
+  predicted denial probabilities as a function of P/I ratio.
+
+  \begin{itemize}
+  \item
+    For example, if projected debt payments are 30\% of an applicant's
+    income, P/I ratio is 0.3, the predicted value is
+    \(-0.080 + 0.604 * 0.3 = 0.101\).
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What is the effect of race on the probability
+of denial, holding constant the P/I ratio?}
+To keep things simple, we focus on differences between black applicants
+and white applicants.
+
+\[\widehat{deny} = \underset{(0.029)}{-0.091} + \underset{(0.089)}{0.559} P/I~ratio + \underset{(0.025)}{0.177} black.
+(11.3)\]
+
+\begin{itemize}
+\item
+  The coefficient on black, 0.177, indicates that an African American
+  applicant has a 17.7\% higher probability of having a mortgage
+  application denied than a white applicant, holding constant their
+  payment-to-income ratio. This coefficient is significant at the 1\%
+  level (the t-statistic is 7.11).
+\item
+  The estimate suggests that there might be racial bias in mortgage
+  decisions, but such a conclusion would be premature.
+\item
+  Although the payment-toincome ratio plays a role in the loan officer's
+  decision, so do many other factors, such as the applicant's earning
+  potential and his or her credit history. If any of these variables is
+  correlated with the regressors black given the P/I ratio, its omission
+  will cause omitted variable bias.
+\item
+  Thus we must defer any conclusions about discrimination in mortgage
+  lending until we complete the more thorough analysis.
+\end{itemize}
+\end{frame}
+
+\subsubsection[Shortcomings]{Shortcomings of the linear probability model}
+\begin{frame}[allowframebreaks]{Shortcomings of the linear probability model}
+	
+\begin{itemize}
+\item
+  The linearity that makes the linear probability model easy to use is
+  also its major flaw. Because probabilities cannot exceed 1, the effect
+  on the probability that \(Y = 1\) of a given change in \(X\) must be
+  nonlinear:
+\item
+  Although a change in \(P/I\) ratio from \(0.3\) to \(0.4\) might have
+  a large effect on the probability of denial, once P/I ratio is so
+  large that the loan is very likely to be denied, increasing P/I ratio
+  further will have little effect.
+\item
+  In contrast, in the linear probability model, the effect of a given
+  change in P/I ratio is constant, which leads to predicted
+  probabilities to drop below 0 for very low values of P/I ratio and
+  exceed 1 for high values!
+\item
+  A probability cannot be less than 0 or greater than 1. This
+  nonsensical feature is an inevitable consequence of the linear
+  regression.
+\end{itemize}
+\end{frame}
+
+\section{Probit and Logit Regression}
+\begin{frame}[allowframebreaks]{Probit and Logit Regression}
+	
+\begin{itemize}
+\item
+  Probit and logit regression are nonlinear regression models
+  specifically designed for binary dependent variables.
+\item
+  A regression with a binary dependent variable \(Y\) models the
+  probability that \(Y = 1\), it makes sense to adopt a nonlinear
+  formulation that forces the predicted values to be between 0 and 1.
+\item
+  Because cumulative probability distribution functions (c.d.f.'s)
+  produce probabilities between \(0\) and \(1\), they are used in logit
+  and probit regressions.
+
+  \begin{itemize}
+  \item
+    Probit regression uses the standard normal c.d.f.
+  \item
+    Logit regression, also called logistic regression, uses the logistic
+    c.d.f.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\hypertarget{probit-regression}{%
+\subsection{Probit Regression}\label{probit-regression}}
+
+\subsubsection[Single Regressor]{Probit regression with a single regressor}
+\begin{frame}[allowframebreaks]{Probit regression with a single regressor}
+	
+\(Pr(Y = 1 | X ) = \Phi(\beta_0 + X \beta_1),\)\\
+where $\Phi$ is the normal C.D.F.
+
+For example, suppose that Y is the binary mortgage denial variable
+(deny), \(X\) is the payment-to-income ratio (\(P/I\) ratio),
+\(\beta_0 = -2\), and \(\beta_1 = 3\). \\
+What then is the probability of denial if \(P/I~ratio = 0.4\)?
+
+\begin{itemize}
+\item
+This probability is $\Phi(-0.8) = 0.212$.
+  \begin{itemize}
+  \item
+    when P/I ratio is 0.4, the predicted probability that the
+    application will be denied is 21.2\%,
+  \end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item
+  In the probit model, the term \(\beta_0 + \beta_1X\) plays the role of
+  ``\(z\)'' in the cumulative standard normal distribution table in
+  Appendix Table 1.
+\item
+  If \(\beta_1\) is positive, a greater value for \(X\) increases the
+  z-value and thus increases the probability that Y = 1; if \(\beta_1\)
+  is negative, a greater value for X decreases the probability that
+  \(Y = 1\).
+\item
+  Although the effect of X on the z-value is linear, its effect on the
+  probability is nonlinear. Thus in practice the easiest way to
+  interpret the coefficients of a probit model is to compute the
+  predicted probability, or the change in the predicted probability, for
+  one or more values of the regressors.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\linewidth]{../figure/W4_2.png}
+\end{figure}
+\end{frame}
+
+\subsubsection[Multiple Regressor]{Probit regression with multiple regressors}
+\begin{frame}[allowframebreaks]{Probit regression with multiple regressors}
+	
+\begin{itemize}
+\item
+  In all the regression problems we have studied so far, leaving out a
+  determinant of \(Y\) that is correlated with the included regressors
+  results in omitted variable bias.
+\item
+  The solution is to include the additional variable as a regressor.
+\item
+  The probit model with multiple regressors extends the single-regressor
+  probit model by adding regressors to compute the z-value. Accordingly,
+  the probit population regression model with two regressors, \(X_1\)
+  and \(X_2\), is
+\end{itemize}
+
+\pagebreak
+
+\[Pr(Y = 1|X_1,X_2) = \Phi(\beta_0 + \beta_1 X_1 + \beta_2 X_2).\]
+
+\begin{enumerate}
+	\item 
+For example, suppose that \(\beta_0 = -1.6, \beta_1 = 2, \beta_2 = 0.5\). \\
+If \(X_1 = 0.4\) and \(X_2 = 1\), the z-value is
+\(z = -1.6 + 2 * 0.4 + 0.5 * 1 = -0.3\). So the probability that
+\(Y = 1\) given \(X_1 = 0.4,X_2 = 1\) is \(\Phi(-0.3) = 38\%.\)
+
+\item Effect of a change in \(X\). In general, the regression model can be
+used to determine the expected change in \(Y\) arising from a change in
+\(X\). \\
+\end{enumerate}
+
+\pagebreak
+When \(Y\) is binary, its conditional expectation is the conditional
+probability that it equals 1, so the expected change in \(Y\) arising
+from a change in X is the change in the probability that \(Y = 1\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  First, compute the predicted value at the original value of X using
+  the estimated regression function;
+\item
+  next, compute the predicted value at the changed value of \(X\),
+  \(X + \Delta X\);
+\item
+  finally, compute the difference between the two predicted values.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{Application to the mortgage data}
+As an illustration, we fit a probit model to the 2380 observations in
+our data set on mortgage denial (deny) and the payment-toincome ratio
+(\(P/I~ratio\)):
+
+\[\widehat{Pr(deny| P/I ~ ratio) } = \Phi ( \underset{(0.16)}{-2.19} + \underset{(0.47)}{2.97} P/I~ratio). ~ (SW~11.7)\]
+
+\begin{itemize}
+\item
+  The estimated coefficients of \(-2.19\) and \(2.97\) are difficult to
+  interpret because they\\
+  affect the probability of denial via the z-value. Indeed, the only
+  things that can ber eadily concluded from the estimated probit
+  regression are that the payment-to-income ratio is positively related
+  to probability of denial (the coefficient on P/I ratio is positive)
+  and that this relationship is statistically significant
+  \((t = 2.97/0.47 = 6.32)\).
+\end{itemize}
+
+\pagebreak
+	
+What is the change in the predicted probability that an application will
+be denied when the payment-to-income ratio increases from 0.3 to 0.4?\\
+To answer this question, we follow the procedure:
+
+\begin{itemize}
+\item
+  Compute the probability of denial for P/I ratio = 0.3 and for P/I
+  ratio = 0.4, and then compute the difference.
+\item
+  The probability of denial when \(P/I~ratio = 0.3\) is 0.097.
+\item
+  The probability of denial when \(P/I~ratio = 0.4\) is 0.159.
+\item
+  The estimated change in the probability of denial is
+  \(0.159 - 0.097 = 0.062\).
+\item
+  That is, an increase in the payment-to-income ratio from \(0.3\) to
+  \(0.4\) is associated with an increase in the probability of denial of
+  6.2 percentage points, from 9.7\% to 15.9\%.
+\item
+  Because the probit regression function is nonlinear, the effect of a change in \(X\) depends on the starting value of X. For example, if $P/I~ratio = 0.5$ the estimated denial probability is $\Phi(-2.19 + 2.97 * 0.5 ) = \Phi(-0.71) = 0.239$.
+  \item
+  Thus the change in the predicted probability when P/I ratio increases
+  from 0.4 to 0.5 is 0.239 - 0.159, or 8.0 percentage points, larger
+  than the increase of 6.2 percentage points when P/I ratio increases
+  from 0.3 to 0.4.
+\end{itemize}
+
+What is the effect of race on the probability of mortgage denial, holding constant the P/I ratio?
+
+To estimate this effect, we estimate a probit regression with P/I ratio and black as regressors:
+
+\[\widehat{Pr(deny=1|P/I~ratio,black)} = \Phi(\underset{(0.16)}{-2.26} + \underset{(0.44)}{2.74} P/I~ratio + \underset{(0.083)}{0.71} black) , (11.8)\]
+
+\begin{itemize}
+\item
+  Again, the values of the coefficients are difficult to interpret, but
+  the sign and statistical significance are not.
+\item
+  The coefficient on black is positive, indicating that an African
+  American applicant has a higher probability of denial than a white
+  applicant, holding constant their payment-to-income ratio.
+\item
+  This coefficient is statistically significant at the 1\% level (the
+  t-statistic on the coefficient multiplying black is 8.55).
+\item
+  For a white applicant with P/I ratio = 0.3, the predicted denial
+  probability is 7.5\%,
+\item
+  while for a black applicant with P/I ratio = 0.3, it is 23.3\%;
+\item
+  the difference in denial probabilities between these two hypothetical
+  applicants is 15.8 percentage points.
+\end{itemize}
+\end{frame}
+
+
+\subsubsection[Estimation]{Estimation of the probit coefficients}
+\begin{frame}[allowframebreaks]{Estimation of the probit coefficients}
+\begin{itemize}
+\item
+  The probit coefficients reported here were estimated using the method
+  of maximum likelihood, which produces efficient (minimum variance)
+  estimators in a wide variety of applications, including regression
+  with a binary dependent variable.
+\item
+  The maximum likelihood estimator is consistent and normally
+  distributed in large samples, so t-statistics and confidence intervals
+  for the coefficients can be constructed in the usual way.
+\item
+  Regression software for estimating probit models typically uses
+  maximum likelihood estimation, so this is a simple method to apply in
+  practice.
+\item
+  Standard errors produced by such software can be used in the same way
+  as the standard errors of regression coefficients; for
+
+  \begin{itemize}
+  \item
+    example, a 95\% confidence interval for the true probit coefficient
+    can be constructed as the estimated coefficient \(\pm\) 1.96
+    standard errors.
+  \item
+    Similarly, F-statistics computed using maximum likelihood estimators
+    can be used to test joint hypotheses.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Logit Regression}
+\begin{frame}[allowframebreaks]{Logit Regression}
+
+The population logit model of the binary dependent variable Y with
+multiple regressors is\\
+\begin{align*}
+  Pr(Y = 1 | X_1,\ldots,X_k )  = F(\beta_0 + \beta_1 X_1 +\ldots + \beta_k X_k)\\= \frac{1}{1 + \exp{-(\beta_0 + \beta_1 X_1 +\ldots + \beta_k X_k)}}.  
+\end{align*}
+
+
+Logit regression is similar to probit regression except that the
+cumulative distribution function is different.
+
+\begin{itemize}
+\item
+  As with probit, the logit coefficients are best interpreted by
+  computing predicted probabilities and differences in predicted
+  probabilities.
+\item
+  The coefficients of the logit model can be estimated by maximum
+  likelihood.
+\item
+  The maximum likelihood estimator is consistent and normally
+  distributed in large samples, so t-statistics and confidence intervals
+  for the coefficients can be constructed in the usual way.
+\item
+  The logit and probit regression functions are similar. \\
+ 
+\end{itemize}
+\pagebreak
+ \includegraphics[width=\linewidth]{../figure/W4_3.png}
+ 
+Historically, the main motivation for logit regression was that the
+logistic cumulative distribution function could be computed faster than
+the normal cumulative distribution function. With the advent of more
+powerful computers, this distinction is no longer important.
+\end{frame}
+
+
+\subsubsection[Application]{Application to the Boston HMDA data}
+
+\begin{frame}{Application to the Boston HMDA data}
+A logit regression of deny against P/I ratio and black, using the 2380
+observations in the data set, yields the estimated regression function
+
+\[\begin{split}
+		Pr(deny = 1 & | P/I~ratio,black) \\ & = F(\underset{(0.35)}{-4.13} + \underset{(0.96)}{5.37} P/I~ratio +  \underset{(0.15)}{1.27} black), {SW}(11.10)
+\end{split}
+\]
+
+\begin{itemize}
+\item
+  The coefficient on black is positive and statistically significant at
+  the 1\% level (the t-statistic is 8.47).
+\item
+  The predicted denial probability of a white applicant with P/I ratio =
+  0.3 is 0.074, or 7.4\%.
+\item
+  The predicted denial probability of an African American applicant with
+  P/I ratio = 0.3 is 0.222, or 22.2\%, so the difference between the two
+  probabilities is 14.8 percentage points.
+\end{itemize}
+\end{frame}
+
+\subsubsection[Comparison]{Comparing the Linear Probability, Probit, and Logit Model}
+\begin{frame}[allowframebreaks]{Comparing the Linear Probability, Probit, and Logit Model}
+
+All three models---linear probability, probit, and logit---are just
+approximations to the unknown population regression function
+\(E[Y|X]= Pr(Y=1|X)\). The linear probability model is easiest to use
+and to interpret, but it cannot capture the nonlinear nature of the true
+population regression function. \\
+Probit and logit regressions model this nonlinearity in the
+probabilities, but their regression coefficients are mored ifficult to
+interpret. \\
+So which should you use in practice?
+
+\begin{itemize}
+\item
+  There is no one right answer, and different researchers use different
+  models. Probit and logit regressions frequently produce similar
+  results.
+\item
+  For example, according to the estimated probit model the difference in
+  denial probabilities between a black applicant and a white applicant
+  with \(P/I~ratio = 0.3\) was estimated to be 15.8 percentage points,
+  whereas the logit estimate of this gap was 14.9 percentage points.
+\item
+  For practical purposes, the two estimates are very similar. One way to
+  choose between logit and probit is to pick the method that is easier
+  to use in your statistical software.
+\item
+  The linear probability model provides the least sensible approximation
+  to the nonlinear population regression function. Even so, in some data
+  sets there may be few extreme values of the regressors, in which case
+  the linear probability model still can provide an adequate
+  approximation.
+\item
+  In the denial probability regression in Equation (11.3), the estimated
+  black/white gap from the linear probability model is \(17.7\)
+  percentage points, larger than the probit and logit estimates but
+  still qualitatively similar.
+\item
+  The only way to know this, however, is to estimate both a linear and a
+  nonlinear model and to compare their predicted probabilities.
+\end{itemize}
+\end{frame}
+
+\section[Estimation]{Estimation and Inference in the Logit and Probit Models}
+\begin{frame}{Estimation}
+\begin{itemize}
+\item The nonlinear models studied are nonlinear functions of the independent variables but are linear functions of the unknown coefficients(parameters).
+
+\item Consequently, the unknown coefficients of those nonlinear regression functions can be estimated by OLS. 
+
+\item In contrast, the probit and logitregression functions are nonlinear functions of the coefficients. 
+
+\item That is, the probit coefficients appear inside the cumulative distribution functions.
+
+\item Because the population regression function is a nonlinear function of the coefficients, those coefficients cannot be estimated by OLS.
+\end{itemize}
+
+\end{frame}
+\subsection{Nonlinear Least Squares Estimation}
+\begin{frame}[allowframebreaks]{Nonlinear Least Squares Estimation}
+\begin{itemize}
+	\item  Nonlinear least squares is a general method for estimating the unknown
+parameters of a regression function when, like the probit coefficients,
+those parameters enter the population regression function nonlinearly.
+
+\item The nonlinear least squares estimator extends the OLS estimator to
+regression functions that are nonlinear functions of the parameters.
+
+\item Like OLS, nonlinear least squares finds the values of the parameters
+that minimize the sum of squared prediction mistakes produced by the
+model.
+\end{itemize}
+
+Nonlinear least squares estimator of the parameters of the probit model. 
+The conditional expectation of \(Y\) given the \(X\)'s is \\
+\( E[Y | X_1,\ldots,X_k] = Pr(Y = 1| X_1,\ldots,X_k) \).
+
+Estimation by nonlinear least squares fits this conditional expectation
+function, which is a nonlinear function of the parameters, to the
+dependent variable.
+
+That is, the nonlinear least squares estimator of the probit
+coefficients is the values of \(\beta_1,\ldots,\beta_k\) that\\
+minimize the sum of squared prediction mistakes:
+
+\(\sum_{i=1}^n [Y_i  - \Phi(\beta_0 + \beta_1 X_1 + \ldots + \beta_k X_k)]^2.\)
+
+\pagebreak
+The nonlinear least squares estimator shares two key properties with the
+OLS estimator in linear regression:
+
+\begin{itemize}
+\item
+  It is consistent (the probability that it is close to the true value
+  approaches 1 as the sample size gets large),
+\item
+  normally distributed in large samples.
+\item
+  There are, however, estimators that have a smaller variance than the
+  nonlinear least squares estimator;
+\item
+  the nonlinear least squares estimator is \textbf{inefficient}.
+\item
+  For this reason, the nonlinear least squares estimator of the probit
+  coefficients is rarely used in practice, and instead the parameters
+  are estimated by \textbf{maximum likelihood}.
+\end{itemize}
+\end{frame}
+
+\subsection[MLE]{Maximum Likelihood Estimation}
+\begin{frame}[allowframebreaks]{Maximum Likelihood Estimation}
+	
+\begin{itemize}
+\item
+  The likelihood function is the joint probability distribution of the
+  data, treated as a function of the unknown coefficients. The maximum
+  likelihood estimator (MLE) of the unknown coefficients consists of the
+  values of the coefficients that maximize the likelihood function.
+  Because the MLE chooses the unknown coefficients to maximize the
+  likelihood function, which is in turn the joint probability
+  distribution, in effect the MLE chooses the values of the parameters
+  to maximize the probability of drawing the data that are actually
+  observed. In this sense, the MLEs are the parameter values ``most
+  likely'' to have produced the data.
+\item
+  To illustrate maximum likelihood estimation, consider two i.i.d.
+  observations, \(Y_1\) and \(Y_2\), on a binary dependent variable with
+  no regressors. Thus \(Y\) is a Bernoulli random variable, and the only
+  unknown parameter to estimate is the probability \(p\) that \(Y = 1\),
+  which is also the mean of \(Y\).
+\item
+  To obtain the maximum likelihood estimator, we need an expression for
+  the likelihood function, which in turn requires an expression for the
+  joint probability distribution of the data. The joint probability
+  distribution of the two observations \(Y_1\) and \(Y_2\) is
+  \(Pr(Y_1 = y_1,Y_2 = y_2)\). \\
+  Because \(Y_1\) and \(Y_2\) are independently distributed, the joint
+  distribution is the product of the individual distributions, so
+  \(Pr(Y_1 = y_1, Y_2 = y_2) = Pr(Y_1 = y_1) Pr(Y_2 = y_2)\).\\
+  The Bernoulli distribution can be summarized in the formula
+  \(Pr(Y = y) = p^{y1} (1 - p)^{1- y} \). \\
+  Thus the joint probability distribution of \(Y_1\) and \(Y_2\) is
+  \(Pr(Y_1 = y_1, Y_2 = y_2) = p^{y_1 + y_2}( 1- p)^{ 2 - y_1 - y_2}.\)
+\item
+  The likelihood function is the joint probability distribution, treated
+  as a function of the unknown coefficients. For \(n = 2\) i.i.d.
+  observations on Bernoulli random variables,\\
+  the likelihood function is \\
+  \(f(p; Y_1, Y_2) = p^{Y_1 + Y_2}( 1- p)^{ 2 - Y_1 - Y_2}. (11.12)\)
+\item
+  The maximum likelihood estimator of p is the value of p that maximizes
+  the likelihood function in Equation (11.12). As with all maximization
+  or minimization problems, this can be done by trial and error; that
+  is, you can try different values of p and\\
+  compute the likelihood \(f(p; Y_1, Y_2)\) until you are satisfied that
+  you have maximized this function. In this example, however, maximizing
+  the likelihood function using calculus produces a simple formula for
+  the MLE: \\
+  The MLE is \(\hat p = \frac{1}{2}(Y_1 + Y_2)\).
+\item
+  In other words, the MLE of p is just the sample average! In fact, for
+  general \(n\), the MLE pn of the Bernoulli probability \(p\) is the
+  sample average; that is, \(\hat p = \bar Y\).
+\end{itemize}
+\end{frame}
+
+\subsubsection{Statistical inference based on the MLE}
+\begin{frame}[allowframebreaks]{Statistical inference based on the MLE}
+\begin{itemize}
+\item
+  Because the MLE is normally distributed in large samples, statistical
+  inference about the probit and logit coefficients based on the MLE
+  proceeds in the same way as inference about the linear regression
+  function coefficients based on the OLS estimator. That is, hypothesis
+  tests are performed using the t-statistic, and 95\% confidence
+  intervals are formed as \(\pm\) 1.96 standard errors.\\
+  Tests of joint hypotheses on multiple coefficients use the F-statistic
+  in a way similar to that discussed in Chapter 7 for the linear
+  regression model.
+\item
+  All of this is completely analogous to statistical inference in the
+  linear regression model.\\
+  An important practical point is that some statistical software reports
+  tests of joint\\
+  hypotheses using the F-statistic, while other software uses the
+  chi-squared statistic. The chi-squared statistic is \(q * F\), where
+  \(q\) is the number of restrictions being tested. \\
+  Because the F-statistic is, under the null hypothesis, distributed as
+  \(\chi^2_q\) in large samples, \(q * F\) is distributed as
+  \(\chi^2_q\) in large samples.
+\item
+  Because the two a pproaches differ only in whether they divide by
+  \(q\), they produce identical inferences, but you need to know which
+  approach is implemented in your software so that you use the correct
+  critical values.
+\end{itemize}
+\end{frame}
+
+\subsection{Measures of Fit}
+\begin{frame}[allowframebreaks]{Measures of Fit}
+	
+\begin{itemize}
+\item
+  It was mentioned that the \(R^2\) is a poor measure of fit for the
+  linear probability model. This is also true for probit and logit
+  regression.
+\item
+  Two measures of fit for models with binary dependent variables are the
+  fraction correctly predicted and the pseudo-R2. The fraction correctly
+  predicted uses the following rule: If \(Y_i = 1\) and the predicted
+  probability exceeds 50\% or if \(Y_i = 0\) and the predicted
+  probability is less than 50\%, then Yi is said to be correctly
+  predicted.
+\item
+  Otherwise, \(Y_i\) is said to be incorrectly predicted. The fraction
+  correctly predicted is the fraction of the \(n\) observations
+  \(Y_1,\ldots, Y_n\) that are correctly predicted.
+\item
+  An advantage of this measure of fit is that it is easy to understand.
+  A disadvantage is that it does not reflect the quality of the
+  prediction:
+
+  \begin{itemize}
+  \item
+    If \(Y_i = 1\), the observation is treated as correctly predicted
+    whether the predicted probability is 51\% or 90\%. The
+    pseudo-\(R^2\) measures the fit of the model using the likelihood
+    function.
+  \item
+    Because the MLE maximizes the likelihood function, adding another
+    regressor to a probit or logit model increases the value of the
+    maximized likelihood, just like adding a regressor necessarily
+    reduces the sum of squared residuals in linear regression by OLS.
+  \item
+    This suggests measuring the quality of fit of a probit model by
+    comparing values of the maximized likelihood function with all the
+    regressors to the value of the likelihood with none. This is, in
+    fact, what the pseudo-\(R^2\) does.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section[Application]{Application to the Boston HMDA Data}
+\begin{frame}[allowframebreaks]{Application to the Boston HMDA Data}
+	\begin{itemize}
+\item
+  Mortgage denial rates were higher for black than white applicants,
+  holding constant their \textbf{payment-to-income ratio}.
+\item
+  If any of those other factors differ systematically by race, the
+  estimators considered so far have \textbf{omitted variable bias}.
+\item
+  Statistical evidence of discrimination in the Boston HMDA data.
+\item
+  \textbf{Objective}: estimate the effect of race on the probability of
+  denial, holding constant other characteristics.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary statistics}
+	\begin{figure}
+		\centering
+	\includegraphics[width=0.7\linewidth]{../figure/W4_11.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\centering
+\includegraphics[width=0.7\linewidth]{../figure/W4_12.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{../figure/W4_12_2.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{Interpretation of results based on Table 11.2}
+	
+\begin{itemize}
+\item
+  In the 1990s, loan officers commonly used thresholds, or cutoff values
+  for the loan-to-value ratio.;
+\item
+  Because the coefficients of the logit and probit models in columns
+  (2)--(6) are not directly interpretable, the table reports standard
+  errors but not confidence intervals. The table reports whether the
+  test that the coefficient is 0 rejects at the 5\% or 1\% significance
+  level.
+\item
+  (1) is a linear probability model, its coefficients are estimated
+  changes in predicted probabilities due to a unit change in the
+  independent variable.
+\item
+  Applicants with a public record of credit problems, such as filing for
+  bankruptcy, have much greater difficulty obtaining a loan: All else
+  equal, a public bad credit record is estimated to increase the
+  probability of denial by 0.197, or 19.7 percentage points. Being
+  denied private mortgage insurance is estimated to be virtually
+  decisive: The estimated coefficient of 0.702 means that being denied
+  mortgage insurance increases your chance of being denied a mortgage by
+  70.2 percentage points, all else equal.
+\item
+  Of the nine variables (other than race) in the regression, the
+  coefficients on all but two are statistically significant at the 5\%
+  level, which is consistent with loan officers' considering many
+  factors when they make their decisions. The coefficient on black in
+  regression (1) is 0.084, indicating that the difference in denial
+  probabilities for black and white applicants is 8.4 percentage points,
+  holding constant the other variables in the regression. This is
+  statistically significant at the 1\% significance level \(t = 3.65\).
+\item
+  The logit and probit estimates reported in columns (2) and (3) yield
+  similar conclusions. In the logit and probit regressions, eight of the
+  nine coefficients on variables other than race are individually
+  statistically significantly different from 0 at the 5\% level, and the
+  coefficient on black is statistically significant at the 1\% level. As
+  discussed in Section 11.2, because these models are nonlinear,
+  specific values of all the regressors must be chosen to compute the
+  difference in predicted probabilities for white applicants and black
+  applicants.
+\item
+  A conventional way to make this choice is to consider an ``average''
+  applicant who has the sample average values of all the regressors
+  other than race. The final row in Table 11.2 reports this estimated
+  difference in probabilities, evaluated for this average applicant. The
+  estimated racial differentials are similar to each other: 8.4
+  percentage points for the linear probability model {[}column (1){]},
+  6.0 percentage points for the logit model {[}column (2){]}, and 7.1
+  percentage points for the probit model {[}column (3){]}. These
+  estimated race effects and the coefficients on black are less than in
+  the regressions of the previous sections, in which the only regressors
+  were P/I ratio and black, indicating that those earlier estimates had
+  omitted variable bias.
+\item
+  The regressions in columns (4) through (6) investigate the sensitivity
+  of the results in column (3) to changes in the regression
+  specification. Column (4) modifies column (3) by including additional
+  applicant characteristics. These characteristics help to predict
+  whether the loan is denied; for example, having at least a high school
+  diploma reduces the probability of denial (the estimate is negative,
+  and the coefficient is statistically significant at the 1\% level).
+  However, controlling for these personal characteristics does not
+  change the estimated coefficient on black or the estimated difference
+  in denial probabilities (6.6\%) in an important way.
+\item
+  Column (5) breaks out the six consumer credit categories and four
+  mortgage credit categories to test the null hypothesis that these two
+  variables enter linearly; this regression also adds a variable
+  indicating whether the property is a condominium. The null hypothesis
+  that the credit rating variables enter the expression for the z-value
+  linearly is not rejected, nor is the condominium indicator
+  significant, at the 5\% level. Most importantly, the estimated racial
+  difference in denial probabilities (6.3\%) is essentially the same as
+  in columns (3) and (4).
+\item
+  Column (6) examines whether there are interactions. Are different
+  standards applied to evaluating the payment-to-income and housing
+  expense-to-income ratios for black applicants versus white applicants?
+  The answer appears to be no: The interaction terms are not jointly
+  statistically significant at the 5\% level. However, race continues to
+  have a significant effect, because the race indicator and the
+  interaction terms are jointly statistically significant at the 1\%
+  level. Again, the estimated racial difference in denial probabilities
+  (6.5\%) is essentially the same as in the other probit regressions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item
+  In all six specifications, the effect of race on the denial
+  probability, holding other applicant characteristics constant, is
+  statistically significant at the 1\% level. The estimated difference
+  in denial probabilities between black applicants and white applicants
+  ranges from 6.0 percentage points to 8.4 percentage points.
+\item
+  One way to assess whether this differential is large or small is to
+  return to a variation on the question posed at the beginning of this
+  chapter. Suppose two individuals apply for a mortgage, one white and
+  one black, but otherwise having the same values of the other
+  independent variables in regression (3); specifically, aside from
+  race, the values of the other variables in regression (3) are the
+  sample average values in the HMDA data set. The white applicant faces
+  a 7.4\% chance of denial, but the black applicant faces a 14.5\%
+  chance of denial. The estimated racial difference in denial
+  probabilities, 7.1 percentage points, means that the black applicant
+  is nearly twice as likely to be denied as the white applicant.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Conclusion}
+
+\begin{itemize}
+\item
+  The results in Table 11.2 (and in the original Boston Fed study)
+  provide statistical evidence of racial patterns in mortgage denial
+  that.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Criticisms}
+A number of the criticisms made of the original Federal Reserve Bank of Boston study concern internal validity:
+
+\begin{itemize}
+\item
+  possible errors in the data,
+\item
+  alternative nonlinear functional forms,
+\item
+  additional interactions, and so forth.
+\item
+  The original data were subjected to a careful audit, some errors were
+  found, and the results reported here (and in the final published
+  Boston Fed study) are based on the ``cleaned'' data set.
+\item
+  Estimation of other specifications---different functional forms and/or
+  additional regressors---also produces estimates of racial
+  differentials comparable to those in Table 11.2.
+\item
+  A potentially more difficult issue of internal validity is whether
+  there is relevant nonracial financial information obtained during
+  in-person loan interviews, but not recorded on the loan application
+  itself, that is correlated with race; if so, there still might be
+  omitted variable bias in the Table 11.2 regressions.
+\item
+  Finally, some have questioned external validity: Even if there was
+  racial discrimination in Boston in 1990, it is wrong to implicate
+  lenders elsewhere today.
+\item
+  Moreover, racial discrimination might be less likely using modern
+  online applications because the mortgage can be approved or denied
+  without a face-to-face meeting. The only way to resolve the question
+  of external validity is to consider data from other locations and
+  years.
+\end{itemize}
+\end{frame}
+
+%Combine with econometrics-with-r \href{https://www.econometrics-with-r.org/11-rwabdv.html}{Chapter 11}.
+
+\begin{frame}[allowframebreaks,noframenumbering]
+	\frametitle{References}
+	\bibliographystyle{apalike}
+	\bibliography{library}
+\end{frame}
+
+\end{document}

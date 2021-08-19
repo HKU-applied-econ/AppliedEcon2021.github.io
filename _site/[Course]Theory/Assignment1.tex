@@ -1,0 +1,357 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,amsfonts,eurosym,ulem,graphicx,caption,color,setspace,sectsty,comment,footmisc,caption,natbib,pdflscape,subfigure,array,hyperref,upgreek}
+\usepackage{bbm}
+\usepackage{apalike}
+\usepackage{appendix}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=R,  %代码语言使用的是matlab
+  frame=shadowbox, %把代码用带有阴影的框圈起来
+  rulesepcolor=\color{black!20},%代码块边框为淡青色
+  keywordstyle=\color{black!90}\bfseries,
+  commentstyle=\color{black!70}\textit,    % 设置代码注释的颜色
+  showstringspaces=false,%不显示代码字符串中间的空格标记
+  numbers=right, % 显示行号
+  numberstyle=\tiny,    % 行号字体
+  stringstyle=\ttfamily, % 代码字符串的特殊格式
+  breaklines=true, %对过长的代码自动换行
+  extendedchars=false,
+  texcl=true}
+
+% \usepackage{palatino}
+
+
+%\onehalfspacing
+\usepackage[a4paper, margin=0.9in]{geometry}
+\sectionfont{\fontsize{12}{13}\selectfont}
+\subsectionfont{\fontsize{11}{12}\selectfont}
+\renewcommand{\baselinestretch}{1.1}
+
+
+\def\mb{\mathbf}
+\def\iid{\mathrm{i.i.d. }}
+\def\bs{\boldsymbol}
+\def\tbf{\textbf}
+\def\t{^{\top}}
+\def\bSig{\bs{\Sigma}}
+\newcommand{\mcitet}[1]{\mbox{\citet{#1}}}
+\newcommand{\mcitep}[1]{\mbox{\citep{#1}}}
+
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator{\vecth}{vech}
+
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}{Example}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ind}{\mathbbm{1}}
+\newcommand{\prob}{\mathbbm{P}}
+\newcommand{\var}{\text{var}}
+
+\newtheorem{assumption}{Assumption}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+
+\begin{document}
+%-------------------------------
+%	TITLE SECTION
+%-------------------------------
+
+\fancyhead[C]{}
+\hrule \medskip
+\begin{minipage}{0.9\textwidth}
+\centering
+\large
+\textsc{Applied Econometrics, 2021}\\
+\textsc{Assignment} 1\\
+\normalsize
+
+\textsc{Due: September 14th, 2021}
+\end{minipage}
+\medskip \hrule
+\bigskip
+
+%-------------------------------
+%	CONTENTS
+%-------------------------------
+
+
+\noindent \textbf{Instructions.} Do your best to make your arguments
+rigorous. You may discuss this problem set with your classmates and consult
+any books or notes, but write out the answers on your own using your own
+words and show your derivation so that your understanding is transparent
+from the answers.  \bigskip
+
+
+
+\begin{enumerate}
+	\section*{Review of Probability}
+	% \item (Exercise 1.1 from Lecture Notes)
+	% \begin{enumerate}
+	% \item Let $S=\{1,2,3\}$. Then, $\mathcal{F}
+	% =\{\{1\},\{2\},\{3\}\}$. Is it a field?
+	% \item Let $S=\{1,2,3\}.$ Then, $\mathcal{F}=\{S,\{1\},\{2\}\}$. Is it a field?
+	% \item Let $S=\{H,T\}$ and $\mathcal{F}=\{\varnothing ,S\}$. Is $\mathcal{F}$ a
+	% field?
+	% \item Let $S=\{H,L,M\}$ and $\mathcal{F}=\{\varnothing ,S,\{H,L\},\{M\}\}$. Is $
+	% \mathcal{F}$ a field?
+	% \end{enumerate}
+	% { (a) No because $S\notin \mathcal{F}$. (b) No because $\{1\}^c = \{2,3\}\notin \mathcal{F}$. (c) Yes, because (a) $S\in\mathcal{F}$ and (2) $\varnothing^c=S\in\mathcal{F}$ and $S^c=\varnothing\in\mathcal{F}$, and (3) $\varnothing\cup S=S\in\mathcal{F}$ so that all three requirements to define the field are satisfied. (d) Yes, check all three requirements.}
+
+	\item \textit{(Random Variable)} Let $S=\mathbf{R}$, and define $X:S\rightarrow \mathbf{R}$ as follows: for each $s \in S$,
+	\begin{eqnarray*}
+		X(s) &=&1\text{ if }2.2\leq s\leq 3.1\text{ or }3.2\leq s\leq 3.9, \text{ and } \\
+		X(s) &=&0\text{ otherwise.}
+	\end{eqnarray*}%
+	Suppose that the probability $\mathbf{P}$ on a field $\mathcal{F}$ of $S$ is given as follows:%
+	\begin{eqnarray*}
+		\mathbf{P}(\{0.2\}) &=&1/4, \\
+		\mathbf{P}(\{1.5\}) &=&1/4,\\
+		\mathbf{P}(\{2.4\}) &=&1/4,\quad\text{ and} \\
+		\mathbf{P}(\{3.3\}) &=&1/4.
+	\end{eqnarray*}%
+	\begin{enumerate}
+	\item  Draw the CDF of $X$.
+
+	\item Show that $X$ is a discrete random variable.
+
+	\item Compute $\text{Var}(X)$.
+	\end{enumerate}
+	% {The random variable $X$ takes two possible values $0$ and $1$ of which probability mass function is given by $P(X=0)=P(\{s=0.2\}\cup\{s=1.5\})=1/4+1/4=1/2$ and $P(X=1)=P(\{s=2.4\}\cup\{s=3.3\})=1/4+1/4=1/2$. The CDF is $F(t):=P(X\leq t)=0$ for $t<0$, $F(t)=1/2$ for $0\leq t<1$, and $F(t)=1$ for $t\geq 1$. The variance of $X$ is $E((X-1/2)^2)=1/4$.}
+
+
+	\item \textit{(Independence)} Suppose that $X$ and $Y$ are discrete random variables taking values from $A_X=\{1,2,3\}$ and $A_Y=\{\sqrt{2},\sqrt{3}\}$ respectively. Furthermore, assume that $X$ and $Y$ are independent. Then, using the definition of independence between random variables, show that for any functions $f$ and $g$, $f(X)$ and $g(Y)$ are independent.
+
+
+	\item \textit{(Variance and Covariance) }Suppose that $\{(Y_{i},X_{i})\}_{i=1}^{n}$ is a set of i.i.d. random
+	vectors. (Note that this implies that the joint distribution of $%
+	(Y_{1},X_{1})$ and the joint distribution of $(Y_{2},X_{2})$ are identical,
+	etc., and also $(Y_{1},X_{1})$ is independent of $(Y_{2},X_{2})$, etc. This
+	does NOT mean that $Y_{i}$ and $X_{i}$ are independent for some or any $i$.)
+	Then let $Cov(Y_{1},X_{1})$ denote the (population)\ covariance between $%
+	Y_{1}$ and $X_{1}$ and let $\widehat{Cov}(Y_{1},X_{1})$ denote the sample covariance defined by
+	\begin{equation*}
+	\widehat{Cov}(Y_{1},X_{1})=\frac{1}{n}\sum_{i=1}^{n}\left( Y_{i}-\bar{Y}%
+	_{n}\right) \left( X_{i}-\bar{X}_{n}\right),\text{ and } \widehat{Var}(Y_{1})=\frac{1}{n}\sum_{i=1}^{n}\left( Y_{i}-\bar{Y}
+	_{n}\right)^2.
+	\end{equation*}
+	where $\bar X_n=\frac{1}{n}\sum_{i=1}^n X_i$ and $\bar Y_n=\frac{1}{n}\sum_{i=1}^n Y_i$ denote the sample means of $\{X_i\}_{i=1}^n$ and $\{Y_i\}_{i=1}^n$ respectively. Then show the following properties.
+	\begin{enumerate}
+	\item  For any constants (i.e., nonstochastic numbers) $a,$ $b,$ $c$%
+	, and $d$, we have%
+	\begin{equation*}
+	\widehat{Cov}(aY_{1}+c,bX_{1}+d)=ab\widehat{Cov}(Y_{1},X_{1}).
+	\end{equation*}
+	\item  \begin{eqnarray*}
+		\text{Var}\left(\frac{1}{n}\sum_{i=1}^{n} Y_i\right) = \frac{1}{n}\text{Var}(Y_1)
+	\end{eqnarray*}
+
+	\item \begin{eqnarray*}
+		\frac{1}{n}\sum_{i=1}^{n}\left( Y_{i}-\bar{Y}%
+		_{n}\right) \left( X_{i}-\bar{X}_{n}\right) =\frac{1}{n}\sum_{i=1}^{n}\left( Y_{i}-\bar{Y}%
+		_{n}\right) X_{i}=\frac{1}{n}\sum_{i=1}^{n}  Y_{i}\left( X_{i}-\bar{X}_{n}\right).
+	\end{eqnarray*}
+	\end{enumerate}
+	% { For (a) and (c), see page 15-16 and 20 of
+	% \[
+	% \href{https://canvas.ubc.ca/courses/36198/files/6616482/download?wrap=1}{https://canvas.ubc.ca/courses/36198/files/6616482/download?wrap=1},
+	% \]
+	% respectively.
+	%  For (b), $\text{Var}\left(\frac{1}{n}\sum_{i=1}^{n} Y_i\right) =(1/n)^2\text{Var}\left( \sum_{i=1}^{n} Y_i\right) = (1/n)^2\left( \sum_{i=1}^{n}\text{Var}\left( Y_i\right)
+	% +2\sum_{i=1}^n\sum_{i\neq j}  \text{Cov}\left( Y_i,Y_j\right)\right) =  (1/n)^2\left( n\text{Var}\left( Y_1\right) +0 \right) =(1/n) \text{Var}\left( Y_1\right)$.}
+
+
+\section*{Review of Statistics}
+
+	\item \textit{(Unbiased Estimator vs. Consistent Estimator)} Suppose that we observe a set of i.i.d. random variables $X_1,...,X_n$ and another set of i.i.d. random variables $Y_1,...,Y_n$. Let us assume that the correlation between $X_i$ and $Y_i$ is not zero and unknown for any $i=1,...,n$, but the correlation between $X_i$ and $Y_j$ for any $i \ne j$ is zero. Suppose that our parameter of interest is as follows:
+	\begin{eqnarray*}
+		\theta = \mathbf{E}X_1 \mathbf{E}Y_1.
+	\end{eqnarray*}
+	\begin{enumerate}
+	\item Show that an estimator defined by $\hat\theta=\bar X_n \bar Y_n$ for $\bar X_n = \frac{1}{n}\sum_{i=1}^n X_i$ and  $\bar Y_n = \frac{1}{n}\sum_{i=1}^n Y_i$ is a consistent estimator of $\theta$.
+	(Hint: apply the Law of Large Numbers and Slutsky Theorem)
+	% $\bar X_n\overset{p}{\rightarrow} E[X]$ and  $\bar Y_n\overset{p}{\rightarrow} E[Y]$ by LLN. Therefore, applying the Continuous Mapping Theorem, $\hat\theta=\bar X_n \bar Y_n \overset{p}{\rightarrow}  E[X] E[Y]$.
+	\item Show that $\hat\theta=\bar X_n \bar Y_n$ is not an unbiased estimator.
+	% { Note that $\bar X_n \bar Y_n=(\frac{1}{n} \sum_{i=1}^n X_i)(\frac{1}{n} \sum_{j=1}^n Y_j) = \frac{1}{n^2} \sum_{i=1}^n \sum_{j=1}^n X_i Y_j = \frac{1}{n^2} \{ \sum_{i=1}^n X_i Y_i +    \sum_{i=1}^n  \sum_{j\neq i}^nX_i Y_j\}$. Therefore, $E[\bar X_n \bar Y_n] =\frac{1}{n^2} \{ \sum_{i=1}^nE[ X_i Y_i ]+    \sum_{i=1}^n  \sum_{j\neq i}^nE[X_i] E[Y_j]\} = \frac{1}{n} \{E[ X_1 Y_1]+      (n-1)E[X_1] E[Y_1]\} =E[X_1] E[Y_1] +  \frac{1}{n} \{E[ X_1 Y_1]-E[X_1] E[Y_1] \}$. Therefore, unless $E[ X_1 Y_1]-E[X_1] E[Y_1] =\text{Cov}(X_1,Y_1)=0$,  $\bar X_n \bar Y_n$ is an biased estimator of $E[X_1]E[Y_1]$.}
+	\item  Provide an unbiased estimator of $\theta$. (Hint: what is an unbiased estimator of $\theta$ when $n=2$?)
+	% \\{ For example, we may take any $i\neq j$ pair and $E[X_iY_j]=E[X_i]E[Y_j]= \mathbf{E}X_1 \mathbf{E}Y_1$ because observation $i$ is independent of observation $j$. Therefore, $X_iY_j$ for any $i\neq j$ is an unbiased estimator. Utilizing all the pairs, we can construct the following unbiased estimator: $\frac{1}{n(n-1)}\sum_{i=1}^n \sum_{j\neq i }^n X_i Y_j$.}
+	\end{enumerate}
+    \item  \textit{(Mean Squared Errors and Optimal Weight)} Suppose that we observe i.i.d. random variables $Y_1,...,Y_n$ with $n = 400$, such that
+    \begin{eqnarray*}
+    	Y_i = \theta + \varepsilon_i,
+    \end{eqnarray*}
+where $\varepsilon_i$'s are i.i.d. random variables that are unobserved. It is known that $\mathbf{E}\varepsilon_i = 0$ and $Var(\varepsilon_i) = 0.5$.
+\medskip
+\begin{enumerate}
+\item Show that, given any estimator $\tilde\theta$ of $\theta$, the Mean Squared Errors defined by $MSE(\tilde\theta)=E[(\tilde\theta-\theta)^2]$ satisfies
+\[
+MSE(\tilde\theta) = \left(\text{Bias}(\tilde\theta)\right)^2 + \text{Var}(\hat\theta),
+\]
+where $\text{Bias}(\tilde\theta)=E[\tilde\theta]-\theta$.
+% \\ {$MSE(\tilde\theta)=E[\{(\tilde\theta-E[\tilde\theta])+(E[\tilde\theta]-\theta)\}^2] = E [(\tilde\theta-E[\tilde\theta])\}^2] + \{E[\tilde\theta]-\theta)\}^2$.}
+
+	\item Find out the least squares estimator of $\theta$, i.e., find out $\hat \theta$ such that
+\begin{eqnarray*}
+	\hat \theta = \arg \min_b \sum_{i=1}^n(Y_i - b)^2.
+\end{eqnarray*}
+% { Solving the first order condition $0=-2\sum_i (Y_i-\hat\theta)$  gives $\hat \theta = (1/n)\sum_{i=1}^n Y_i$.}
+
+      \item Show that $\hat\theta$ is an unbiased estimator of $\theta$. \\
+% { Taking an expectation, $E[\hat\theta]=(1/n)\sum_{i=1}^n E[Y_i]= (1/n) \times n E[Y_i]=E[\theta]+E[\epsilon]=\theta$.}
+      \item Show that $\hat\theta$ is a consistent estimator of $\theta$.\\
+% { Because the mean of $Y_i$ is finite, we may apply the Law of Large Numbers to $\hat\theta=\frac{1}{n}\sum_{i=1}^n Y_i$ to get $\hat\theta \overset{p}{\rightarrow} \theta$.}
+	\item  Compute the MSE of the least squares estimator $\hat \theta$ you obtained in (b). Does the MSE of $\hat \theta$ converges to zero as $n \rightarrow \infty$?
+% \\ { Note $\tilde\theta-\theta=\frac{1}{n}\sum_{i=1}^n (\theta+\epsilon_i) - \theta = \frac{1}{n}\sum_{i=1}^n \epsilon_i$. Therefore, $MSE(\theta) =E[(\frac{1}{n}\sum_{i=1}^n \epsilon_i)^2]=\frac{Var(\epsilon)}{n}=0.5/n$ }
+
+
+	\item  Suppose that we consider the following form of an estimator for $\mathbf{E}Y_1$:
+\begin{eqnarray*}
+	\tilde \theta(a,b) =  \sum_{i=1}^n Y_i a_i + b,
+\end{eqnarray*}
+where $a_i$'s and $b$ are constants to be chosen, and $a=(a_i)_{i=1}^n$, which satisfy the following constraint:
+\begin{eqnarray*}
+	 \sum_{i=1}^n a_i = 1.
+\end{eqnarray*}
+Find $a = (a_i)_{i=1}^n$ and $b$ which minimize the MSE of $\tilde \theta(a,b)$. Let the optimal estimator be denoted by $\tilde \theta(a^*,b^*)$, where $a^*$ and $b^*$ are the minimizers. Is the estimator $\tilde \theta(a^*,b^*)$ unbiased?
+% \\ { $a_i=1/n$ and $b=0$ will minimize the MSE. $\tilde\theta=\frac{1}{n} \sum_{i=1}^n Y_i$ is an unbiased estimator. To see this
+% \begin{equation*}
+% \begin{split}
+% MSE & = E(\widetilde{\theta}-\theta)^2 \\
+%  %& = E[\frac{1}{n}\sum\limits_{i=1}^{n}Y_ia_i + b - \theta]^2 \\
+%  & = E[\frac{1}{n}\sum\limits_{i=1}^{n}(\theta + \epsilon_i)a_i + b -\theta]^2 \\
+%  & =  E[\frac{1}{n}\sum\limits_{i=1}^{n}(a_i - 1)\theta+\frac{1}{n}\sum\limits_{i=1}^{n}a_i\epsilon_i+b]^2 \\
+%  & = E[\frac{1}{n^2}\sum\limits_{i=1}^{n}a_i^2 \epsilon_i^2 + b^2 +\frac{2}{n}\sum\limits_{i=1}^{n}\sum\limits_{j\neq i}^{n}a_ia_j\epsilon_i\epsilon_j]^2  \\
+%  & = \frac{1}{n^2}\sum\limits_{i=1}^{n}a_i^2E(\epsilon_i)^2 + b^2\\
+% \end{split}
+% \end{equation*}
+% (notice that $ \frac{1}{n}\sum\limits_{i=1}^{n}(a_i - 1)\theta=0$, $ \frac{2}{n}\sum\limits_{i=1}^{n}\sum\limits_{j\neq i}^{n}a_ia_jE[\epsilon_i\epsilon_j]=0 $)\\
+% Therefore $b^*=0$ as $b^2$ appears as an additive term in MSE.\\
+% Now setting up Lagrangian,
+% $ L = \frac{1}{n^2}\sum\limits_{i=1}^{n}a_i^2E(\epsilon_i)^2-\lambda(\frac{1}{n}\sum\limits_{i=1}^{n}a_i - 1)$ \\
+% FOC:\\
+% $[a_i]: \frac{2E(\epsilon_i)^2}{n^2}a_i- \lambda\frac{1}{n} = 0
+% \Rightarrow  a_i = \frac{\lambda }{2E(\epsilon_i)^2} = \lambda $ \\
+% Thus, $a_1 = a_2 = a_3 = ... $ \\
+% $[\lambda]:\sum\limits_{i=1}^{n}a_i = n \Rightarrow a_i^* = 1/n $ for all $a_i$\\
+% Thus, $E[\widetilde{\theta}(a^*,b^*)] = \theta $ \\
+% By unbiasedness, $ MSE = Var(\widetilde{\theta}) $
+% }
+
+	\item  Now, we drop the assumption that $Y_i$'s are i.i.d. We assume instead that $Y_i$'s are independent across $i$'s, and $\mathbf{E}Y_i$'s are identical across $i$, but $Var(Y_i) = \sigma_i^2$ which are positive and all different across $i$'s, and are known. (That is, $Y_i$'s are heteroskedastic.) Then, compute $a$ and $b$ which minimizes the MSE of $\tilde \theta(a,b)$ in this set-up. Let the minimizer be $\tilde a$ and $\tilde b$. Is the estimator $\tilde \theta(\tilde a,\tilde b)$ unbiased? % Which estimator between $\tilde \theta(a^*,b^*)$ in (f) and $\tilde \theta(\tilde a,\tilde b)$ has a smaller variance.
+% \\	{ Repeating the same logic as the previous question, we have $b^*=0$ and $ L = \frac{1}{n^2}\sum\limits_{i=1}^{n}a_i^2E(\epsilon_i)^2-\lambda(\frac{1}{n}\sum\limits_{i=1}^{n}a_i - 1)$ \\
+% FOC:\\
+% $[a_i]: \frac{2E(\epsilon_i)^2}{n^2}a_i- \lambda\frac{1}{n} = 0
+% \Rightarrow  a_i = \frac{\lambda }{2E(\epsilon_i)^2} =\frac{\lambda }{2\sigma_i^2} $ \\
+% $[\lambda]:\sum\limits_{i=1}^{n}a_i  =n$ \\
+% Substituting $a_i =\frac{\lambda }{2\sigma_i^2} $ into $\sum\limits_{i=1}^{n}a_i  =n$, we have $ \lambda \sum_{i=1}^n \frac{1}{2\sigma_i^2}  =n   \Rightarrow  \lambda = \frac{1}{(1/n)\sum_{i=1}^n {1}/{2\sigma_i^2}} $ and $\tilde a_i = \frac{1/\sigma_i^2}{(1/n)\sum_{j=1}^n {1}/{\sigma_j^2}}$ (put a higher weight on the observation with lower variance). This estimator is also unbiased.
+% %Thus, $E[\widetilde{\theta}(a^*,b^*)] = \theta $ \\
+% }
+	\end{enumerate}
+
+	\item \textit{(Central Limit Theorem, Hypothesis Test, and Power of Test)} Let $\{(X_{i},Y_{i})\}_{i=1}^{n}$ be i.i.d. random vectors, which means that $(X_{1},Y_{1})$, $(X_{2},Y_{2})$,..., $(X_{n},Y_{n})$ are mutually independent random vectors and the random vectors are identically distributed. (This does not mean that $X_{i}$ and $Y_{i}$ are independent.) The null hypothesis of interest is%
+	\begin{equation*}
+		H_{0}:\mathbf{E}X_{i}=\mathbf{E}Y_{i}
+	\end{equation*}%
+	and the alternative hypothesis is%
+	\begin{equation*}
+		H_{1}:\mathbf{E}X_{i} > \mathbf{E}Y_{i}.
+	\end{equation*}%
+	Suppose for simplicity that $Var(X_{i} - Y_{i})$ is known to be $2$.
+	\medskip
+	\begin{enumerate}
+	\item Show that
+	\begin{equation*}
+		\frac{\sqrt{n}(\bar{X}_{n}-\bar{Y}_{n} - (\mathbf{E}X_{i} - \mathbf{E}Y_{i}))}{\sqrt{2}}\rightarrow _{d}N(0,1),
+	\end{equation*}
+	where $\bar{X}_{n}=\frac{1}{n}\sum_{i=1}^{n}X_{i}$ and $\bar{Y}_{n}=\frac{1}{n}\sum_{i=1}^{n}Y_{i}$.
+	(HINT: Use the Central Limit Theorem.)
+	\medskip
+	\item Using (a), find a test statistic $\tau$ and critical value $c\in \mathbf{R}$ such that
+	under the null hypothesis, as $n\rightarrow \infty,$
+	\begin{equation*}
+		P\left\{ \tau >c\right\} \rightarrow 0.05.
+	\end{equation*}
+	\item  Show that under the alternative hypothesis such that
+	\begin{equation}
+	\label{alt}
+		\mathbf{E}X_{i}=\mathbf{E}Y_{i}+1>\mathbf{E}Y_{i},
+	\end{equation}
+	the power of the test $(\tau, c)$ converges to 1 as $n\rightarrow \infty$. (HINT. For this, it is sufficient to show that for any small $\varepsilon>0$, there exists a sufficiently large $n_0$ such that for all $n \ge n_0$,
+	\begin{eqnarray*}
+		P\{\tau > c\} > 1- \varepsilon,
+	\end{eqnarray*}
+under the alternative hypothesis in (\ref{alt}).)
+\end{enumerate}
+% {  (a) Note that $X_i$ and $Y_i$ may be correlated. So, you need to be explicit about how you apply the central limit theorem. Write
+% $\bar X_n - \bar Y_n = \frac{1}{n} \sum_{i=1}^n (X_i-Y_i)=\frac{1}{n}\sum_{i=1}^n W_i$ with $W_i:= X_i-Y_i$.  Then, we have
+% \[
+% 		\frac{\sqrt{n}(\bar{X}_{n}-\bar{Y}_{n} - (\mathbf{E}X_{i} - \mathbf{E}Y_{i}))}{\sqrt{2}}
+% 		=
+% 		\frac{\sqrt{n}(\bar{W}_{n}  -  \mathbf{E}W_i )}{\sqrt{2}} \overset{d}{\rightarrow} N(0,1)
+% 		\]
+% 		where  the last step uses the CLT given that  $\{W_i: i=1,2,...,n\}$ are i.i.d. random variables with $\text{Var}(W_i)=2$.  (b) Under $H_0: E X  - E Y=0$,  $\tau = \frac{\sqrt{n}(\bar{X}_{n}-\bar{Y}_{n} )}{\sqrt{2}} \overset{d}{\rightarrow} N(0,1)$ so that $\Pr(\tau>1.64)\approx 0.05$ and so $c=1.64$. (c) Under  $H_1: E X - E Y= 1$,
+% 		\begin{align*}
+% 		\text{Power} & = \Pr\left(\tau >1.64\ |  \ E X -E Y=1 \right)\\
+% 		& = \Pr\left(\left. \frac{ \sqrt{n}(\bar{X}_{n}-\bar{Y}_{n} )}{\sqrt{2}} >1.64\ \right| \ E X -E Y=1 \right)\\
+% 		& = \Pr\left(\left. \frac{ \sqrt{n}(\bar{X}_{n}-\bar{Y}_{n} -1)}{\sqrt{2}} >1.64 - \frac{\sqrt{n}}{\sqrt{2}}\  \right| \ E X -E Y=1 \right)\\
+% 		& \approx  1-\Phi\left( 1.64 - \frac{\sqrt{n}}{\sqrt{2}}\right)  \rightarrow 1 \quad \text{as $n\rightarrow \infty$}.
+% \end{align*} }
+\section*{Programming}
+
+	\item For this question, include your code with the output in the submission.
+	\begin{enumerate}
+		\item \textit{(Discrete Random Variables)} Sampling Suppose you are the lottery fairy in a weekly lottery, where 5 out of 36 unique numbers are drawn.
+		Instructions:
+		Draw the winning numbers for this week.
+		\\(Hints: Start with \texttt{set.seed(123)} to set the seed. You may use the function \texttt{sample()} to draw random numbers.)
+
+		\item Consider a random variable $X$ with probability density function (PDF) $f_X(x) = \frac{x}{4}e^{-x^2/8}, x \ge 0$.
+		Define the PDF from above as a function and check whether the function you have defined is indeed a PDF. (Hints: You may use the function integrate to check the integration of a function.)
+
+		\item \textit{(Normal Distribution)} Let $Y \sim N(3,10)$, compute the $99 \%$-th quantile of the given distribution.
+	\end{enumerate}
+
+\item Consider the following alternative estimator for $\mu_Y$, the mean of the $Y_i$,
+$$ \tilde Y_i = \frac{1}{n-1} \sum_{i=1}^n Y_i $$.
+\begin{enumerate}
+	\item In this exercise we will illustrate that this estimator is a biased estimator for $Y_i$.\\
+	Instructions: 1. Define a function \texttt{Y\_tilde} that implements the estimator above.\\
+	2. Randomly draw $5$ observations from the \texttt{N(10,25)} distribution and compute an estimate using \texttt{Y\_tilde()}. Repeat this procedure 10000 times and store the results in \texttt{est\_biased}.\\
+	3. Plot a histogram of \texttt{est\_biased}. Add a red vertical line at using the function \texttt{abline()}.
+	\item do the same procedure as in part (a). Increase the number of observations to draw from 5 to 1000 this time. What do you notice? What can you say about this estimator?
+\end{enumerate}
+\end{enumerate}
+
+
+\bigskip
+
+
+
+\bibliographystyle{apalike}
+\bibliography{library}
+\end{document}

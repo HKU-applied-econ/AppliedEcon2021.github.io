@@ -1,0 +1,22 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{The IV Estimator with a Single Regressor and a Single Instrument}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{The IV Model and Assumptions}{5}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{1}{Endogeneity and Exogeneity}{6}{0}{1}
+\beamer@subsubsectionintoc {1}{1}{2}{The two conditions for a valid instrument}{8}{0}{1}
+\beamer@subsectionintoc {1}{2}{The Two Stage Least Squares Estimator}{10}{0}{1}
+\beamer@subsectionintoc {1}{3}{Why does IV regression work?}{12}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{1}{Example 1: Philip Wright's problem}{12}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{2}{Example 2: Estimating the effect on test scores of class size}{19}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{3}{Formula for the TSLS estimator}{22}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{4}{Sampling distribution of bnTSLS1 when the sample size is large}{23}{0}{1}
+\beamer@subsubsectionintoc {1}{3}{5}{Statistical inference using the large-sample distribution}{25}{0}{1}
+\beamer@subsectionintoc {1}{4}{Application to the Demand for Cigarettes}{26}{0}{1}
+\beamer@sectionintoc {2}{The General IV Regression Model}{33}{0}{2}
+\beamer@subsubsectionintoc {2}{0}{1}{Included exogenous variables and control variables in IV regression}{35}{0}{2}
+\beamer@subsectionintoc {2}{1}{TSLS in the General IV Model}{38}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{1}{TSLS with a single endogenous regressor}{38}{0}{2}
+\beamer@subsectionintoc {2}{2}{Instrument Relevance and Exogeneity in the General IV Model}{41}{0}{2}
+\beamer@subsectionintoc {2}{3}{The IV Regression Assumptions and Sampling Distribution of the TSLS Estimator}{42}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{1}{The IV regression assumptions}{42}{0}{2}
+\beamer@sectionintoc {3}{Checking Instrument Validity}{51}{0}{3}
+\beamer@sectionintoc {4}{Application to the Demand for Cigarettes}{67}{0}{4}

@@ -1,0 +1,1060 @@
+\RequirePackage{currfile}
+\tolerance=5000
+\documentclass[10pt, xcolor=x11names,compress,usenames,dvipsnames]{beamer}
+
+\usepackage[english]{babel}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{amssymb,amsmath,amsfonts,eurosym,geometry,ulem,graphicx,caption,color,setspace,comment,footmisc,caption,pdflscape,subfigure,array,hyperref,upgreek,bbm,xcolor,float,amsthm,amsmath,verbatim,setspace,ulem,textpos,changepage,url,multirow,tikz,color, colortbl,numprint,mathrsfs,cancel,wrapfig,booktabs,threeparttable,ebgaramond,natbib}
+
+\usetikzlibrary{fit,shapes.geometric}
+
+\newcounter{nodemarkers}
+\newcommand\circletext[1]{%
+    \tikz[overlay,remember picture]
+        \node (marker-\arabic{nodemarkers}-a) at (0,1.5ex) {};%
+    #1%
+    \tikz[overlay,remember picture]
+        \node (marker-\arabic{nodemarkers}-b) at (0,0){};%
+    \tikz[overlay,remember picture,inner sep=2pt]
+        \node[draw,rectangle,red ,fit=(marker-\arabic{nodemarkers}-a.center) (marker-\arabic{nodemarkers}-b.center)] {};%
+    \stepcounter{nodemarkers}%
+}
+
+
+\setbeamertemplate{footline}[frame number]
+
+
+\normalem
+
+\newcommand{\tsout}[1]{\text{\sout{$#1$}}}
+\definecolor{Gray}{gray}{0.9}
+\newcolumntype{g}{>{\columncolor{Gray}}c}
+
+\newtheorem{remark}{Remark}
+\def\mb{\mathbf}
+\def\iid{\mathrm{i.i.d.}}
+\def\bs{\boldsymbol}
+\def\tbf{\textbf}
+\def\t{^{\top}}
+\def\E{\mathbbm{E}}
+\def\bSig{\bs{\Sigma}}
+
+\newcommand{\mcitet}[1]{\mbox{\citet{#1}}}
+\newcommand{\mcitep}[1]{\mbox{\citep{#1}}}
+\newcommand{\ind}{\mathbbm{1}}
+
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator{\vecth}{vech}
+
+
+
+\newcommand{\R}{\mathbbm{R}}
+\newcommand{\prob}{\mathbbm{P}}
+\newcommand{\var}{\text{var}}
+
+\newtheorem{assumption}{Assumption}
+
+\newtheorem{hyp}{Hypothesis}
+\newtheorem{subhyp}{Hypothesis}[hyp]
+\renewcommand{\thesubhyp}{\thehyp\alph{subhyp}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\makeatletter
+\newenvironment<>{proofs}[1][\proofname]{%
+    \par
+    \def\insertproofname{#1\@addpunct{.}}%
+    \usebeamertemplate{proof begin}#2}
+  {\usebeamertemplate{proof end}}
+\makeatother
+
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\arraybackslash\hspace{0pt}}m{#1}}
+\setbeamertemplate{theorems}[numbered]
+% Themes
+ \mode<presentation> {
+\usetheme{Hannover}
+ \usecolortheme{default}
+ \setbeamercovered{transparent}
+ }
+
+\setbeamercovered{transparent}
+
+\setbeamertemplate{itemize item}{$\triangleright$}
+\setbeamertemplate{itemize subitem}{$\diamond$}
+\setbeamertemplate{enumerate items}[default]
+\setbeamerfont{frametitle}{size=\large}
+\PassOptionsToPackage{height=1cm}{beamerouterthemesidebar}
+\usepackage{blindtext}
+
+% Title
+\title[Probability]{Regression with Single Variable \footnote[frame]{This section is based on \cite{Stock2020}, Chapter 4 and 5, \cite{Hansen2021a}, Chapter 2}
+}
+\date[]{\today}
+
+
+\author[Hao]{Jasmine(Yu) Hao}
+\institute[VSE]{Faculty of Business and Economics\\Hong Kong University}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+\begin{frame}
+\tbf{Goal}:
+\begin{itemize}
+\item
+  Causal Inference
+\item
+  Prediction
+\end{itemize}
+
+\tbf{Data} : Dependent variable \(Y\), independent variable \(X\).
+
+\tbf{Question of interest}: How does change in \(X\) affect \(Y\)?
+
+\end{frame}
+
+\section[CEF]{Conditional Expectation Function}
+\begin{frame}[allowframebreaks]{Example 1}
+
+   An important determinant of wages is education\footnote[frame]{Population survey description
+   \url{https://www.ssc.wisc.edu/~bhansen/econometrics/cps09mar_description.pdf}
+   Data: \url{https://www.ssc.wisc.edu/~bhansen/econometrics/cps09mar.xlsx}
+   }.
+   In many empirical studies economists measure education attainment by number of years of schooling. Then the conditional expectation of \(\log(wage)\) given \(gender,race\) and \(education\), is a single number for each category.
+
+  \[\E(\log(wage) | gender=man, race=white, education=12) = 2.8\]
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{../figure/W2_CEF_1.png}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+  \includegraphics[width=\linewidth]{../figure/W2_CEF_2.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{CEF}
+  The Conditional expectation can be written with
+
+
+\[\E(Y|X_1 = x_1, X_2 = x_2,\ldots, X_k = x_k ) = m(x_1,\ldots, x_k).\]
+
+We call this the \textbf{conditional expectation function(CEF)}.
+
+The variables \(X\) can be both discrete and continuous.
+
+\end{frame}
+
+\begin{frame}{Law of Iterated Expectation}
+  If \(\E(Y) < \infty\), then for any random variable \(X\),
+
+\[\E [ \E [ Y| X]] \ \E[Y].\]
+
+More generally,
+
+If \(\E(Y) < \infty\), then for any random variables \(X_1\) and
+\(X_2\),
+
+\[\E_{X_2} [ \E [ Y| X_1,X_2]] \ \E[Y | X_1].\]
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{CEF error}
+Assume now \(X\) is the class size, and \(Y\) is expected test score for a given district.
+
+The CEF error \(e\) is defined as the difference between \(Y\) and the
+\(CEF\) evaluated at \(X\):
+
+\[e = Y - m(X)\]
+
+By construction, \(Y = m(X) + e\).
+
+\pagebreak
+A key property of CEF error is that it has conditional mean of zero.
+
+\begin{equation}
+\begin{split}
+\E(e|X) & = \E[ (Y - m(X)) | X] \\
+& = \E[Y|X] - \E(m(X) | X) \\
+& = m(X) - m(X) = 0.
+\end{split}
+\end{equation}
+Properties of the CEF error, if \(\E[Y] < \infty\) then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item \(\E[e|X] = 0\).
+\item \(\E[e] = 0\).
+\item  For any function \(h(x)\) such that \(\E[h(X) e] < \infty\) then  \(\E[h(X) e] = 0\).
+\end{enumerate}
+
+
+\pagebreak
+
+A special case of the regression model is when there are no
+regressors \(X\). In this case \(m(X) = \E[Y] = \mu_Y\).
+
+We can write the equation for \(Y\) in the regression format
+\begin{equation}
+    Y = \mu + e ,\E[e] = 0
+\end{equation}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{Variance}
+An important measure of the dispersion about the CEF function is
+the unconditional variance of the CEF error \(e\).
+
+We write this as \[\sigma^2 = var[e] = \E[ (e - \E(e))^2] = \E[e^2].\]
+
+Consider the following regression:
+\[Y = \E[Y |  X] + e\]
+
+\begin{itemize}
+  \item  It turns out that there is a simple relationship. We can think of the conditional expectation \(\E[Y|X]\) as the \emph{``explained portion''} of \(Y\).
+  \item The remainder \(e = Y -\E[Y|X] \) is the \emph{``unexplained portion''}.
+\end{itemize}
+
+\pagebreak
+
+\begin{remark}
+  In our discussion of iterated expectations we have seen that by increasing the conditioning set the conditional expectation reveals greater detail about the distribution of $Y$.
+  What is the implication for the regression error?
+
+  More included variables indicate larger explained portion.
+\end{remark}
+
+
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{Best Predictor}
+  Suppose that given a random vector \(X\) we want to predict or forecast
+\(Y\). We can write any predictor as a function g (X) of X. The
+(ex-post) prediction error is the realized difference \(Y - g(X)\) . A
+non-stochastic measure of the magnitude of the prediction error is the
+expectation of its square
+
+\[\E[(Y - g(X))^2].\]
+
+We can define the best predictor as the function \(g(X)\) which minimize
+the expectation of squares.
+
+\begin{itemize}
+\item
+  The CEF \(m(X)\) is the best predictor.
+\item
+  If we assume no variation of \(X\), then the best predictor is
+  \(\bar Y\).
+\item
+  If we assume single \(X\) and linear function of \(g(X)\), the best
+  predictor is \(\hat \beta_0 + \hat \beta_1 X\).
+\end{itemize}
+
+Theorem:
+
+If \(\E(Y^2) < \infty\), then for any predictor \(g(X)\),
+
+\[\E[ ( Y - g(X))^2] \ge \E[ ( Y - m(X))^2],\]
+
+where \(m(X) = \E[Y|X]\).
+
+\footnote[frame]{For reference reading, see \cite{Hansen2021a}, Chapter 2.}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Conditional Variance}
+While the conditional mean is a good measure of the location of a
+conditional distribution it does not provide information about the
+spread of the distribution.
+
+A common measure of the dispersion is the conditional variance.
+
+The conditional regression error given \(X = x\) is
+
+\[\sigma^2(x) = var[W|X=x] = \E[ ( e - \E[e|X=x])^2 | X=x] =  \E[ e ^2 | X=x] .\]
+
+The conditional variance is a random variable.
+
+we define the conditional standard deviation as its square root
+\(\sigma(x) = \sqrt{\sigma^2(x)}\).
+
+\pagebreak
+
+The variance of \(Y\) can be decomposed as the following:
+
+\[var(Y) = \E[ var(Y | X) + var [\E[Y|X]] ].\]
+
+See Theorem 4.14 of Introduction to Econometrics. Theorem 2.8 decomposes
+the unconditional variance into what are sometimes called the
+``\textbf{within group variance}'' and the ``\textbf{across group
+variance}''.
+\end{frame}
+
+\begin{frame}{Issue with CEF}
+This assumption does not need to be viewed as literally true. Rather it is a useful modeling device so that parameters such as \(\beta\) are well defined.
+    \begin{itemize}
+    % \item
+      % This assumption should be interpreted as how we view an observation a priori, before we actually observe it.
+      % If I tell you that we have a sample with n = 59 observations set in no particular order, then it makes sense to view two observations, say 17 and 58, as draws from the same distribution.
+    % \item
+    %   We have no reason to expect anything special about either observation. In econometric theory we refer to the underlying common distribution $F$ as the population.
+    \item
+      Some authors prefer the label the \tbf{data-generating-process (DGP)}. You can think of it as a theoretical concept or an infinitely-large potential population. In contrast, we refer to the observations available to us as the sample or dataset.
+    \item
+      Even in this case we view the observations as if they are random draws from an underlying infinitely-large population as this will allow us to apply the tools of statistical theory.
+    \end{itemize}
+    \end{frame}
+
+
+\section{The Linear Regression Model}
+
+\begin{frame}{Linear CEF}
+  An important special case is when the CEF \(m(x) = \E[Y | X = x]\) is
+linear in x. In this case we can write the mean equation as
+
+\[m(x) = \beta_0 + \beta_1 x_1.\]
+
+Denote the vector \(X = \begin{pmatrix} 1 \\ X_1 \end{pmatrix}\) and
+\(\beta = \begin{pmatrix} \beta_0 \\ \beta_1 \end{pmatrix}\), then
+\(m(x) = x^\top \beta\).
+
+This is the \textbf{linear CEF} model. It is also often called the
+\textbf{linear regression model}, or the regression of \(Y\) on \(X\).
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Best Linear Predictor}
+  \begin{itemize}
+    \item
+      While the conditional mean \(m(X) = E[Y | X]\) is the best predictor
+      of \(Y\) among all functions of \(X\), its functional form is
+      typically unknown.
+    \item
+      In particular, the linear CEF model is empirically unlikely to be
+      accurate unless X is discrete and low-dimensional so all interactions
+      are included.
+    \item
+      Consequently, in most cases it is more realistic to view the linear
+      specification as an approximation.
+    \item
+      The conditional mean \(m(X)\) is the best predictor in the sense that
+      it has the lowest mean squared error among all predictors.
+
+      By extension, we can define an approximation to the CEF by the linear
+      function with the lowest mean squared error among all linear
+      predictors.
+    \end{itemize}
+
+    For this derivation we require the following regularity condition.
+
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item
+      \(\E [Y^2] < \infty\)
+    \item
+      \(\E \Vert X^2\Vert < \infty \)
+    \item
+      \(\mathbf{Q}_{XX} = \E[XX^\top]\) is positive definite.
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Example 2}
+For example \footnote[frame]{See \cite{Stock2020} Chapter 4, example 1.}:
+\begin{itemize}
+\item
+  A father tells you that his family wants to move to a town with a good
+  school system. He is interested in a specific school district: Test
+  scores for this district are not publicly available,
+\item
+  the father knows its class size, based on the district's
+  student--teacher ratio. So he asks you: if he tells you the district's
+  class size, could you predict that district's standardized test
+  scores?
+\item
+  These two questions are clearly related: They both pertain to the
+  relation between class size and test scores. Yet they are different.
+  To answer the superintendent's question, you need an estimate of the
+  causal effect of a change in one variable (the student-teacher ratio,
+  \(X\)) on another (test scores, \(Y\)).
+\end{itemize}
+    \pagebreak
+
+    \begin{itemize}
+      \item To answer the question, you need to know how \(X\) relates to \(Y\), on average, across school districts so you can use this relation to predict Y given X in a specific district.
+      \item Back to the question of school district, could you predict the district's standardized test scores?
+      \item We use the notation \(\E(Y|X=x)\) to denote the mean of \(Y\) given that \(X\) takes the value of \(x\).
+      \item In the case of test scores and class size, the linear function can be written \(  \E(TestScore | ClassSize) = \beta_0 + \beta_{ClassSize} \times ClassSize, \) where \(\beta_0\) is the intercept, and \(\beta_{ClassSize}\) is the slope.
+      \item Suppose the class size in the district size is \(20\), \(\beta_0 = 720\) and \(\beta_{ClassSize} = -0.6\). We could predict the mean test scores to be 720 -0.6 * 20 = 708.
+    \end{itemize}
+
+    \pagebreak
+
+    The prediction tells you what the test score will be, on average, for
+    districts with class sizes of that value; it does not tell you what
+    specifically the test score will be in any one district.
+
+    \begin{itemize}
+    \item
+      Districts with the same class sizes can nevertheless differ in many
+      ways and in general will have different values of test scores.
+    \item
+      If we make a prediction for a given district, we know that prediction
+      will not be exactly right: The prediction will have an error.
+    \item
+      Stated mathematically, for any given district the imperfect
+      relationship between class size and test score can be written as
+      \( TestScore = \beta_0 + \beta_{ClassSize} \times ClassSize + error. \)
+    \item
+      \(\beta_0 + \beta_{ClassSize} \times ClassSize\) represents the
+      average relationship between class size and scores in the population
+      of school districsts.
+    \item
+      \(error\) represents the error made in prediction.
+    \end{itemize}
+
+    \end{frame}
+
+  \begin{frame}{Notations}
+    More generally, suppose we have \(n\) sample districts.  \(Y_i\) denotes the average test score in \(i\)-th district and \(X_i\) be the average class size in \(i\)-th district. The prediction becomes \(\E(Y_i | X_i) = \beta_0 + \beta_1 X_{1,i}\).
+    \begin{itemize}
+    \item the subscript \(i\) runs over observations \(i = 1,\ldots, n\);
+    \item \(Y_i\) is the dependent variable, the regressand or left-hand side variable(LHS).
+    \item \(X_{1,i}\) is the independent variable, the regressor or right-hand side variable(RHS).
+    \item \(\beta_0 + \beta_1 X_{1,i} \) is the population regression function.
+    \item \(u_i\) is the error term.
+    \item \(\beta_1\) is the slope, \(\beta_0\) is the intercept of the population regression function.
+    \end{itemize}
+    \end{frame}
+
+    \section[Estimation]{Estimating the Coefficients of the Linear Regression
+    Model}
+
+    \begin{frame}{Textbook case}
+    In a practical situation such as the application to class size and test
+    scores, the intercept \(\beta_0\) and the slope \(\beta_1\) of the
+    population regression line are unknown.
+
+    Therefore, we must use data to estimate these unknown coefficients.
+
+    This estimation problem is similar to the estimating sample mean.
+
+    \url{http://fmwww.bc.edu/ec-p/data/stockwatson/caschool.dta}
+
+    \end{frame}
+    \begin{frame}
+
+    \begin{figure}{Scatter Plot}
+    \centering
+    \includegraphics[width=\linewidth]{../figure/W2_OLS_ScatterPlot.png}
+
+    \end{figure}
+
+    \end{frame}
+
+    \subsection{The Ordinary Least Squares Estimator(OLS)}
+    \begin{frame}[allowframebreaks]{The Ordinary Least Squares Estimator}
+    The moment estimator of $\hat S(\beta)$ is the sample average:
+      $$ \hat S (\beta) = \frac{1}{n} \sum_{i=1}^n (Y_i - X_i^\top \beta)^2 = \frac{1}{n} SSE(\beta) $$
+      where
+      $$ SSE(\beta) = \sum_{i=1}^n (Y_i - X_i^\top \beta)^2 $$
+      is called the \tbf{sum of squared error} function.
+
+    The least squares estimator is $\hat \beta = \arg \min \hat S(\beta)$ where $\hat S(\beta)$ is defined above.
+
+    \pagebreak
+
+    The estimator is also commonly refered to as the \tbf{ordinary least squares (OLS)} estimator.
+    \begin{itemize}
+      \item It is important to understand the distinction between population parameters such as $\beta$ and sample estimators such as $\hat \beta$.
+      \item The population parameter $\beta$ is a non-random feature of the population, is fixed,
+      \item while the sample estimator $\hat \beta$ is a random feature of a random sample, varies across samples.
+    \end{itemize}
+
+
+    \end{frame}
+    \begin{frame}
+
+    \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{../figure/W2_OLS_FittedLine.png}
+    \caption{}
+    \end{figure}
+
+    \end{frame}
+
+    % The OLS estimator chooses the regression coefficients so that the estimated regression line is as close as possible to the observed data.
+
+    % As discussed in previous lecture, the sample average, \(\bar Y\) is the least squares estimator of the population mean \(\E(Y)\).
+
+    % \begin{itemize}
+    % \item
+    % \(\bar Y = \arg \min_{b} \sum_{i=1}^n (Y_i - b)^2 \).
+    % \end{itemize}
+
+    % The OLS estimator extends this idea:
+
+    % \begin{itemize}
+    % \item
+    % \((\hat \beta_{0}, \hat \beta_{1} ) = \arg \min_{b_0 ,b_1} \sum_{ i =1}^n (Y_i - \beta_0 - \beta_1 X_i)^2\)
+    % \item
+    % We can find the unique pair of \((\hat \beta_{0}, \hat \beta_{1} )\)
+    % to minimize the objective function.
+    % \item
+    % \((\hat \beta_{0}, \hat \beta_{1} )\) are estimators (sample
+    % counterparts) of the population coefficient \((\beta_0,\beta_1)\).
+    % \end{itemize}
+
+    % \begin{itemize}
+    %   \item The linear projection coefficient $\beta$ is  the minimizer of the \tbf{expected squared error}.
+    %   \item For given $\beta$, the expected squared error is the expectation of the squared error $(Y-X^\top \beta)^2$.
+    % \end{itemize}
+
+    \begin{frame}{Why OLS?}
+      \begin{itemize}
+      \item
+        OLS is the dominant method used in practice, it has become the common
+        language for regression analysis throughout economics, finance
+
+        \begin{itemize}
+        \item
+          ``The `Beta' of a Stock'' ,
+        \item
+          and the social sciences more generally.
+        \end{itemize}
+      \item
+        Easy to use, build in most of the programming languages.
+      \end{itemize}
+      \end{frame}
+
+
+    \begin{frame}{Solving for OLS with One Regressor}
+      \[SSE(\beta) = \sum_{i=1}^n  (Y_i - X_i^\top \beta)^2 = \sum_{i=1}^n Y_i^2 - 2 \beta \left( \sum_{i=1}^n X_i Y_i \right) + \beta^2 \left( \sum_{i=1}^n X_i^2\right).\]
+
+      The OLS estimator \(\hat \beta\) minimizes this function.
+
+      \[\hat \beta = \frac{\sum_{i=1}^n X_i Y_i}{\sum_{i=1}^n X_i^2}.\]
+
+      Note that the intercept-only model has \(X_i = 1\). In this case
+      \(\hat \beta = \bar Y\).
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{Solving for OLS with Multiple Regressor}
+      To illustrate, consider a vector \(X = (X_1, X_2)^\top\).
+
+      \begin{equation}
+        \begin{split}
+          SSE(\beta) & = \sum_{i=1}^n  (Y_i - X_i^\top \beta)^2 \\
+          & = \sum_{i=1}^n Y_i^2 - 2 \beta^\top \left( \sum_{i=1}^n X_i Y_i \right) + \beta\t \left( \sum_{i=1}^n X_i X_i^\top\right) \beta.
+        \end{split}
+      \end{equation}
+
+
+      A simple way to find the minimum is by solving the first order
+      condition:
+
+      \[\frac{\partial }{\partial \beta} SSE(\hat \beta ) = - 2 \sum_{i=1}^n X_i Y_i + 2 \sum_{i=1}^n X_i X_i^\top \hat \beta = 0.\]
+
+      The solution for \(\hat \beta\) may be found by solving the system of
+      equation. We can write the solution using matrix algebra:
+
+      \[\sum_{i=1}^n X_i X_i^\top \hat \beta \sum_{i=1}^n X_i Y_i.\]
+
+      The system of equations of the form
+      \(\mathbf{A} \mathbf{b} = \mathbf{c} \) where \(A\) is \(k\times k\)
+      matrix and \(\mathbf{b}\) and \(\mathbf{c}\) are \(k \times 1\) vectors
+      is that \(\mathbf{b} = \mathbf{A}^{-1} \mathbf{c} \).
+
+      We can solve for the explicit formula for the least square estimator
+
+      \[\hat \beta  = \left(  \sum_{i=1}^n X_i X_i^\top \right)^{-1} \left(  \sum_{i=1}^n X_i Y_i \right).\]
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{Best Linear Predictor}
+
+      The linear model applies to random variables \((Y,X)\) can be viewed as
+        a probability model. The model is
+
+        \[Y = X^\top \beta + e\]
+
+        where the linear coefficient \(\beta\) is defined as
+
+        \[\beta = \arg\min_{b \in \R^2} \E[(Y - X^\top b)^2].\]
+
+      The best linear predictor of \(Y\) given \(X\) for a pair of random variables \((Y,X) \in \R \times \R^2\).
+      We are interested in estimating the parameters \(\beta\) of the model, in particular the projection coefficient
+      \[\beta = (\E [X X^\top])^{-1} \E [X Y].\]
+
+      \pagebreak
+
+      Notationally we wish to distinguish observations (realizations) from the underlying random variables.
+      \begin{itemize}
+      \item
+        The random variables are \((Y ,X)\).
+      \item
+        The observations are \((Y_i ,X_i )\).
+      \item
+        From the vantage of the researcher the latter are numbers. From the
+        vantage of statistical theory we view them as \emph{realizations of
+        random variables}.
+
+        \begin{itemize}
+  \item
+    For individual observations we append a subscript \(i = 1,\ldots,n\)
+  \item
+    The number \(n\) is the sample size.
+  \item
+    The dataset or sample is \(\{ (Yi ,Xi ) : i = 1, \ldots,n\}\). From
+    the viewpoint of empirical analysis a dataset is an array of
+    numbers.
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+    \section[Goodness of Fit]{Measure of Fit and Prediction Accuracy}
+
+        \begin{frame}{$R^2$}
+
+        The regression \(R^2\) is the fraction of sample variance of \(Y\)
+        explained by (or predicted by \(X\)).
+
+        \begin{equation}
+            \begin{split}
+                ESS = \sum_{i=1}^n (\hat Y_i - \bar Y)^2 \\
+                TSS = \sum_{i=1}^n (Y_i - \bar Y)^2
+            \end{split}
+        \end{equation}
+
+        The \(ESS\) is the \textbf{explained sum of squares} and \(TSS\) is the
+        \textbf{total sum of squares}.
+
+        \(R^2 = \frac{ESS}{TSS}\).
+
+        The sum of squared residuals (SSR) is the sum of squared OLS residuals.
+
+        \(R^2 = 1 - \frac{SSR}{TSS}\).
+        \end{frame}
+
+    \subsection{The Standard Error of Regression}
+
+
+    \begin{frame}{Variation of Data}
+        \begin{itemize}
+            \item The standard error of regression(SER) is an estimator of the standard deviation of the regression error.
+            \item  \( SER = \sqrt{s_{\hat u}^2}\) where \(s_{\hat u}^2 = \frac{SSR}{n-2}.\)
+            \item The degree of freedom is \(n-2\), because when two coefficients were estimated ($\beta_0$ and $\beta_1$).
+        \end{itemize}
+
+    \end{frame}
+
+    \hypertarget{prediction-using-ols}{%
+    \subsection{Prediction Using OLS}\label{prediction-using-ols}}
+
+    \begin{frame}{Prediction}
+        \begin{itemize}
+            \item \textbf{In-sample prediction} : The predicted value \(Y_i\) for the \(i\)-th observation is the value of \(Y_i\) predicted by the OLS regression line when \(X\) takes on its value \(X_i\) for that observation.
+            \item \textbf{Out-of-sample prediction}: prediction methods are used to predict \(Y\) when \(X\) is known but \(Y\) is not.
+        \end{itemize}
+
+    \end{frame}
+
+    \section[Assumptions]{The Least Squares Assumptions for Causal Inference}
+
+    \begin{frame}{Key Assumptions}
+    Key Assumptions
+
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item The Error Term has Conditional Mean of Zero \(\E[u_i | X_i] = 0\).
+     The Error Term has Conditional Mean of Zero \(\E[u_i | X_i] = 0\).
+    \item Independently and Identically Distributed Data \((X_i, Y_i)\)
+    are i.i.d.
+    \item Large Outliers are Unlikely
+    \(\E(X_i^4) < \infty, \E(Y_i^4) < \infty\).
+
+    \end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Review: Distribution of $\bar Y$}
+  Review of the sampling distribution of \(\bar Y\).
+
+  \begin{itemize}
+  \item
+    \(\bar Y\) is an estimator of the unknown population mean of \(Y\),
+    \(\mu_Y\).
+  \item
+    \(\bar Y\) is a random variable that takes on different values from
+    one sample to the next; the probability of these different values is
+    summarized in its sampling distribution.
+  \item
+    When sample size is small, the distribution follows a
+    \(t\)-distribution with degree of freedom \(n-1\)
+  \item
+    When sample size is large, the central limit indicate \(\bar Y\)
+    follows normal distribution.
+  \end{itemize}
+
+  \end{frame}
+
+
+  \begin{frame}{Vectorized Terms}
+    The \(n\) random observation can be viewed in vector term.
+
+    Let
+    \(\mathbf{Y} = \begin{pmatrix} Y_1 \\\ \vdots \\ Y_n \end{pmatrix}\),
+    \(\mathbf{X} = \begin{pmatrix} X_{1}^\top \\ \vdots \\ X_n^\top \end{pmatrix}\),
+    \(\mathbf{e} = \begin{pmatrix} e_1 \\ \vdots \\ e_n \end{pmatrix}\).
+
+ \end{frame}
+
+\begin{frame}[allowframebreaks]{Unbiasedness}
+    Claim: The OLS estimator is unbiased in the linear regression model.
+
+    Consider      the model where \(Y = X_1 \beta_1 + X_2 \beta_2\).
+
+
+    This calculation can be done using either summation notation or matrix
+    notation.
+
+   {\scriptsize
+    \begin{equation}
+      \begin{split}
+    \E[\hat \beta | X_1,X_2] & = \E[ \left( \sum_{i=1}^n X_i X_i^\top \right){-1} \left( \sum_{i=1}^n X_i Y_i \right)|X_1,X_2] \\
+    & = \left( \sum_{i=1}^n X_i X_i^\top \right)^{-1}  \E[\left( \sum_{i=1}^n X_i Y_i \right)|X_1,X_2]  \\
+    & = \left( \sum_{i=1}^n X_i X_i^\top \right)^{-1} \sum_{i=1}^n \E[\left(  X_i Y_i \right)|X_1,X_2] \\
+    & = \left( \sum_{i=1}^n X_i X_i^\top \right)^{-1} \sum_{i=1}^n   X_i \E[\left( Y_i \right)|X_1,X_2]  \\
+    & = \left( \sum_{i=1}^n X_i X_i^\top \right)^{-1} \sum_{i=1}^n X_i X_i^\top  \beta \\
+    & =  \beta.
+    \end{split}
+  \end{equation}
+  }
+
+  \pagebreak
+    If we write in matrix term, the expectation can be written as
+
+    \begin{equation}
+      \begin{split}
+        \E[\mathbf{Y} | \mathbf{X}] = \begin{pmatrix} \vdots \\ \E[Y_i | \mathbf{X}] \\ \vdots \end{pmatrix} = \begin{pmatrix} \vdots \\ \E[ X_i^\top \beta |X_i] \\ \vdots \end{pmatrix} = \mathbf{X} \beta.
+      \end{split}
+    \end{equation}
+
+    Similarly
+    \begin{equation}
+      \begin{split}
+        \E[\mathbf{e} | \mathbf{X}] = = \begin{pmatrix} \vdots \\ \E[e_i | \mathbf{X}] \\ \vdots \end{pmatrix} = \begin{pmatrix} \vdots \\ \E[e_i | X_i] \\ \vdots \end{pmatrix} = 0.
+      \end{split}
+    \end{equation}
+
+    Insert \(\mathbf{Y} = \mathbf{X} \beta + \mathbf{e}\) into the formula
+    for \(\hat\beta \) to obtain
+
+    \begin{equation}
+      \begin{split}
+        \hat \beta = \left( \mathbf X^\top \mathbf X \right)^{-1} \left( \mathbf X^\top \left( \mathbf X \beta + \mathbf{e} \right) \right) \\
+        = \beta + \left( \mathbf X^\top \mathbf X \right)^{-1} \left( \mathbf X^\top  \mathbf{e} \right)
+      \end{split}
+    \end{equation}
+    Then
+    \(\E[\hat \beta - \beta | \mathbf{X}] = \E [ \left( \mathbf X^\top \mathbf X \right)^{-1} \left( \mathbf X^\top  \mathbf{e} \right)  | \mathbf{X}] =  \left( \mathbf X^\top \mathbf X \right)^{-1}  \mathbf X^\top \E [ \mathbf{e}  | \mathbf{X}] = 0.  \)
+  \end{frame}
+
+  \subsection{Variance of OLS Estimator}
+  \begin{frame}[allowframebreaks]{Conditional Variance}
+      For any \(r \times 1\) random vector \(Z\), we define the \(r \times r\)
+      covariance matrix \[
+      var(Z) = \E[ ((Z) - \E[Z]) ((Z) - \E[Z])^\top ] = \E[Z Z^\top] - \E[Z] \E[Z]^\top.
+      \] and for any pair of \((Z,X)\), the conditional covariance matrix \[
+      var[Z|X] = \E[ ((Z) - \E[Z|X]) ((Z) - \E[Z|X])^\top |X].
+      \] The variance of error vector \(\mathbf{e}\) given \(\mathbf{X}\) is a
+      \(n \times n\) matrix \[
+      var(\mathbf{e} | \mathbf{X}) = \E[\mathbf{e} \mathbf{e}^\top | \mathbf{X}] = \mathbf{D}.
+      \] The \(i\)-th diagonal element of \(\mathbf{D}\) is \[
+      \E[ e_i^2 | \mathbf{X}] = \E[ e_i^2 | X_i] = \sigma_i^2,
+      \] while the \(i,j\)-th off diagonal element of \(\mathbf{D}\) is \[
+      \E[ e_i e_j | \mathbf{X}] = \E[ e_i| X_i] \E[ e_j| X_j] = 0,
+      \]
+
+      Under linear homoscedastic regression model, then
+      \(\E[e_i^2 | X_i] = \sigma_i^2 = \sigma^2\).
+
+      For any \(n \times r\) matrix \(\mathbf{A} = \mathbf{A}(\mathbf{X})\),
+      \[
+      var[ \mathbf{A}(\mathbf{X})^\top \mathbf{Y}  ] = var[ \mathbf{A}(\mathbf{X})^\top \mathbf{e} | \mathbf{X} ] = \mathbf{A}^\top \mathbf{D} \mathbf{A}.
+      \] In particular, we write \(\hat \beta = \mathbf{A}^\top Y\) where
+      $\mathbf{A} = \mathbf{X} (\mathbf{X}^\top \mathbf{X})^{-1} $ and therefore
+      \[ V_{\hat \beta} = \mathbf{A}^\top \mathbf{D} \mathbf{A} =  (\mathbf{X}^\top \mathbf{X})^{-1} \mathbf{X}^\top \mathbf{D} \mathbf{X} (\mathbf{X}^\top \mathbf{X})^{-1}.
+      \] Note that under homoscedastic assumption,
+      \(\mathbf{X}^\top \mathbf{D} \mathbf{X} = \sigma^2 \mathbf{X}^\top \mathbf{X}\),
+      then \(V_{\hat \beta} = \sigma^2 (\mathbf{X}^\top \mathbf{X} )^{-1}.\)
+
+    \end{frame}
+
+  \begin{frame}{Intercept Only Model}
+
+    Consider the intercept only model, where \(Y = \beta_0 + \epsilon\).
+    \begin{itemize}
+      \item If \(X_i = \begin{pmatrix} 1 \\ X_{i,1} \end{pmatrix}\), then
+    \(\mathbf{X} = \begin{pmatrix} 1 \\ \vdots \\ 1 \end{pmatrix}\). We can
+    compute the variance of \(\hat \beta\) using the above formula.
+    \item \(\mathbf{X}^\top \mathbf{X} = n\), then \((\mathbf{X}^\top \mathbf{X} )^{-1} = \frac{1}{n}\).
+    \item Recall we estimate \(\hat \sigma^2 = \frac{\sum_{i=1}^n \hat u_i^2}{n-1}\), the variance for \(V_{\beta_0}= \frac{\hat \sigma^2}{n}\).
+  \end{itemize}
+
+  \end{frame}
+\begin{frame}{Single Regressor Model}
+
+  Consider the one-regressor model \(Y = \beta_0 + \beta_1 X_1 + \epsilon\).
+
+  \begin{itemize}
+    \item If \(X_i = \begin{pmatrix} 1 \\ X_{i,1} \end{pmatrix}\), then \(\mathbf{X} = \begin{pmatrix} 1 & X_{1,1} \\ \vdots & \vdots \\ 1 & X_{n,1} \end{pmatrix}\).
+    \item We can compute the variance of \(\hat \beta\) using the above formula.
+    \item \(\mathbf{X}^\top \mathbf{X} = \begin{bmatrix} n & \sum_{i=1}^n X_i \\ \sum_{i=1}^n X_i & \sum_{i=1}^n X_i^2 \end{bmatrix}\),
+    then
+    \(( V_{\hat \beta} = \frac{\hat \sigma^2}{n \sum_{i=1}^n x_i^2 - (\sum_{i=1}^n X_i)^2 } \begin{bmatrix} \sum_{i=1}^n X_i^2 & - \sum_{i=1}^n X_i \\ -\sum_{i=1}^n X_i & n \end{bmatrix}\).
+
+    \item  Recall we estimate \(\hat\sigma^2 = \frac{\sum_{i=1}^n \hat u_i^2}{n-2}\),
+    \item The diagonal terms corresponds to \(V_{\hat \beta_0}\) and \(V_{\hat \beta_1}\).
+  \end{itemize}
+
+\end{frame}
+  \begin{frame}{Hypothesis Testing}
+    \begin{itemize}
+
+      \item Your client, the superintendent, calls you with a problem. She has an
+        angry taxpayer in her office who asserts that cutting class size will
+        not help boost test scores, so hiring more teachers is a waste of
+        money. \(Class Size\), the taxpayer claims, has no effect on test
+        scores.
+      \item The taxpayer's claim can be restated in the language of regression
+        analysis: \(\beta_{ClassSize} = 0\).
+      \item You already provided the superintendent with an estimate of
+        \(\beta_{ClassSize}\) using your sample of 420 observations on
+        California school districts.
+      \item Under the assumption that the least squares assumptions, Is there
+        evidence in your data this slope is nonzero? Can you reject the
+        taxpayer's hypothesis that \(\beta_{ClassSize} = 0\)?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Testing the slope}
+
+We can construct a t-statistics from the data.
+\begin{itemize}
+\item
+  Recall when testing the null hypothesis of the mean of \(Y\) equals to
+  specific value: \(H_0 : \E[Y] = \mu_Y\).
+\item
+  The two-sided alternative hypothesis is \(H_1: \E[Y] \neq \mu_Y\).
+\item
+  The t-test statistics is \(t = \frac{\bar Y - \mu_{Y,0}}{s.e.(Y)}\).
+\end{itemize}
+
+We then compute the p-value by examine the distribution table.
+
+\pagebreak
+At a theoretical level, the critical feature justifying the foregoing
+testing procedure for the population mean is that, in large samples, the
+sampling distribution of Y is approximately normal.
+
+\begin{itemize}
+
+\item
+  Because \(\hat \beta_1\) also has a normal sampling distribution in
+  large samples, hypotheses about the true value of the slope
+  \(\beta_1\) can be tested using the same general approach.
+\item
+  The null and alternative hypotheses need to be stated precisely before
+  they can be tested. The hypothesis is that  \(\beta_{ClassSize} = 0\).
+\item
+  More generally, under the null hypothesis the true population  coefficient \(\beta_1\) takes on some specific value \(\beta_{1,0}\).
+\item
+  Under the two-sided alternative, \(H_1: \beta \neq \beta_{1,0}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Steps to Test the Two-sided Hypothesis}
+  More generally, the \tbf{null hypothesis } and the
+\tbf{two-sided alternative hypothesis} are \[
+H_0 : \beta_1 = \beta_{1,0} ~ H_1: \beta_1 \neq \beta_{1,0}.
+\]
+
+The first step is to compute the \tbf{standard error} of
+\(\hat \beta_1\). The slope estimator has the variance of \[
+  V_{\hat \beta_1} = \frac{\hat \sigma^2}{ \sum_{i=1}^n x_i^2 - \frac{1}{n}(\sum_{i=1}^n X_i)^2 }.
+  \]
+
+The second step is to compute the \(t-statistics\), \[
+t = \frac{ \hat \beta_1 - \beta_{1,0}}{V_{\hat \beta_1}}.
+\] The third step is to compute the p-value, the probability of
+observing a value of \(\hat \beta_1\) at least as different from
+\(\beta_{1,0}\). \[
+p-value = \prob([ | \hat \beta_1 - \beta_{1,0} | > | \hat \beta^{OLS}_1 - \beta_1 | ]) = \prob( |t| > |t^{OLS}| ) = 2\Phi(-|t^{OLS}|).
+\]
+
+\begin{itemize}
+\item
+  A p-value of less than 5\% provides evidence against the null
+  hypothesis in the sense that, under the null hypothesis, the
+  probability of obtaining a value of \(\beta_1\) at least as far from
+  the null as that actually observed is less than 5\%. If so, the null
+  hypothesis is rejected at the 5\% significance level.
+\item
+  Alternatively, the hypothesis can be tested at the 5\% significance
+  level simply by comparing the absolute value of the t-statistic to
+  1.96, the critical value for a two-sided test, and rejecting the null
+  hypothesis at the 5\% level if $ | \hat t^{OLS} | >  1.96$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why Use Two-sided Test}
+  \begin{itemize}
+    \item
+      In practice, one-sided alternative hypotheses should be used only when
+      there is a clear reason for doing so.
+    \item
+      This reason could come from economic theory, prior empirical evidence,
+      or both. However, even if it initially seems that the relevant
+      alternative is one-sided, upon reflection this might not necessarily
+      be so.
+    \item
+      A newly formulated drug undergoing clinical trials actually could
+      prove harmful because of previously unrecognized side effects.
+    \item
+      In the class size example, we are reminded of the graduation joke that
+      a university's secret of success is to admit talented students and
+      then make sure that the faculty stays out of their way and does as
+      little damage as possible. In practice, such ambiguity often leads
+      econometricians to use two-sided tests.
+    \end{itemize}
+\end{frame}
+
+\subsection{Confidence Interval}
+\begin{frame}[allowframebreaks]{Confidence Interval for }
+
+Because any statistical estimate of the slope \(\beta_1\) necessarily
+has sampling uncertainty, we use the OLSestimator and its standard error to construct a confidence interval for the slope \(\beta_1\) or for the intercept \(\beta_0\).
+
+\begin{itemize}
+\item
+  A 95 \% two-sided confidence interval for \(\beta_1\) is an interval
+  that contains the true value of \(\beta_1\) with a 95\% probability;
+\item
+  Equivalently, it is the set of values of \(\beta_1\) that cannot be
+  rejected by a 5 \% two-sided hypothesis test.
+\end{itemize}
+
+When the sample size is large, it is constructed as \[
+CI = [\hat \beta - Z_{1 - \alpha/2} V_{\hat \beta_1}, \hat \beta + Z_{1 - \alpha/2} V_{\hat \beta_1}]
+\] where \(\alpha = 0.05\) and \(Z_{1 - \alpha/2} = 1.96\).
+
+\begin{itemize}
+\item
+  The 95\% confidence interval for \(\beta_1\) can be used to construct
+  a 95\% confidence interval for the predicted effect of a general
+  change in \(X\).
+\end{itemize}
+\end{frame}
+
+\subsection{Homoskedastic v.s. Heteroskedastic}
+\begin{frame}[allowframebreaks]{Homoskedastic v.s. Heteroskedastic}
+
+The error term \(u_i\) is \textbf{homoskedastic} if the variance of the
+conditional distribution of \(e_i\) given \(X_i\) is constant for
+\(i = 1,\ldots,n\) and in particular does not depend on \(X_i\).
+
+Otherwise, the error term is \textbf{heteroskedastic}.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{../figure/W2_error_dist.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Example}
+
+Higher be a binary variable that equals 1 for people whose father's
+NS-SEC grouping was higher than equals \(0\) if this grouping was
+routine. \[
+Earnings_i = \beta_0 + \beta Higher_i + u_i
+\] for \(i = 1, \ldots, n\).
+
+\begin{itemize}
+\item
+  The definition of homoskedasticity states that the variance of \(u_i\)
+  does not depend on the regressor. Here the regressor is \(Higher_i\),
+  so at issue is whether the variance of the error term depends on
+  \(Higher_i\),
+\item
+  In other words, is the variance of the error term the same for people
+  whose father's socioeconomic classification was higher and for those
+  whose father's socioeconomic classification was lower? If so, the
+  error is \textbf{homoskedastic}; if not, it is
+  \textbf{heteroskedastic}.
+\end{itemize}
+\footnote[frame]{This example is based on \cite{Stock2020} p.p. 122.}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Which error assumption to choose?}
+
+\begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    Which is more realistic, heteroskedasticity or homoskedasticity? The answer to this question depends on the application.
+
+    \begin{itemize}
+    \item
+      Those who are born into relatively poorer circumstances are more likely to remain in poorer circumstances later in life, and live in households where earnings do not fall into the top income bracket.
+    \item
+      In other words, the variance of the error term in for those whose
+      father's socioeconomic classification was lower is plausibly less
+      than the variance of the error term for those whose father's
+      socioeconomic classification was higher.
+    \item
+      Unless there are compelling reasons to the
+      contrary---and we can think of none---it makes sense to treat the
+      error term in this example as heteroskedastic.
+    \item
+      It therefore is prudent to assume that the errors might be heteroskedastic unless you have compelling reasons to believe otherwise.
+    \end{itemize}
+
+    \pagebreak
+    \item Practical implications.
+    \begin{itemize}
+    \item
+      In this regard, it is useful to imagine computing both, then
+      choosing between them.
+    \item
+      For simplicity, always to use the heteroskedasticity-robust standard errors.
+    \item  Many software programs report homoskedasticityonly standard errors as their default setting, so it is up to the user to specify the option of heteroskedasticity-robust standard errors.
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[allowframebreaks,noframenumbering]
+    \frametitle{References}
+    \bibliographystyle{apalike}
+  \bibliography{library}
+  \end{frame}
+
+
+\end{document}
