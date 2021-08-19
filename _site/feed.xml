@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Aug 2021 16:49:33 +0800</pubDate>
-    <lastBuildDate>Thu, 19 Aug 2021 16:49:33 +0800</lastBuildDate>
+    <pubDate>Thu, 19 Aug 2021 17:39:12 +0800</pubDate>
+    <lastBuildDate>Thu, 19 Aug 2021 17:39:12 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -75,13 +75,13 @@ Topics include multilinear regressions, limited dependent variable, panel data, 
     &lt;ul&gt;
       &lt;li&gt;Review of Theory (4 hrs)
         &lt;ul&gt;
-          &lt;li&gt;Introduction: Evidence and Policy (&lt;a href=&quot;../[Course]Theory/0_introduction.pdf&quot;&gt;Slides&lt;/a&gt;) (28 pages, 1 hrs)&lt;/li&gt;
-          &lt;li&gt;Causality and Validity Probability(&lt;a href=&quot;../[Course]Theory/1_probability.pdf&quot;&gt;Slides&lt;/a&gt;) (54 pages, 2 hrs)
+          &lt;li&gt;Introduction: Evidence and Policy (&lt;a href=&quot;[Course]Theory/0_introduction.pdf&quot;&gt;Slides&lt;/a&gt;) (28 pages, 1 hrs)&lt;/li&gt;
+          &lt;li&gt;Causality and Validity Probability(&lt;a href=&quot;[Course]Theory/1_probability.pdf&quot;&gt;Slides&lt;/a&gt;) (54 pages, 2 hrs)
             &lt;ul&gt;
               &lt;li&gt;Probability Exercise Intro2Metrics 1.5 - 1.9, 1.17 - 1.19, 2.1 - 2.6, 2.11 - 2.15&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;Statistical Theory Review (&lt;a href=&quot;../[Course]Theory/2_statistics.pdf&quot;&gt;Slides&lt;/a&gt;) (20 pages, 1 hrs)
+          &lt;li&gt;Statistical Theory Review (&lt;a href=&quot;[Course]Theory/2_statistics.pdf&quot;&gt;Slides&lt;/a&gt;) (20 pages, 1 hrs)
             &lt;ul&gt;
               &lt;li&gt;Statistics Exercise Intro2Metrics 13.5 - 13.6, 13.11 - 13.12, SW 3.1 - 3.4&lt;/li&gt;
             &lt;/ul&gt;
@@ -111,7 +111,7 @@ Topics include multilinear regressions, limited dependent variable, panel data, 
     &lt;ul&gt;
       &lt;li&gt;Theoretical Model
         &lt;ul&gt;
-          &lt;li&gt;Bivariate Regression (SW Ch. 4 – 5) (&lt;a href=&quot;../[Course]Theory/3_regression_with_single_regressor.pdf&quot;&gt;Slides&lt;/a&gt;) (60 pages, 2 hrs)&lt;/li&gt;
+          &lt;li&gt;Bivariate Regression (SW Ch. 4 – 5) (&lt;a href=&quot;[Course]Theory/3_regression_with_single_regressor.pdf&quot;&gt;Slides&lt;/a&gt;) (60 pages, 2 hrs)&lt;/li&gt;
           &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;

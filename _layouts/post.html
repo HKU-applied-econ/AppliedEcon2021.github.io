@@ -35,11 +35,6 @@ layout: default
                 <a href="{{ page.author_url | prepend: site.baseurl }}">{{ page.author_name }}</a> in <a href='{{ "/category/" | append: page.categories.first | prepend: site.baseurl }}'>{{ page.categories[0] | uppercase }}</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> {{ page.read_time }} minutes
             </p>
 
-            <h1>{{ page.title }}</h1>
-
-            
-                
-
                 <div id="markdown-content">
                     {{ page.content  }}
                 </div>

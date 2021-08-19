@@ -7,13 +7,12 @@ layout: with-sidebar
 </div>
 
 <div class="category-page-posts animated fadeIn ">
-    {% for post in site.categories[page.category] reversed %}
+    {% assign sorted_cats = site.categories[page.category]%}
+    {% for post in sorted_cats %}
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
 
         <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-
-        {{ post.excerpt | truncatewords: 28 }}
 
         <p class="meta">
             <a href="{{ post.author_url | prepend: site.baseurl }}">{{ post.author_name | uppercase }}</a> in <a href='{{ "/category/" | append: post.categories.first | prepend: site.baseurl }}'>{{ post.categories.first | uppercase}}</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> {{ post.read_time }} minutes
@@ -31,3 +30,4 @@ layout: with-sidebar
 
     {% endfor %}
 </div>
+
