@@ -1,0 +1,20 @@
+I"|<ul>
+  <li>Week 2
+    <ul>
+      <li>Theoretical Model
+        <ul>
+          <li>Bivariate Regression (SW Ch. 4 – 5) (<a href="2021/Theory/3_regression_with_single_regressor.pdf">Slides</a>) (60 pages, 2 hrs)</li>
+          <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)</li>
+        </ul>
+      </li>
+      <li>Programming Exercises
+        <ul>
+          <li><a href="https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html">R tutorial for CA school example</a></li>
+          <li><a href="2021/Coding/3_regression_with_single_regressor.html">Using R for bivariate regression (Econometrics with R, CH 4-5)</a></li>
+          <li><a href="2021/Coding/4_regression_multiple_regressor.html">Using R for multi-variate regression (Econometrics with R, CH 6 - 7)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET

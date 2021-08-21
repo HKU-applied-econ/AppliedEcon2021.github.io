@@ -1,0 +1,295 @@
+---
+title: "2_statistics"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Estimation of the Population Mean
+
+Think of some economic variable, for example hourly earnings of college graduates, denoted by $Y$. Suppose we are interested in $\mu_Y$ the mean of $Y$. In order to exactly calculate $\mu_Y$ we would have to interview every working graduate in the economy. We simply cannot do this due to time and cost constraints. However, we can draw a random sample of $n$ i.i.d. observations $Y_1, \dots, Y_n$ and estimate $\mu_Y$ using one of the simplest estimators in the sense of Key Concept 3.1 one can think of, that is,
+
+$$ \overline{Y} = \frac{1}{n} \sum_{i=1}^n Y_i, $$
+
+the sample mean of $Y$. Then again, we could use an even simpler estimator for $\mu_Y$: the very first observation in the sample, $Y_1$. Is $Y_1$ a good estimator? For now, assume that 
+
+$$ Y \sim \chi_{12}^2 $$
+
+which is not too unreasonable as hourly income is non-negative and we expect many hourly earnings to be in a range of $5€\,$ to $15€$. Moreover, it is common for income distributions to be skewed to the right --- a property of the $\chi^2_{12}$ distribution. 
+
+```{r, fig.align='center'}
+# plot the chi_12^2 distribution
+curve(dchisq(x, df=12), 
+      from = 0, 
+      to = 40, 
+      ylab = "density", 
+      xlab = "hourly earnings in Euro")
+```
+
+We now draw a sample of $n=100$ observations and take the first observation $Y_1$ as an estimate for $\mu_Y$
+
+```{r, fig.align='center'}
+# set seed for reproducibility
+set.seed(1)
+
+# sample from the chi_12^2 distribution, use only the first observation
+rsamp <- rchisq(n = 100, df = 12)
+rsamp[1]
+```
+
+The estimate $8.26$ is not too far away from $\mu_Y = 12$ but it is somewhat intuitive that we could do better: the estimator $Y_1$ discards a lot of information and its variance is the population variance: 
+
+$$ \text{Var}(Y_1) = \text{Var}(Y) = 2 \cdot 12 = 24 $$
+
+## Properties of the Sample Mean {#potsm}
+To examine properties of the sample mean as an estimator for the corresponding population mean, consider the following `R` example.
+
+We generate a population `pop` consisting of observations $Y_i$, $i=1,\dots,10000$ that origin from a normal distribution with mean $\mu = 10$ and variance $\sigma^2 = 1$.
+
+To investigate the behavior of the estimator $\hat{\mu} = \bar{Y}$ we can draw random samples from this population and calculate $\bar{Y}$ for each of them. This is easily done by making use of the function `replicate()`. The argument `expr` is evaluated `n` times. In this case we draw samples of sizes $n=5$ and $n=25$, compute the sample means and repeat this exactly $N=25000$ times.
+
+For comparison purposes we store results for the estimator $Y_1$, the first observation in a sample for a sample of size $5$, separately.
+
+```{r, echo = T, eval = T, message = F, warning = F}
+# generate a fictious population
+pop <- rnorm(10000, 10, 1)
+
+# sample from the population and estimate the mean
+est1 <- replicate(expr = mean(sample(x = pop, size = 5)), n = 25000)
+
+est2 <- replicate(expr = mean(sample(x = pop, size = 25)), n = 25000)
+
+fo <- replicate(expr = sample(x = pop, size = 5)[1], n = 25000)
+```
+
+check that `est1` and `est2` are vectors of 25000.
+
+```{r}
+# check if object type is vector
+is.vector(est1)
+is.vector(est2)
+
+# check length
+length(est1)
+length(est2)
+```
+
+The code chunk below produces a plot of the sampling distributions of the estimators $\bar{Y}$ and $Y_1$ on the basis of the $25000$ samples in each case. We also plot the density function of the $\mathcal{N}(10,1)$ distribution.
+
+```{r, echo = T, eval = T, message = F, warning = F, fig.align='center'}
+# plot density estimate Y_1
+plot(density(fo), 
+      col = "green", 
+      lwd = 2,
+      ylim = c(0, 2),
+      xlab = "estimates",
+      main = "Sampling Distributions of Unbiased Estimators")
+
+# add density estimate for the distribution of the sample mean with n=5 to the plot
+lines(density(est1), 
+     col = "steelblue", 
+     lwd = 2, 
+     bty = "l")
+
+# add density estimate for the distribution of the sample mean with n=25 to the plot
+lines(density(est2), 
+      col = "red2", 
+      lwd = 2)
+
+# add a vertical line at the true parameter
+abline(v = 10, lty = 2)
+
+# add N(10,1) density to the plot
+curve(dnorm(x, mean = 10), 
+     lwd = 2,
+     lty = 2,
+     add = T)
+
+# add a legend
+legend("topleft",
+       legend = c("N(10,1)",
+                  expression(Y[1]),
+                  expression(bar(Y) ~ n == 5),
+                  expression(bar(Y) ~ n == 25)
+                  ), 
+       lty = c(2, 1, 1, 1), 
+       col = c("black","green", "steelblue", "red2"),
+       lwd = 2)
+```
+## An Application to the Gender Gap of Earnings
+This section discusses how to reproduce the results presented in the box *The Gender Gap of Earnings of College Graduates in the United States* of the book.
+
+In order to reproduce Table 3.1 of the book you need to download the replication data which are hosted by Pearson and can be downloaded [here](https://wps.pearsoned.com/wps/media/objects/11422/11696965/datasets3e/datasets/cps_ch3.xlsx). This file contains data that range from  
+1992  to2008 and earnings are reported in prices of 2008.
+
+There are several ways to import the .xlsx-files into R. Our suggestion is the function `read_excel()` from the `readxl` package (Wickham and Bryan 2019). The package is not part of R’s base version and has to be installed manually.
+
+```{r}
+# load the 'readxl' package
+library(readxl)
+```
+
+You are now ready to import the dataset. Make sure you use the correct path to import the downloaded file! In our example, the file is saved in a subfolder of the working directory named data. If you are not sure what your current working directory is, use `getwd()`, see also `?getwd`. This will give you the path that points to the place R is currently looking for files to work with.
+
+
+```{r}
+# import the data into R
+cps <- read_excel(path = "data/cps_ch3.xlsx")
+```
+
+Next, install and load the package `dyplr` (Wickham et al. 2020). This package provides some handy functions that simplify data wrangling a lot. It makes use of the %>% operator.
+
+```{r}
+# load the 'dplyr' package
+library(dplyr)
+```
+
+First, get an overview over the dataset. Next, use %>% and some functions from the dplyr package to group the observations by gender and year and compute descriptive statistics for both groups.
+```{r}
+# get an overview of the data structure
+print(head(cps))
+avgs <- cps %>% 
+        group_by(a_sex, year) %>% 
+        summarise(mean(ahe08), 
+                  sd(ahe08), 
+                  n())
+print(avgs)
+```
+
+With the pipe operator %>% we simply chain different R functions that produce compatible input and output. In the code above, we take the dataset cps and use it as an input for the function `group_by()`. The output of group_by is subsequently used as an input for `summarise()` and so forth.
+
+Now that we have computed the statistics of interest for both genders, we can investigate how the gap in earnings between both groups evolves over time.
+
+```{r}
+# split the dataset by gender
+male <- avgs %>% dplyr::filter(a_sex == 1) 
+
+female <- avgs %>% dplyr::filter(a_sex == 2)
+
+# rename columns of both splits
+colnames(male)   <- c("Sex", "Year", "Y_bar_m", "s_m", "n_m")
+colnames(female) <- c("Sex", "Year", "Y_bar_f", "s_f", "n_f")
+
+# estimate gender gaps, compute standard errors and confidence intervals for all dates
+gap <- male$Y_bar_m - female$Y_bar_f
+
+gap_se <- sqrt(male$s_m^2 / male$n_m + female$s_f^2 / female$n_f)
+
+gap_ci_l <- gap - 1.96 * gap_se
+
+gap_ci_u <- gap + 1.96 * gap_se
+
+result <- cbind(male[,-1], female[,-(1:2)], gap, gap_se, gap_ci_l, gap_ci_u)
+
+# print the results to the console
+print(result, digits = 3)
+```
+
+## Scatterplots, Sample Covariance and Sample Correlation
+
+A scatter plot represents two dimensional data, for example $n$ observation on $X_i$ and $Y_i$, by points in a coordinate system. It is very easy to generate scatter plots using the `plot()` function in `R`. Let us generate some artificial data on age and earnings of workers and plot it.
+
+```{r, fig.align='center'}
+# set random seed
+set.seed(123)
+
+# generate dataset
+X <- runif(n = 100, 
+           min = 18, 
+           max = 70)
+
+Y <- X + rnorm(n=100, 50, 15)
+
+# plot observations
+plot(X, 
+     Y, 
+     type = "p",
+     main = "A Scatterplot of X and Y",
+     xlab = "Age",
+     ylab = "Earnings",
+     col = "steelblue",
+     pch = 19)
+```
+
+
+The plot shows positive correlation between age and earnings. This is in line with the notion that older workers earn more than those who joined the working population recently.
+
+#### Sample Covariance and Correlation {-}
+By now you should be familiar with the concepts of variance and covariance. If not, we recommend you to work your way through Chapter 2 of the book. 
+
+Just like the variance, covariance and correlation of two variables are properties that relate to the (unknown) joint probability distribution of these variables. We can estimate covariance and correlation by means of suitable estimators using a sample $(X_i,Y_i)$, $i=1,\dots,n$. 
+
+The sample covariance 
+
+$$ s_{XY} = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})(Y_i - \overline{Y}) $$
+
+is an estimator for the population variance of $X$ and $Y$ whereas the sample correlation
+
+$$ r_{XY} = \frac{s_{XY}}{s_Xs_Y} $$
+can be used to estimate the population correlation, a standardized measure for the strength of the linear relationship between $X$ and $Y$. See Chapter 3.7 in the book for a more detailed treatment of these estimators.
+
+As for variance and standard deviation, these estimators are implemented as `R` functions in the `stats` package. We can use them to estimate population covariance and population correlation of the artificial data on age and earnings.
+
+```{r}
+# compute sample covariance of X and Y
+cov(X, Y)
+
+# compute sample correlation between X and Y
+cor(X, Y)
+
+# an equivalent way to compute the sample correlation
+cov(X, Y) / (sd(X) * sd(Y))
+```
+
+The estimates indicate that $X$ and $Y$ are moderately correlated.
+
+The next code chunk uses the function `mvnorm()` from package `MASS` to generate bivariate sample data with different degrees of correlation. 
+
+```{r, fig.align='center'}
+library(MASS)
+
+# set random seed
+set.seed(1)
+
+# positive correlation (0.81)
+example1 <- mvrnorm(100,
+                    mu = c(0, 0), 
+                    Sigma = matrix(c(2, 2, 2, 3), ncol = 2),
+                    empirical = TRUE)
+
+# negative correlation (-0.81)
+example2 <- mvrnorm(100,
+                    mu = c(0, 0), 
+                    Sigma = matrix(c(2, -2, -2, 3), ncol = 2),
+                    empirical = TRUE)
+
+# no correlation 
+example3 <- mvrnorm(100,
+                    mu = c(0, 0), 
+                    Sigma = matrix(c(1, 0, 0, 1), ncol = 2),
+                    empirical = TRUE)
+
+# no correlation (quadratic relationship)
+X <- seq(-3, 3, 0.01)
+Y <- - X^2 + rnorm(length(X))
+
+example4 <- cbind(X, Y)
+
+# divide plot area as 2-by-2 array
+par(mfrow = c(2, 2))
+
+# plot datasets
+plot(example1, col = "steelblue", pch = 20, xlab = "X", ylab = "Y", 
+     main = "Correlation = 0.81")
+
+plot(example2, col = "steelblue", pch = 20, xlab = "X", ylab = "Y", 
+     main = "Correlation = -0.81")
+
+plot(example3, col = "steelblue", pch = 20, xlab = "X", ylab = "Y", 
+     main = "Correlation = 0")
+
+plot(example4, col = "steelblue", pch = 20, xlab = "X", ylab = "Y", 
+     main = "Correlation = 0")
+```

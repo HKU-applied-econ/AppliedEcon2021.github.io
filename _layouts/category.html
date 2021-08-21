@@ -8,7 +8,7 @@ layout: with-sidebar
 
 <div class="category-page-posts animated fadeIn ">
     {% assign sorted_cats = site.categories[page.category]%}
-    {% for post in sorted_cats %}
+    {% for post in sorted_cats reversed%}
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
 

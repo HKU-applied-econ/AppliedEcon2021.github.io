@@ -1,0 +1,117 @@
+I"�<h1 id="course-outline"><strong>Course Outline</strong></h1>
+
+<ul>
+  <li>Week 1 (6 hours course)
+    <ul>
+      <li>Review of Theory (4 hrs)</li>
+      <li><em>Introduction to Programming Language (2 hrs)</em></li>
+    </ul>
+  </li>
+  <li>Week 2
+    <ul>
+      <li>Theoretical Model
+        <ul>
+          <li>Bivariate Regression (SW Ch. 4 – 5)</li>
+          <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)</li>
+        </ul>
+      </li>
+      <li>Programming Exercises
+        <ul>
+          <li><a href="https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html">R tutorial for CA school example</a></li>
+          <li><a href="https://www.econometrics-with-r.org/4-lrwor.html https://www.econometrics-with-r.org/5-htaciitslrm.html">Using R for bivariate regression (Econometrics with R, CH 4-5)</a></li>
+          <li><a href="https://www.econometrics-with-r.org/6-rmwmr.html https://www.econometrics-with-r.org/7-htaciimr.html">Using R for multi-variate regression (Econometrics with R, CH 6 - 7)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Week 3
+    <ul>
+      <li>Theoretical Model
+        <ul>
+          <li>Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8)</li>
+          <li>Regressions with binary dependent variables (SW, Ch. 11)</li>
+        </ul>
+      </li>
+      <li><u>Potentially Midterm? (1 hour, need discussion)</u></li>
+      <li>Programming Exercisess</li>
+    </ul>
+  </li>
+  <li>Week 4
+    <ul>
+      <li>Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)</li>
+      <li>Threats to (Internal / External) Validity</li>
+    </ul>
+  </li>
+  <li>Week 5
+    <ul>
+      <li>Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)</li>
+      <li>Experiments and Quasi-Experiments (Chapter 13)</li>
+    </ul>
+  </li>
+  <li>Week 6
+    <ul>
+      <li>Times series regressions and forecasting (SW, Ch. 14)</li>
+      <li>Machine Learning (material will be distributed by instructor</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<p>Main textbook:</p>
+
+<ul>
+  <li>Stock, James and Mark Watson (2018), <em>Introduction to</em> <em>Econometrics</em>, Global Edition, 4th ed., Pearson. (It is perfectly fine if you use the 3rd edition of this textbook.)</li>
+  <li>Hanck, Christoph, Martin Arnold, Alexander Gerber, and Martin Schmelzer. “Introduction to Econometrics with R.” University of Duisburg-Essen (2019).
+    <ul>
+      <li><a href="https://www.econometrics-with-r.org/">Online course notes</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Supplementary textbook:</p>
+
+<ul>
+  <li>Jeffrey Wooldridge , <em>Introductory Econometrics: A Modern Approach</em>, Ohio : South-Western Cengage Learning.</li>
+  <li>Cunningham, Scott. “Causal Inference.” <em>The Mixtape</em> 1 (2020).
+    <ul>
+      <li><a href="https://mixtape.scunning.com/index.html">Online course notes</a></li>
+    </ul>
+  </li>
+  <li>Sheppard, Kevin. “Introduction to Python for econometrics, statistics and data analysis.” <em>Self-published, University of Oxford, version</em> 2 (2012).
+    <ul>
+      <li><a href="https://www.kevinsheppard.com/teaching/python/notes/#notes">Online course notes</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<h3 id="datasets">Datasets</h3>
+
+<ul>
+  <li><a href="http://fmwww.bc.edu/ec-p/data/stockwatson/datasets.list.html">Datasets used in Stock &amp; Watson Textbook</a></li>
+</ul>
+
+<h3 id="r-tutorial">R-tutorial</h3>
+
+<ul>
+  <li><a href="https://www.econometrics-with-r.org">Econometrics with R</a></li>
+  <li><a href="https://cengel.github.io/R-intro/gettingstarted.html">Getting started with R</a></li>
+</ul>
+
+<h3 id="python--tutorial">Python  Tutorial</h3>
+
+<ul>
+  <li><a href="https://python.quantecon.org/intro.html">Quantecon Python Introduction</a></li>
+  <li><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html">Pandas Introduction</a></li>
+</ul>
+
+<h3 id="python-for-econometrics">Python for Econometrics</h3>
+
+<ul>
+  <li><a href="https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf">Python for Econometrics</a></li>
+  <li><a href="https://mixtape.scunning.com/">Mixtape by Scrunning</a></li>
+  <li>[Python by Keven Sheppard](</li>
+</ul>
+:ET

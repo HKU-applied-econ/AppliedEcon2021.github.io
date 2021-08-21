@@ -5,9 +5,388 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Aug 2021 18:52:34 +0800</pubDate>
-    <lastBuildDate>Thu, 19 Aug 2021 18:52:34 +0800</lastBuildDate>
+    <pubDate>Thu, 19 Aug 2021 22:51:40 +0800</pubDate>
+    <lastBuildDate>Thu, 19 Aug 2021 22:51:40 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Python Basics</title>
+        <description>&lt;p&gt;After we configure the environment, we start with basic dataset. For this section, we show the basic data analysis using the dataset.&lt;/p&gt;
+
+&lt;h1 id=&quot;python-basics&quot;&gt;Python Basics&lt;/h1&gt;
+&lt;p&gt;In this section, we get familiar with the syntax of Python, commenting, conditional
+statements, loops, and functions.&lt;/p&gt;
+&lt;h2 id=&quot;comments&quot;&gt;Comments&lt;/h2&gt;
+&lt;p&gt;A comment explains what a line of code does, and is used by programmers to help others understand the code they have written. In Python, a comment starts with the # symbol.&lt;/p&gt;
+&lt;h2 id=&quot;printing&quot;&gt;Printing&lt;/h2&gt;
+&lt;p&gt;The print function prints content to the screen or any other output device.
+Generally, we pass a combination of strings and variables as arguments to the print
+function. Arguments are the values included within the parenthesis of a function, which
+the function uses for producing the result. In the following statement, “Hello!” is the
+argument to the print function.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'''Today is a lovely day.
+It will be warm and sunny.
+It is ideal for hiking.'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Today is a lovely day.
+It will be warm and sunny.
+It is ideal for hiking.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that we do not use semicolons in Python to end statements, unlike some other languages.
+The format method can be used in conjunction with the print method for embedding
+variables within a string. It uses curly braces as placeholders for variables that are passed
+as arguments to the method.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 01 Aug 2021 00:00:00 +0800</pubDate>
+        <link>/about/week1-2</link>
+        <guid isPermaLink="true">/about/week1-2</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Configure Data Analysis Environment</title>
+        <description>&lt;p&gt;To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
+We mainly use two languages for this course, R and Python. You can pick one favorate language to use.&lt;/p&gt;
+
+&lt;h1 id=&quot;install-python-and-pandas&quot;&gt;Install Python and Pandas&lt;/h1&gt;
+
+&lt;p&gt;Anaconda is an open source platform used widely by Python programmers and data scientists. Installing this platform installs Python, the Jupyter notebook application, and hundreds of libraries. 
+The following are the steps you need to follow for installing the Anaconda distribution.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the following URL: &lt;a href=&quot;https://www.anaconda.com/products/individual&quot;&gt;Anaconda&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Click the installer for your operating system, as shown in the following figure.
+The installer gets downloaded to your system.
+&lt;img src=&quot;img/W1/1.png&quot; alt=&quot;Figure 1-1&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Open the installer (file downloaded in the previous step) and run the graphic installer. Simply follow the steps indicated.&lt;/li&gt;
+  &lt;li&gt;Open the Jupyter Notebook on your computer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;install-packages-in-python&quot;&gt;Install Packages in Python&lt;/h2&gt;
+
+&lt;p&gt;Open a terminal on your operation system. If you have a PC, search for a cmd window. If you have a Mac, search for terminal.&lt;/p&gt;
+
+&lt;p&gt;For example, if we want to install the &lt;a href=&quot;https://bashtage.github.io/linearmodels/&quot;&gt;linearmodels package&lt;/a&gt; in Python, simply type:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;linearmodels
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;start-jupyter-notebook&quot;&gt;Start Jupyter Notebook&lt;/h2&gt;
+
+&lt;p&gt;Find the App Jupyter Notebook and open the program. It should automatically start in your browser. 
+&lt;img src=&quot;img/W1/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By clicking the “New” button on the upper right corner, we can start a new Python Instance. 
+For more details in Jupyter Notebook, see the &lt;a href=&quot;https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html&quot;&gt;introduction&lt;/a&gt; and practice using the jupyter notebook.&lt;/p&gt;
+
+&lt;h1 id=&quot;install-r-and-rstudio&quot;&gt;Install R and Rstudio&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Installing R is very straightforward. The easiest way is to install it through CRAN, which stands for The Comprehensive R Archive Network. Just visit the CRAN downloads page and follow the links: &lt;a href=&quot;https://cran.r-project.org/&quot;&gt;CTRAN&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once R is installed, you can proceed to install the RStudio IDE to have a much-improved environment to work in your R scripts. It includes a console that supports direct code execution and tools for plotting and keeping track of your variables in the workspace, among other features. &lt;a href=&quot;https://www.rstudio.com/products/rstudio/download/#download&quot;&gt;RStudio&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;installing-packages-in-r&quot;&gt;Installing Packages in R&lt;/h2&gt;
+&lt;p&gt;Now you have base R installed on your system and a nice IDE to begin your R programming journey. However, base R is rather limited in the things that it can do, which is why we have R packages such as dplyr for enhanced data-wrangling capabilities or ggplot2 for improved data visualizations. There are two simple ways to install R packages using RStudio. The first is to execute the following line of code in the console:&lt;/p&gt;
+
+&lt;div class=&quot;language-R highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;install.packages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;dplyr&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ggplot2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Sun, 01 Aug 2021 00:00:00 +0800</pubDate>
+        <link>/about/week1-1</link>
+        <guid isPermaLink="true">/about/week1-1</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Introduction</title>
+        <description>&lt;h2 id=&quot;economic-questions-and-data&quot;&gt;Economic Questions and Data&lt;/h2&gt;
+
+&lt;p&gt;Many decisions in economics, business, and government hinge on understanding relationships among variables in the world around us. These decisions require quantitative answers to quantitative questions.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Question #1: Does Reducing Class Size Improve Elementary School Education?&lt;/li&gt;
+  &lt;li&gt;Question #2: Is There Racial Discrimination in the Market for Home Loans?&lt;/li&gt;
+  &lt;li&gt;Question #3: Does Healthcare Spending Improve Health Outcomes?&lt;/li&gt;
+  &lt;li&gt;Question #4: By How Much Will U.S. GDP Grow Next Year?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-causal-inference&quot;&gt;What is causal inference?&lt;/h2&gt;
+
+&lt;h4 id=&quot;so-how-would-i-define-causal-inference&quot;&gt;So how would I define causal inference?&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Causal inference is the leveraging of theory and deep knowledge of institutional details to estimate the impact of events and choices on a given outcome of interest.&lt;/li&gt;
+  &lt;li&gt;It is not a new field; humans have been obsessing over causality since antiquity. But what is new is the progress we believe we’ve made in estimating causal effects both inside and outside the laboratory.&lt;/li&gt;
+  &lt;li&gt;Some date the beginning of this new, modern causal inference to Fisher (1935), Haavelmo (1943), or Rubin (1974). Some connect it to the work of early pioneers like John Snow.&lt;/li&gt;
+  &lt;li&gt;It’s sometimes reviewed in a lengthy chapter on “program evaluation” in econometrics textbooks (Wooldridge 2010), or even given entire book-length treatments.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;correlation-with-causality&quot;&gt;Correlation with causality&lt;/h4&gt;
+
+&lt;p&gt;It is very common these days to hear someone say “correlation does not mean causality.”&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When the rooster crows, the sun soon after rises, but we know the rooster didn’t cause the sun to rise. Had the rooster been eaten by the farmer’s cat, the sun still would have risen. Yet so often people make this kind of mistake when naively interpreting simple correlations.&lt;/li&gt;
+  &lt;li&gt;But weirdly enough, sometimes there are causal relationships between two things and yet &lt;em&gt;no observable correlation&lt;/em&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;Consider a central bank reading tea leaves to discern when a recessionary wave is forming.&lt;/li&gt;
+      &lt;li&gt;Seeing evidence that a recession is emerging, the bank enters into open-market operations, buying bonds and pumping liquidity into the economy.&lt;/li&gt;
+      &lt;li&gt;These actions are done optimally, these open-market operations will show no relationship whatsoever with actual output.&lt;/li&gt;
+      &lt;li&gt;In fact, in the ideal, banks may engage in aggressive trading in order to stop a recession, and we would be unable to see any evidence that it was working &lt;em&gt;even though it was&lt;/em&gt;!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;example-price-elasticity-of-demand&quot;&gt;Example: Price Elasticity of Demand&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;One of the cornerstones of scientific methodologies is empirical analysis - use data to test a theory or to estimate a relationship between variables.&lt;/li&gt;
+  &lt;li&gt;The first step in conducting an empirical economic analysis is the careful formulation of the question we would like to answer.&lt;/li&gt;
+  &lt;li&gt;In some cases, we would like to develop and test a formal economic model that describes mathematically a certain relationship, behavior, or process of interest.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A model is the framework with which we describe the relationships we are interested in, the intuition for our results, and the hypotheses we would like to test&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;describe the phenomena of interest and&lt;/li&gt;
+  &lt;li&gt;make falsifiable (testable) predictions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After we have specified a model, we turn it into what is called an econometric model, which&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;can be estimated directly with data.&lt;/li&gt;
+  &lt;li&gt;how to describe the relationships of the variables we are interested in through an equation.&lt;/li&gt;
+  &lt;li&gt;how we will deal with variables that cannot be directly or reasonably observed by the researcher, or that cannot be measured very well, but which play an important role in our model.&lt;/li&gt;
+  &lt;li&gt;Comparative statics: theoretical descriptions of causal effects contained within the model.
+    &lt;ul&gt;
+      &lt;li&gt;idea of &lt;em&gt;ceteris paribus&lt;/em&gt;—or “all else constant.”&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To illustrate this idea, let’s begin with a basic economic model: supply and demand equilibrium and the problems it creates for estimating the price elasticity of demand. Policy-makers and business managers have a natural interest in learning the price elasticity of demand because knowing it enables firms to maximize profits and governments to choose optimal taxes, and whether to restrict quantity altogether (Becker, Grossman, and Murphy &lt;a href=&quot;https://mixtape.scunning.com/references.html#ref-Becker2006&quot;&gt;2006&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;But the problem is that we do not observe demand curves, because demand curves are theoretical objects. More specifically, a demand curve is a collection of paired potential outcomes of price and quantity. We observe &lt;em&gt;price and quantity equilibrium values&lt;/em&gt;, not the potential price and potential quantities along the entire demand curve. Only by tracing out the potential outcomes along a demand curve can we calculate the elasticity.&lt;/p&gt;
+
+&lt;p&gt;The demand price elasticity is the solution to
+\(\epsilon = \frac{\partial \log Q}{\partial \log P}\)
+For instance, it holds supply fixed, the prices of other goods fixed, income fixed, preferences fixed, input costs fixed, and so on. In order to estimate the price elasticity of demand, we need changes in $P$ that are completely and utterly independent of the otherwise normal determinants of supply and the other determinants of demand.&lt;/p&gt;
+
+&lt;p&gt;Otherwise we get shifts in either supply or demand, which creates new pairs of data for which any correlation between $P$​ and $Q$​ will not be a measure of the elasticity of demand.&lt;/p&gt;
+
+&lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Experimental data come from experiments designed to evaluate a treatment or policy or to investigate a causal effect.
+    &lt;ul&gt;
+      &lt;li&gt;For example, the state of Tennessee financed a large randomized controlled experiment examining class size in the 1980s. In that experiment, which we examine in SW Chapter 13, thousands of students were randomly assigned to classes of different sizes for several years and were given standardized tests annually.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Data obtained by observing actual behavior outside an experimental setting are called &lt;strong&gt;observational data&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cross-sectional data: Data on different entities—workers, consumers, firms, governmental units, etc for a single time period.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Time series data&lt;/strong&gt; are data for a single entity (person, firm, country) collected at multiple time periods. Our data set on the growth rate of GDP and the term spread in the United States is an example of a time series data set.&lt;/li&gt;
+  &lt;li&gt;Panel data, also called longitudinal data, are data for multiple entities in which each entity is observed at two or more time periods.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;reading&quot;&gt;Reading&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mixtape.scunning.com/introduction.html#what-is-causal-inference&quot;&gt;Mixtape Chapter 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;SW Chapter 1&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 01 Aug 2021 00:00:00 +0800</pubDate>
+        <link>/about/week1-0</link>
+        <guid isPermaLink="true">/about/week1-0</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Week 6 Material</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Week 6
+    &lt;ul&gt;
+      &lt;li&gt;Times series regressions and forecasting (SW, Ch. 14)&lt;/li&gt;
+      &lt;li&gt;Machine Learning (material will be distributed by instructor&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <link>/about/week6</link>
+        <guid isPermaLink="true">/about/week6</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
+    
+      <item>
+        <title>Week 5 Material</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Week 5
+    &lt;ul&gt;
+      &lt;li&gt;Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)(98 pages, 4-5 hours)  (&lt;a href=&quot;2021/Theory/9_IV_regression.pdf&quot;&gt;Slides&lt;/a&gt;)
+        &lt;ul&gt;
+          &lt;li&gt;The slides has 90 pages. Need at least 4 hours to cover.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Experiments and Quasi-Experiments (Chapter 13)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <link>/about/week5</link>
+        <guid isPermaLink="true">/about/week5</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
+    
+      <item>
+        <title>Week 4 Material</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Week 4
+    &lt;ul&gt;
+      &lt;li&gt;Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14) (56 pages, 2 hrs)  (&lt;a href=&quot;2021/Theory/8_panel_regression.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+      &lt;li&gt;Threats to (Internal / External) Validity (SW, Ch. 9)  (&lt;a href=&quot;2021/Theory/6_extermal_validity.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <link>/about/week4</link>
+        <guid isPermaLink="true">/about/week4</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
+    
+      <item>
+        <title>Week 3 Material</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Week 3
+    &lt;ul&gt;
+      &lt;li&gt;Theoretical Model
+        &lt;ul&gt;
+          &lt;li&gt;Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) (&lt;a href=&quot;2021/Theory/5_nonlinear_regression.pdf&quot;&gt;Slides&lt;/a&gt;) (55 pages, 2 hrs)&lt;/li&gt;
+          &lt;li&gt;Regressions with binary dependent variables (SW, Ch. 11) (&lt;a href=&quot;2021/Theory/7_binary_regression.pdf&quot;&gt;Slides&lt;/a&gt;) (55 pages, 2 hrs)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;u&gt;Potentially Midterm? (1 hour, need discussion)&lt;/u&gt;&lt;/li&gt;
+      &lt;li&gt;Programming Exercisess&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <link>/about/week3</link>
+        <guid isPermaLink="true">/about/week3</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
+    
+      <item>
+        <title>Week 2 Material</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Week 2
+    &lt;ul&gt;
+      &lt;li&gt;Theoretical Model
+        &lt;ul&gt;
+          &lt;li&gt;Bivariate Regression (SW Ch. 4 – 5) (&lt;a href=&quot;2021/Theory/3_regression_with_single_regressor.pdf&quot;&gt;Slides&lt;/a&gt;) (60 pages, 2 hrs)&lt;/li&gt;
+          &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Programming Exercises
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html&quot;&gt;R tutorial for CA school example&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/3_regression_with_single_regressor.nb.html&quot;&gt;Using R for bivariate regression (Econometrics with R, CH 4-5)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/4_regression_multiple_regressor.nb.html&quot;&gt;Using R for multi-variate regression (Econometrics with R, CH 6 - 7)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <link>/about/week2</link>
+        <guid isPermaLink="true">/about/week2</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
+    
+      <item>
+        <title>Week 1 Material</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Lecture (6 hours course)
+    &lt;ul&gt;
+      &lt;li&gt;Review of Theory (4 hrs)
+        &lt;ul&gt;
+          &lt;li&gt;Introduction: Evidence and Policy (&lt;a href=&quot;2021/Theory/0_introduction.pdf&quot;&gt;Slides&lt;/a&gt;) (28 pages, 1 hrs)&lt;/li&gt;
+          &lt;li&gt;Causality and Validity Probability(&lt;a href=&quot;2021/Theory/1_probability.pdf&quot;&gt;Slides&lt;/a&gt;) (54 pages, 2 hrs)&lt;/li&gt;
+          &lt;li&gt;Statistical Theory Review (&lt;a href=&quot;2021/Theory/2_statistics.pdf&quot;&gt;Slides&lt;/a&gt;) (20 pages, 1 hrs)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Introduction to Programming Language (2 hrs)&lt;/em&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Introduction to programming language and set up the environment (1 hrs)
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/1-2-a-very-short-introduction-to-r-and-rstudio.html&quot;&gt;R Basics&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf&quot;&gt;Introduction to Python/R&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Basic programming exercise (1 hrs)
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://mixtape.scunning.com/probability-and-regression.html&quot;&gt;Probability and Statistical Theory Review (SW Ch. 2 -3)&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;SW CH3. E3.1&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tutorial
+    &lt;ul&gt;
+      &lt;li&gt;How to use Rstudio.&lt;/li&gt;
+      &lt;li&gt;How to use R markdown.&lt;/li&gt;
+      &lt;li&gt;Probability Exercise Intro2Metrics 1.5 - 1.9, 1.17 - 1.19, 2.1 - 2.6, 2.11 - 2.15&lt;/li&gt;
+      &lt;li&gt;Statistics Exercise Intro2Metrics 13.5 - 13.6, 13.11 - 13.12, SW 3.1 - 3.4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Assignment: Due on Sep 14th.
+&lt;a href=&quot;Assignment1.pdf&quot;&gt;Assignment(due Sep 14th)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <link>/about/week1</link>
+        <guid isPermaLink="true">/about/week1</guid>
+        
+        
+        <category>AppliedEconometrics</category>
+        
+      </item>
     
       <item>
         <title>Course Information</title>
@@ -60,168 +439,6 @@ Topics include multilinear regressions, limited dependent variable, panel data, 
         <pubDate>Wed, 02 Jun 2021 00:00:00 +0800</pubDate>
         <link>/about/0-info</link>
         <guid isPermaLink="true">/about/0-info</guid>
-        
-        
-        <category>AppliedEconometrics</category>
-        
-      </item>
-    
-      <item>
-        <title>Course Outline</title>
-        <description>&lt;h1 id=&quot;course-outline&quot;&gt;&lt;strong&gt;Course Outline&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Week 1 (6 hours course)
-    &lt;ul&gt;
-      &lt;li&gt;Review of Theory (4 hrs)
-        &lt;ul&gt;
-          &lt;li&gt;Introduction: Evidence and Policy (&lt;a href=&quot;2021/Theory/0_introduction.pdf&quot;&gt;Slides&lt;/a&gt;) (28 pages, 1 hrs)&lt;/li&gt;
-          &lt;li&gt;Causality and Validity Probability(&lt;a href=&quot;2021/Theory/1_probability.pdf&quot;&gt;Slides&lt;/a&gt;) (54 pages, 2 hrs)
-            &lt;ul&gt;
-              &lt;li&gt;Probability Exercise Intro2Metrics 1.5 - 1.9, 1.17 - 1.19, 2.1 - 2.6, 2.11 - 2.15&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Statistical Theory Review (&lt;a href=&quot;2021/Theory/2_statistics.pdf&quot;&gt;Slides&lt;/a&gt;) (20 pages, 1 hrs)
-            &lt;ul&gt;
-              &lt;li&gt;Statistics Exercise Intro2Metrics 13.5 - 13.6, 13.11 - 13.12, SW 3.1 - 3.4&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;Introduction to Programming Language (2 hrs)&lt;/em&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Introduction to programming language and set up the environment (1 hrs)
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/1-2-a-very-short-introduction-to-r-and-rstudio.html&quot;&gt;R Basics&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf&quot;&gt;Introduction to Python/R&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Basic programming exercise (1 hrs)
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://mixtape.scunning.com/probability-and-regression.html&quot;&gt;Probability and Statistical Theory Review (SW Ch. 2 -3)&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;SW CH3. E3.1&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;Assignment1.pdf&quot;&gt;Assignment(due Sep 14th)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Week 2
-    &lt;ul&gt;
-      &lt;li&gt;Theoretical Model
-        &lt;ul&gt;
-          &lt;li&gt;Bivariate Regression (SW Ch. 4 – 5) (&lt;a href=&quot;2021/Theory/3_regression_with_single_regressor.pdf&quot;&gt;Slides&lt;/a&gt;) (60 pages, 2 hrs)&lt;/li&gt;
-          &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Programming Exercises
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html&quot;&gt;R tutorial for CA school example&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-lrwor.html https://www.econometrics-with-r.org/5-htaciitslrm.html&quot;&gt;Using R for bivariate regression (Econometrics with R, CH 4-5)&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/6-rmwmr.html https://www.econometrics-with-r.org/7-htaciimr.html&quot;&gt;Using R for multi-variate regression (Econometrics with R, CH 6 - 7)&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Week 3
-    &lt;ul&gt;
-      &lt;li&gt;Theoretical Model
-        &lt;ul&gt;
-          &lt;li&gt;Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) (&lt;a href=&quot;2021/Theory/5_nonlinear_regression.pdf&quot;&gt;Slides&lt;/a&gt;) (55 pages, 2 hrs)&lt;/li&gt;
-          &lt;li&gt;Regressions with binary dependent variables (SW, Ch. 11) (&lt;a href=&quot;2021/Theory/7_binary_regression.pdf&quot;&gt;Slides&lt;/a&gt;) (55 pages, 2 hrs)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;u&gt;Potentially Midterm? (1 hour, need discussion)&lt;/u&gt;&lt;/li&gt;
-      &lt;li&gt;Programming Exercisess&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Week 4
-    &lt;ul&gt;
-      &lt;li&gt;Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14) (56 pages, 2 hrs)  (&lt;a href=&quot;2021/Theory/8_panel_regression.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-      &lt;li&gt;Threats to (Internal / External) Validity (SW, Ch. 9)  (&lt;a href=&quot;2021/Theory/6_extermal_validity.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Week 5
-    &lt;ul&gt;
-      &lt;li&gt;Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)(98 pages, 4-5 hours)  (&lt;a href=&quot;2021/Theory/9_IV_regression.pdf&quot;&gt;Slides&lt;/a&gt;)
-        &lt;ul&gt;
-          &lt;li&gt;The slides has 90 pages. Need at least 4 hours to cover.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Experiments and Quasi-Experiments (Chapter 13)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Week 6
-    &lt;ul&gt;
-      &lt;li&gt;Times series regressions and forecasting (SW, Ch. 14)&lt;/li&gt;
-      &lt;li&gt;Machine Learning (material will be distributed by instructor&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;p&gt;Main textbook:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stock, James and Mark Watson (2018), &lt;em&gt;Introduction to&lt;/em&gt; &lt;em&gt;Econometrics&lt;/em&gt;, Global Edition, 4th ed., Pearson. (It is perfectly fine if you use the 3rd edition of this textbook.)&lt;/li&gt;
-  &lt;li&gt;Hanck, Christoph, Martin Arnold, Alexander Gerber, and Martin Schmelzer. “Introduction to Econometrics with R.” University of Duisburg-Essen (2019).
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/&quot;&gt;Online course notes&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Supplementary textbook:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Jeffrey Wooldridge , &lt;em&gt;Introductory Econometrics: A Modern Approach&lt;/em&gt;, Ohio : South-Western Cengage Learning.&lt;/li&gt;
-  &lt;li&gt;Cunningham, Scott. “Causal Inference.” &lt;em&gt;The Mixtape&lt;/em&gt; 1 (2020).
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://mixtape.scunning.com/index.html&quot;&gt;Online course notes&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Sheppard, Kevin. “Introduction to Python for econometrics, statistics and data analysis.” &lt;em&gt;Self-published, University of Oxford, version&lt;/em&gt; 2 (2012).
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.kevinsheppard.com/teaching/python/notes/#notes&quot;&gt;Online course notes&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;h3 id=&quot;datasets&quot;&gt;Datasets&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://fmwww.bc.edu/ec-p/data/stockwatson/datasets.list.html&quot;&gt;Datasets used in Stock &amp;amp; Watson Textbook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;r-tutorial&quot;&gt;R-tutorial&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org&quot;&gt;Econometrics with R&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cengel.github.io/R-intro/gettingstarted.html&quot;&gt;Getting started with R&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;python--tutorial&quot;&gt;Python  Tutorial&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://python.quantecon.org/intro.html&quot;&gt;Quantecon Python Introduction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html&quot;&gt;Pandas Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;python-for-econometrics&quot;&gt;Python for Econometrics&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf&quot;&gt;Python for Econometrics&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mixtape.scunning.com/&quot;&gt;Mixtape by Scrunning&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;[Python by Keven Sheppard](&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 01 Jun 2021 00:00:00 +0800</pubDate>
-        <link>/about/1-syllabus</link>
-        <guid isPermaLink="true">/about/1-syllabus</guid>
         
         
         <category>AppliedEconometrics</category>

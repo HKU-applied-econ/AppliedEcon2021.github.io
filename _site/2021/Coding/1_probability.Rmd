@@ -1,0 +1,239 @@
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+### Basics
+A vector is the most common and basic data type in R, and is pretty much the workhorse of R. A vector is composed by a series of values, which can be either numbers or characters. We can assign a series of values to a vector using the `c()' function. For example we can create a vector of weights and assign it to a new object `y1':
+```{r}
+a <- 0 #numeric variable
+y1 <- c(1, 2, 3, 4, 5) #arbitrary vector of numbers
+y2 <- 1:9 #a sequence of numbers
+hello <- c("Hello", "World") #vector of strings
+```
+
+If we arrange data elements of a vector in a two-dimensional rectangular layout we have a matrix. To construct a matrix, we use a function conveniently called `matrix()'.
+```{r}
+mat1 = matrix(c(8,4,5,6),nrow = 2, ncol = 2,byrow = TRUE)
+mat2 = matrix(1:4,nrow = 2, ncol = 2,byrow = TRUE)
+```
+
+By using `*', we multiply two matrix element by element:
+```{r}
+print(mat1 * mat2)
+```
+
+The matrix product operator is `%*%':
+```{r}
+print(mat1 %*% mat2)
+
+```
+
+
+You have seen the function c() that can be used to combine objects. In general, all function calls look the same: a function name is always followed by round parentheses. Sometimes, the parentheses include arguments.
+
+We generate a sequence of numbers from 1 to 5, where the steplength is 2.
+```{r}
+z <- seq(from = 1, to = 5, by = 2)
+mean(z)
+```
+
+### Define functions
+The functions can be defined using the basic format. 
+The function can take 0 /1/ many arguement. 
+Here is an example of the 2 arguement functions.
+
+```{r}
+product <- function(x,y)
+{
+  x * y
+}
+product(1,3)
+product(mat1,mat2)
+
+```
+
+
+### Probability Distributions of Discrete Random Variables {-}
+
+A typical example for a discrete random variable $D$ is the result of a dice
+roll: in terms of a random experiment this is nothing but randomly selecting a
+sample of size $1$ from a set of numbers which are mutually exclusive outcomes.
+Here, the sample space is $\{1,2,3,4,5,6\}$ and we can think of many different
+events, e.g., 'the observed outcome lies between $2$ and $5$'.
+
+A basic function to draw random samples from a specified set of elements is the function `sample()`, see `?sample`. We can use it to simulate the random outcome of a dice roll. Let's roll the dice!
+
+```{r} 
+sample(1:6, 1)
+```
+
+The probability distribution of a discrete random variable is the list of all possible values of the variable and their probabilities which sum to $1$. The cumulative probability distribution function gives the probability that the random variable is less than or equal to a particular value.
+
+For the dice roll, the probability distribution and the cumulative probability distribution are summarized in Table \@ref(tab:pdist).
+
+```{r pdist, echo=FALSE, purl=FALSE}
+pdfdata <- rbind("Outcome"=as.character(1:6), "Probability"=c("1/6","1/6","1/6","1/6","1/6","1/6"), "Cumulative Probability"=c("1/6","2/6","3/6","4/6","5/6","1"))
+knitr::kable(pdfdata,  caption = "PDF and CDF of a Dice Roll")
+```
+
+We can easily plot both functions using R. Since the probability equals $1/6$ for each outcome, we set up the vector `probability` by using the function `rep()` which replicates a given value a specified number of times.
+
+```{r, eval = T, message = F, warning = F, fig.align='center', fig.pos="h"} 
+# generate the vector of probabilities 
+probability <- rep(1/6, 6) 
+
+# plot the probabilities 
+plot(probability,
+     xlab = "outcomes",
+     main = "Probability Distribution") 
+``` 
+
+For the cumulative probability distribution we need the cumulative probabilities, i.e., we need the cumulative sums of the vector `probability`. These sums can be computed using `cumsum()`.
+
+```{r} 
+# generate the vector of cumulative probabilities 
+cum_probability <- cumsum(probability) 
+
+# plot the probabilites 
+plot(cum_probability, 
+     xlab = "outcomes", 
+     main = "Cumulative Probability Distribution") 
+```
+
+### Expected Value, Mean and Variance {-}
+
+The expected value of a random variable is, loosely, the long-run average value of its outcomes when the number of repeated trials is large. For a discrete random variable, the
+expected value is computed as a weighted average of its possible outcomes
+whereby the weights are the related probabilities. 
+
+An example of sampling with replacement is rolling a dice three times in a row.
+
+```{r} 
+# set seed for reproducibility
+set.seed(1)
+
+# rolling a dice three times in a row
+sample(1:6, 3, replace = T)
+```
+Of course we could also consider a much bigger number of trials, $10000$ say.
+Doing so, it would be pointless to simply print the results to the console: by
+default `R` displays up to $1000$ entries of large vectors and omits the
+remainder (give it a try). Eyeballing the numbers does not reveal much.
+Instead, let us calculate the sample average of the outcomes using `mean()` and see if the result comes close to the expected value $E(D)=3.5$.
+
+```{r, eval = T, message = F, warning = F} 
+# set seed for reproducibility
+set.seed(1)
+
+# compute the sample mean of 10000 dice rolls
+mean(sample(1:6, 
+           10000, 
+           replace = T))
+```
+
+We find the sample mean to be fairly close to the expected value. 
+
+
+The variance as defined in Key Concept 2.2, being a population quantity, *is not* implemented as a function in R. Instead we have the function `var()` which computes the *sample variance* 
+
+$$ s^2_Y = \frac{1}{n-1} \sum_{i=1}^n (y_i - \overline{y})^2. $$
+
+Remember that $s^2_Y$ is different from the so called *population variance* of a discrete random variable $Y$, 
+
+$$ \text{Var}(Y) = \frac{1}{N} \sum_{i=1}^N (y_i - \mu_Y)^2 $$
+
+since it measures how the $n$ observations in the sample are dispersed around the sample average $\overline{y}$. Instead, $\text{Var}(Y)$ measures the dispersion of the whole population ($N$ members) around the population mean $\mu_Y$. The difference becomes clear when we look at our dice rolling example. For $D$ we have
+
+$$ \text{Var}(D) = 1/6 \sum_{i=1}^6 (d_i - 3.5)^2 = 2.92  $$
+which is obviously different from the result of $s^2$ as computed by `var()`.
+
+```{r, echo = 1, eval = T, message = F, warning = F} 
+var(1:6)
+```
+
+### Probability Distributions of Continuous Random Variables
+Since a continuous random variable takes on a continuum of possible values, we cannot use the concept of a probability distribution as used for discrete random variables. Instead, the probability distribution of a continuous random variable is summarized by its probability density function (PDF).
+
+The cumulative probability distribution function (CDF) for a continuous random variable is defined just as in the discrete case. Hence, the CDF of a continuous random variables states the probability that the random variable is less than or equal to a particular value.
+
+Consider the continuous random variable $X$ with PDF
+
+$$ f_X(x) = \frac{3}{x^4}, x>1. $$
+
+```{r}
+# define functions
+f <- function(x) 3 / x^4
+g <- function(x) x * f(x)
+h <- function(x) x^2 * f(x)
+```
+Next, we use integrate() and set lower and upper limits of integration to $1$ and $\infty$ using arguments lower and upper. By default, integrate() prints the result along with an estimate of the approximation error to the console. However, the outcome is not a numeric value one can readily do further calculation with. In order to get only a numeric value of the integral, we need to use the $ operator in conjunction with value. The $ operator is used to extract elements by name from an object of type list.
+```{r}
+# compute area under the density curve
+area <- integrate(f, 
+                 lower = 1, 
+                 upper = Inf)$value
+area 
+#> [1] 1
+
+# compute E(X)
+EX <- integrate(g,
+                lower = 1,
+                upper = Inf)$value
+EX
+#> [1] 1.5
+
+# compute Var(X)
+VarX <- integrate(h,
+                  lower = 1,
+                  upper = Inf)$value - EX^2 
+VarX
+#> [1] 0.75
+```
+
+### The Normal Distribution {-}
+
+The probably most important probability distribution considered here is the normal
+distribution. This is not least due to the special role of the standard normal distribution and the Central Limit Theorem which is to be treated shortly. Normal distributions are symmetric and bell-shaped. A normal distribution is characterized by its mean $\mu$ and its standard deviation $\sigma$, concisely expressed by
+$\mathcal{N}(\mu,\sigma^2)$. The normal distribution has the PDF
+
+\begin{align}
+f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \exp{-(x - \mu)^2/(2 \sigma^2)}.
+\end{align}
+
+For the standard normal distribution we have $\mu=0$ and $\sigma=1$. Standard normal variates are often denoted by $Z$. Usually, the standard normal PDF is denoted by $\phi$ and the standard normal CDF is denoted by $\Phi$. Hence,
+$$ \phi(c) = \Phi'(c) \ \ , \ \ \Phi(c) = P(Z \leq c) \ \ , \ \ Z \sim \mathcal{N}(0,1).$$ Note that the notation X $\sim$ Y reads as "X is distributed as Y". In `R`, we can conveniently obtain densities of normal distributions using the function `dnorm()`. Let us draw a plot of the standard normal density function using `curve()` together with `dnorm()`
+```{r} 
+# draw a plot of the N(0,1) PDF
+curve(dnorm(x),
+      xlim = c(-3.5, 3.5),
+      ylab = "Density", 
+      main = "Standard Normal Density Function") 
+```
+
+
+We can obtain the density at different positions by passing a vector to `dnorm()`.
+
+```{r}
+# compute density at x=-1.96, x=0 and x=1.96
+dnorm(x = c(-1.96, 0, 1.96))
+```
+
+Similar to the PDF, we can plot the standard normal CDF using `curve`. We could use `dnorm()` for this but it is much more convenient to rely on `pnorm()`.
+
+```{r}
+# plot the standard normal CDF
+curve(pnorm(x), 
+      xlim = c(-3.5, 3.5), 
+      ylab = "Probability", 
+      main = "Standard Normal Cumulative Distribution Function")
+```
