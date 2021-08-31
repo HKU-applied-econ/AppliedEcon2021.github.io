@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Aug 2021 12:35:01 +0800</pubDate>
-    <lastBuildDate>Tue, 31 Aug 2021 12:35:01 +0800</lastBuildDate>
+    <pubDate>Tue, 31 Aug 2021 17:35:11 +0800</pubDate>
+    <lastBuildDate>Tue, 31 Aug 2021 17:35:11 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -354,12 +354,19 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
             &lt;ul&gt;
               &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/2-2-RSATDOSA.html#mean-and-variance-of-the-sample-mean&quot;&gt;Mean and Variance&lt;/a&gt;&lt;/li&gt;
               &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/2-2-RSATDOSA.html#large-sample-approximations-to-sampling-distributions&quot;&gt;Large Sample Approximation&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-1-estimation-of-the-population-mean.html&quot;&gt;Estimation of the population mean&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-2-potsm.html&quot;&gt;Properties of the sample mean&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
+          &lt;li&gt;Application Example: &lt;a href=&quot;https://www.econometrics-with-r.org/3-6-aattggoe.html&quot;&gt;Gender Wage Equality&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;Introduction to programming language and set up the environment (1 hrs)
             &lt;ul&gt;
               &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/1-2-a-very-short-introduction-to-r-and-rstudio.html&quot;&gt;R Basics&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf&quot;&gt;Introduction to Python/R&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;2021/Coding/1_probability.html&quot;&gt;Matrix and Probability&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;Reading: &lt;a href=&quot;https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf&quot;&gt;Introduction to Python/R&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
           &lt;li&gt;Basic programming exercise (1 hrs)
