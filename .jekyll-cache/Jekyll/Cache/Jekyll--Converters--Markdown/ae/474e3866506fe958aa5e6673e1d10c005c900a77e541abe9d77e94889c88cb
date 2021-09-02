@@ -1,0 +1,40 @@
+I";<ul>
+  <li>Lecture (6 hours course)
+    <ul>
+      <li>Lecture 1: Review of Theory
+        <ul>
+          <li>Logistics (<a href="2021/Theory/0_logistics.pdf">Slides</a>)</li>
+          <li>Introduction: Evidence and Policy (<a href="2021/Theory/0_introduction.pdf">Slides</a>)</li>
+          <li>Probability(<a href="2021/Theory/1_probability.pdf">Slides</a>)</li>
+        </ul>
+      </li>
+      <li>Lecture 2: Review of Theory and Programming
+        <ul>
+          <li>Statistics (<a href="2021/Theory/1_probability.pdf">Slides</a>)</li>
+          <li><a href="2021/Coding/1_probability.html">Matrix and Probability</a>
+            <ul>
+              <li>Reference book: <a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">R for beginners</a></li>
+            </ul>
+          </li>
+          <li>R basics
+            <ul>
+              <li>R studio/ Rmarkdown (<a href="2021/Coding/R%20and%20Rstudio.pdf">Handouts</a>)
+                <ul>
+                  <li>how to write blocks</li>
+                  <li>ctrl + shift + enter to run blocks</li>
+                </ul>
+              </li>
+              <li>variable, vectors, functions, matrix</li>
+              <li><code class="language-plaintext highlighter-rouge">plot</code>/<code class="language-plaintext highlighter-rouge">hist</code>/<code class="language-plaintext highlighter-rouge">curve</code></li>
+              <li><code class="language-plaintext highlighter-rouge">help(rnorm)</code></li>
+              <li><code class="language-plaintext highlighter-rouge">install.packages("readxl")</code></li>
+              <li><code class="language-plaintext highlighter-rouge">set.seed()</code></li>
+              <li><code class="language-plaintext highlighter-rouge">head</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
