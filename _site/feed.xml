@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Sep 2021 23:40:26 +0800</pubDate>
-    <lastBuildDate>Thu, 02 Sep 2021 23:40:26 +0800</lastBuildDate>
+    <pubDate>Fri, 03 Sep 2021 18:41:47 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Sep 2021 18:41:47 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -25,9 +25,9 @@ function. Arguments are the values included within the parenthesis of a function
 the function uses for producing the result. In the following statement, “Hello!” is the
 argument to the print function.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'''Today is a lovely day.
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&apos;&apos;Today is a lovely day.
 It will be warm and sunny.
-It is ideal for hiking.'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+It is ideal for hiking.&apos;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -427,7 +427,7 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Assignment: Due on Sep 12th.
-&lt;!-- [Assignment(due Sep 14th)](Assignment1.pdf)  --&gt;&lt;/li&gt;
+&lt;a href=&quot;2021/Assignment/Assignment1.pdf&quot;&gt;Assignment(due Sep 14th)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
