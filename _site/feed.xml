@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Sep 2021 18:41:47 +0800</pubDate>
-    <lastBuildDate>Fri, 03 Sep 2021 18:41:47 +0800</lastBuildDate>
+    <pubDate>Fri, 03 Sep 2021 18:47:47 +0800</pubDate>
+    <lastBuildDate>Fri, 03 Sep 2021 18:47:47 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -402,13 +402,31 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
           &lt;/li&gt;
           &lt;li&gt;Statistics
             &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-2-potsm.html&quot;&gt;Properties of the sample mean&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-3-hypothesis-tests-concerning-the-population-mean.html&quot;&gt;Hypothesis Testing with Bournoulli Variable&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;Application Example: &lt;a href=&quot;https://www.econometrics-with-r.org/3-6-aattggoe.html&quot;&gt;Gender Wage Equality&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-7-scatterplots-sample-covariance-and-sample-correlation.html&quot;&gt;Scatter plot&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-2-potsm.html&quot;&gt;Properties of the sample mean&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;The shape of the distribution&lt;/li&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lines&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-3-hypothesis-tests-concerning-the-population-mean.html&quot;&gt;Hypothesis Testing with Bournoulli Variable&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;how to compute and how to understand p-value&lt;/li&gt;
+                  &lt;li&gt;distribution of t-statistics&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;Application Example: &lt;a href=&quot;https://www.econometrics-with-r.org/3-6-aattggoe.html&quot;&gt;Gender Wage Equality&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;dplyr&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-7-scatterplots-sample-covariance-and-sample-correlation.html&quot;&gt;Scatter plot&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cov&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cor&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;SW CH3. E3.1 &lt;a href=&quot;https://www.econometrics-with-r.org/3-6-aattggoe.html&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -419,11 +437,10 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
         &lt;ul&gt;
           &lt;li&gt;How to use Rstudio.&lt;/li&gt;
           &lt;li&gt;How to use R markdown.&lt;/li&gt;
-          &lt;li&gt;Give an introduction to dplyr: https://dplyr.tidyverse.org/articles/dplyr.html&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Probability Exercise Intro2Metrics(Pick 3 - 4 questions) 1.5 - 1.9, 1.17 - 1.19, 2.1 - 2.6, 2.11 - 2.15&lt;/li&gt;
-      &lt;li&gt;Statistics Exercise Intro2Metrics(Pick 3 questions) 13.5 - 13.6, 13.11 - 13.12, SW 3.1 - 3.4&lt;/li&gt;
+      &lt;li&gt;Probability Exercise Intro2Metrics exercise 2.1 - 2.6, 2.11 - 2.15&lt;/li&gt;
+      &lt;li&gt;Statistics Exercise Intro2Metrics(Pick 3 questions) exercise 13.5 - 13.6, 13.11, SW 3.1 - 3.4&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Assignment: Due on Sep 12th.
