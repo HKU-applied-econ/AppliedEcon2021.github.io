@@ -1,4 +1,4 @@
-I"-<ul>
+I"<ul>
   <li>Lecture (6 hours course)
     <ul>
       <li>Lecture 1: Review of Theory
@@ -20,10 +20,11 @@
                   <li>ctrl + shift + enter to run blocks</li>
                 </ul>
               </li>
-              <li><a href="2021/Coding/0_intro.html">Matrix and Probability</a>
+              <li><a href="2021/Coding/0_intro.html">Basics</a>
                 <ul>
                   <li>variable, vectors, functions, matrix</li>
                   <li><code class="language-plaintext highlighter-rouge">plot</code>/<code class="language-plaintext highlighter-rouge">hist</code>/<code class="language-plaintext highlighter-rouge">curve</code></li>
+                  <li><code class="language-plaintext highlighter-rouge">integrate</code></li>
                   <li><code class="language-plaintext highlighter-rouge">help(rnorm)</code></li>
                   <li><code class="language-plaintext highlighter-rouge">install.packages("readxl")</code></li>
                   <li><code class="language-plaintext highlighter-rouge">set.seed()</code></li>
@@ -49,7 +50,7 @@
                   <li><code class="language-plaintext highlighter-rouge">colMeans(samples)</code>: sum a 2D vector by rows</li>
                 </ul>
               </li>
-              <li><a href="https://www.econometrics-with-r.org/2-2-RSATDOSA.html#large-sample-approximations-to-sampling-distributions">Large Sample Approximation</a>
+              <li><a href="https://www.econometrics-with-r.org/2-2-RSATDOSA.html#large-sample-approximations-to-sampling-distributions">Large Sample Approximation*</a>
                 <ul>
                   <li>show the convergence in probability(LLN)</li>
                   <li>show the convergence in distribution(CLT)</li>
@@ -59,12 +60,26 @@
           </li>
           <li>Statistics
             <ul>
-              <li><a href="https://www.econometrics-with-r.org/3-2-potsm.html">Properties of the sample mean</a></li>
-              <li><a href="https://www.econometrics-with-r.org/3-3-hypothesis-tests-concerning-the-population-mean.html">Hypothesis Testing with Bournoulli Variable</a></li>
-              <li>Application Example: <a href="https://www.econometrics-with-r.org/3-6-aattggoe.html">Gender Wage Equality</a></li>
+              <li><a href="https://www.econometrics-with-r.org/3-2-potsm.html">Properties of the sample mean</a>
+                <ul>
+                  <li>The shape of the distribution</li>
+                  <li><code class="language-plaintext highlighter-rouge">lines</code></li>
+                </ul>
+              </li>
+              <li><a href="https://www.econometrics-with-r.org/3-3-hypothesis-tests-concerning-the-population-mean.html">Hypothesis Testing with Bournoulli Variable</a>
+                <ul>
+                  <li>how to compute and how to understand p-value</li>
+                  <li>distribution of t-statistics</li>
+                </ul>
+              </li>
+              <li>Application Example: <a href="https://www.econometrics-with-r.org/3-6-aattggoe.html">Gender Wage Equality</a>
+                <ul>
+                  <li>dplyr</li>
+                </ul>
+              </li>
+              <li><a href="https://www.econometrics-with-r.org/3-7-scatterplots-sample-covariance-and-sample-correlation.html">Scatter plot</a></li>
             </ul>
           </li>
-          <li>SW CH3. E3.1 <a href="https://www.econometrics-with-r.org/3-6-aattggoe.html">Link</a></li>
         </ul>
       </li>
     </ul>
@@ -75,15 +90,13 @@
         <ul>
           <li>How to use Rstudio.</li>
           <li>How to use R markdown.</li>
-          <li>Give an introduction to dplyr: https://dplyr.tidyverse.org/articles/dplyr.html</li>
         </ul>
       </li>
-      <li>Probability Exercise Intro2Metrics(Pick 3 - 4 questions) 1.5 - 1.9, 1.17 - 1.19, 2.1 - 2.6, 2.11 - 2.15</li>
-      <li>Statistics Exercise Intro2Metrics(Pick 3 questions) 13.5 - 13.6, 13.11 - 13.12, SW 3.1 - 3.4</li>
+      <li>Probability Exercise Intro2Metrics exercise 2.1 - 2.6, 2.11 - 2.15</li>
+      <li>Statistics Exercise Intro2Metrics(Pick 3 questions) exercise 13.5 - 13.6, 13.11, SW 3.1 - 3.4</li>
     </ul>
   </li>
   <li>Assignment: Due on Sep 12th.
-<!-- [Assignment(due Sep 14th)](Assignment1.pdf)  --></li>
+<a href="2021/Assignment/Assignment1.pdf">Assignment(due Sep 14th)</a></li>
 </ul>
-
 :ET
