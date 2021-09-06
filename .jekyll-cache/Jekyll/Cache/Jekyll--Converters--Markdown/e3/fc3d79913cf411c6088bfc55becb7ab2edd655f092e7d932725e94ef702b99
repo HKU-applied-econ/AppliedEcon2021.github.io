@@ -1,0 +1,42 @@
+I"<ul>
+  <li>Lecture
+    <ul>
+      <li>Theoretical Model
+        <ul>
+          <li>Bivariate Regression (SW Ch. 4 – 5) (<a href="2021/Theory/3_regression_with_single_regressor.pdf">Slides</a>) (60 pages, 2 hrs)
+            <ul>
+              <li>What if the OLS assumptions are not satisfied?
+                <ul>
+                  <li><a href="https://www.econometrics-with-r.org/4-4-tlsa.html#assumption-1-the-error-term-has-conditional-mean-of-zero">Assumption 1</a></li>
+                  <li><a href="https://www.econometrics-with-r.org/4-4-tlsa.html#assumption-2-independently-and-identically-distributed-data">Assumption 2</a></li>
+                  <li><a href="https://www.econometrics-with-r.org/4-4-tlsa.html#assumption-3-large-outliers-are-unlikely">Assumption 2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)</li>
+        </ul>
+      </li>
+      <li>Programming Exercises
+        <ul>
+          <li><a href="https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html">R tutorial for CA school example</a></li>
+          <li><a href="2021/Coding/3_regression_with_single_regressor.nb.html">Using R for bivariate regression (Econometrics with R, CH 4-5)</a>
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">lm</code></li>
+              <li><code class="language-plaintext highlighter-rouge">summary</code></li>
+              <li><code class="language-plaintext highlighter-rouge">vcovHC</code></li>
+              <li><code class="language-plaintext highlighter-rouge">conftest</code></li>
+            </ul>
+          </li>
+          <li><a href="2021/Coding/4_regression_multiple_regressor.nb.html">Using R for multi-variate regression (Econometrics with R, CH 6 - 7)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Tutorial
+    <ul>
+      <li>Give an introduction to dplyr: https://dplyr.tidyverse.org/articles/dplyr.html</li>
+    </ul>
+  </li>
+</ul>
+:ET

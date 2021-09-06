@@ -1,4 +1,4 @@
-I"<ul>
+I"—<ul>
   <li>Lecture (6 hours course)
     <ul>
       <li>Lecture 1: Review of Theory
@@ -24,8 +24,8 @@
                 <ul>
                   <li>variable, vectors, functions, matrix</li>
                   <li><code class="language-plaintext highlighter-rouge">plot</code>/<code class="language-plaintext highlighter-rouge">hist</code>/<code class="language-plaintext highlighter-rouge">curve</code></li>
-                  <li><code class="language-plaintext highlighter-rouge">integrate</code></li>
                   <li><code class="language-plaintext highlighter-rouge">help(rnorm)</code></li>
+                  <li><code class="language-plaintext highlighter-rouge">integrate</code></li>
                   <li><code class="language-plaintext highlighter-rouge">install.packages("readxl")</code></li>
                   <li><code class="language-plaintext highlighter-rouge">set.seed()</code></li>
                   <li><code class="language-plaintext highlighter-rouge">head</code></li>
@@ -66,15 +66,15 @@
                   <li><code class="language-plaintext highlighter-rouge">lines</code></li>
                 </ul>
               </li>
-              <li><a href="https://www.econometrics-with-r.org/3-3-hypothesis-tests-concerning-the-population-mean.html">Hypothesis Testing with Bournoulli Variable</a>
-                <ul>
-                  <li>how to compute and how to understand p-value</li>
-                  <li>distribution of t-statistics</li>
-                </ul>
-              </li>
               <li>Application Example: <a href="https://www.econometrics-with-r.org/3-6-aattggoe.html">Gender Wage Equality</a>
                 <ul>
                   <li>dplyr</li>
+                </ul>
+              </li>
+              <li>Hypothesis Testing with Bournoulli Variable
+                <ul>
+                  <li>how to compute and how to understand p-value</li>
+                  <li>distribution of t-statistics</li>
                 </ul>
               </li>
               <li><a href="https://www.econometrics-with-r.org/3-7-scatterplots-sample-covariance-and-sample-correlation.html">Scatter plot</a>

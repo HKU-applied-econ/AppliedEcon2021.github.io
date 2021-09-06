@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Sep 2021 18:47:47 +0800</pubDate>
-    <lastBuildDate>Fri, 03 Sep 2021 18:47:47 +0800</lastBuildDate>
+    <pubDate>Mon, 06 Sep 2021 16:30:03 +0800</pubDate>
+    <lastBuildDate>Mon, 06 Sep 2021 16:30:03 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -310,21 +310,43 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       <item>
         <title>Week 2 Material</title>
         <description>&lt;ul&gt;
-  &lt;li&gt;Week 2
+  &lt;li&gt;Lecture
     &lt;ul&gt;
       &lt;li&gt;Theoretical Model
         &lt;ul&gt;
-          &lt;li&gt;Bivariate Regression (SW Ch. 4 – 5) (&lt;a href=&quot;2021/Theory/3_regression_with_single_regressor.pdf&quot;&gt;Slides&lt;/a&gt;) (60 pages, 2 hrs)&lt;/li&gt;
+          &lt;li&gt;Bivariate Regression (SW Ch. 4 – 5) (&lt;a href=&quot;2021/Theory/3_regression_with_single_regressor.pdf&quot;&gt;Slides&lt;/a&gt;) (60 pages, 2 hrs)
+            &lt;ul&gt;
+              &lt;li&gt;What if the OLS assumptions are not satisfied?
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-4-tlsa.html#assumption-1-the-error-term-has-conditional-mean-of-zero&quot;&gt;Assumption 1&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-4-tlsa.html#assumption-2-independently-and-identically-distributed-data&quot;&gt;Assumption 2&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-4-tlsa.html#assumption-3-large-outliers-are-unlikely&quot;&gt;Assumption 2&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
           &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;Programming Exercises
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html&quot;&gt;R tutorial for CA school example&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;2021/Coding/3_regression_with_single_regressor.nb.html&quot;&gt;Using R for bivariate regression (Econometrics with R, CH 4-5)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/3_regression_with_single_regressor.nb.html&quot;&gt;Using R for bivariate regression (Econometrics with R, CH 4-5)&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lm&lt;/code&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;summary&lt;/code&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vcovHC&lt;/code&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conftest&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;2021/Coding/4_regression_multiple_regressor.nb.html&quot;&gt;Using R for multi-variate regression (Econometrics with R, CH 6 - 7)&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tutorial
+    &lt;ul&gt;
+      &lt;li&gt;Give an introduction to dplyr: https://dplyr.tidyverse.org/articles/dplyr.html&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -366,8 +388,8 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
                 &lt;ul&gt;
                   &lt;li&gt;variable, vectors, functions, matrix&lt;/li&gt;
                   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plot&lt;/code&gt;/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hist&lt;/code&gt;/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;curve&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;integrate&lt;/code&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;help(rnorm)&lt;/code&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;integrate&lt;/code&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;install.packages(&quot;readxl&quot;)&lt;/code&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set.seed()&lt;/code&gt;&lt;/li&gt;
                   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;head&lt;/code&gt;&lt;/li&gt;
@@ -408,15 +430,15 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
                   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lines&lt;/code&gt;&lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-3-hypothesis-tests-concerning-the-population-mean.html&quot;&gt;Hypothesis Testing with Bournoulli Variable&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;how to compute and how to understand p-value&lt;/li&gt;
-                  &lt;li&gt;distribution of t-statistics&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
               &lt;li&gt;Application Example: &lt;a href=&quot;https://www.econometrics-with-r.org/3-6-aattggoe.html&quot;&gt;Gender Wage Equality&lt;/a&gt;
                 &lt;ul&gt;
                   &lt;li&gt;dplyr&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;Hypothesis Testing with Bournoulli Variable
+                &lt;ul&gt;
+                  &lt;li&gt;how to compute and how to understand p-value&lt;/li&gt;
+                  &lt;li&gt;distribution of t-statistics&lt;/li&gt;
                 &lt;/ul&gt;
               &lt;/li&gt;
               &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-7-scatterplots-sample-covariance-and-sample-correlation.html&quot;&gt;Scatter plot&lt;/a&gt;
