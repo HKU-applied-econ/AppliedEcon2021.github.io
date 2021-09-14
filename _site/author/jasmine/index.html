@@ -257,13 +257,14 @@ Please feel free to reach out to me if you are interested in more technical stuf
               </li>
             </ul>
           </li>
-          <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)</li>
+          <li><a href="2021/Coding/4_regression_multiple_regressor.html">Using R for multi-variate regression (Econometrics with R, CH 6 - 7)</a></li>
+          <li>Multivariate Regression I &amp; II (SW Ch. 6 - 7)(<a href="2021/Theory/4_regression_multiple_regressor.pdf">Slides</a>)(46 pages, 2hrs)</li>
         </ul>
       </li>
       <li>Programming Exercises
         <ul>
           <li><a href="https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html">R tutorial for CA school example</a></li>
-          <li><a href="2021/Coding/3_regression_with_single_regressor.nb.html">Using R for bivariate regression (Econometrics with R, CH 4-5)</a>
+          <li><a href="2021/Coding/3_regression_with_single_regressor.html">Using R for bivariate regression (Econometrics with R, CH 4-5)</a>
             <ul>
               <li><code class="language-plaintext highlighter-rouge">lm</code></li>
               <li><code class="language-plaintext highlighter-rouge">summary</code></li>
@@ -271,7 +272,11 @@ Please feel free to reach out to me if you are interested in more technical stuf
               <li><code class="language-plaintext highlighter-rouge">conftest</code></li>
             </ul>
           </li>
-          <li><a href="2021/Coding/4_regression_multiple_regressor.nb.html">Using R for multi-variate regression (Econometrics with R, CH 6 - 7)</a></li>
+          <li><a href="2021/Coding/4_regression_multiple_regressor.html">Using R for multi-variate regression (Econometrics with R, CH 6 - 7)</a>
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">stargazer</code></li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
@@ -301,12 +306,21 @@ Please feel free to reach out to me if you are interested in more technical stuf
     <ul>
       <li>Theoretical Model
         <ul>
-          <li>Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) (<a href="2021/Theory/5_nonlinear_regression.pdf">Slides</a>) (55 pages, 2 hrs)</li>
-          <li>Regressions with binary dependent variables (SW, Ch. 11) (<a href="2021/Theory/7_binary_regression.pdf">Slides</a>) (55 pages, 2 hrs)</li>
+          <li>Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) (<a href="2021/Theory/5_nonlinear.pdf">Slides</a>)</li>
+          <li>Regressions with binary dependent variables (SW, Ch. 11) (<a href="2021/Theory/7_binary.pdf">Slides</a>)</li>
         </ul>
       </li>
-      <li><u>Potentially Midterm? (1 hour, need discussion)</u></li>
-      <li>Programming Exercisess</li>
+      <li>Programming Exercisess
+        <ul>
+          <li><a href="2021/Coding/5_nonlinear_regression.html">Nonlinear Regression</a></li>
+          <li><a href="https://www.econometrics-with-r.org/11-2-palr.html">Binary Regression</a>
+            <ul>
+              <li><code class="language-plaintext highlighter-rouge">glm(deny ~ pirat, family = binomial(link = "probit"),...)</code></li>
+              <li><code class="language-plaintext highlighter-rouge">glm(deny ~ pirat, family = binomial(link = "logit"),...)</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -327,8 +341,21 @@ Please feel free to reach out to me if you are interested in more technical stuf
             <ul>
   <li>Week 4
     <ul>
-      <li>Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14) (56 pages, 2 hrs)  (<a href="2021/Theory/8_panel_regression.pdf">Slides</a>)</li>
-      <li>Threats to (Internal / External) Validity (SW, Ch. 9)  (<a href="2021/Theory/6_extermal_validity.pdf">Slides</a>)</li>
+      <li>Theoretical Model
+        <ul>
+          <li>Threats to (Internal / External) Validity (SW, Ch. 9)  (<a href="2021/Theory/6_extermal_validity.pdf">Slides</a>)</li>
+          <li>Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)  (<a href="2021/Theory/8_panel_regression.pdf">Slides</a>)
+            <ul>
+              <li>the slides are not yet polished</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Coding Practice
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">plm</code> (need to install the library <code class="language-plaintext highlighter-rouge">install.packages("plm")</code>)</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -352,6 +379,7 @@ Please feel free to reach out to me if you are interested in more technical stuf
       <li>Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)(98 pages, 4-5 hours)  (<a href="2021/Theory/9_IV_regression.pdf">Slides</a>)
         <ul>
           <li>The slides has 90 pages. Need at least 4 hours to cover.</li>
+          <li>The slides are not polished.</li>
         </ul>
       </li>
       <li>Experiments and Quasi-Experiments (Chapter 13)</li>
@@ -376,7 +404,7 @@ Please feel free to reach out to me if you are interested in more technical stuf
   <li>Week 6
     <ul>
       <li>Times series regressions and forecasting (SW, Ch. 14)</li>
-      <li>Machine Learning (material will be distributed by instructor</li>
+      <li>Machine Learning (material will be distributed by instructor)</li>
     </ul>
   </li>
 </ul>

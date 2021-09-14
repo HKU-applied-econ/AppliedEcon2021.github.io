@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Sep 2021 16:30:03 +0800</pubDate>
-    <lastBuildDate>Mon, 06 Sep 2021 16:30:03 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Sep 2021 18:51:51 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Sep 2021 18:51:51 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -223,7 +223,7 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
   &lt;li&gt;Week 6
     &lt;ul&gt;
       &lt;li&gt;Times series regressions and forecasting (SW, Ch. 14)&lt;/li&gt;
-      &lt;li&gt;Machine Learning (material will be distributed by instructor&lt;/li&gt;
+      &lt;li&gt;Machine Learning (material will be distributed by instructor)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -245,6 +245,7 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       &lt;li&gt;Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)(98 pages, 4-5 hours)  (&lt;a href=&quot;2021/Theory/9_IV_regression.pdf&quot;&gt;Slides&lt;/a&gt;)
         &lt;ul&gt;
           &lt;li&gt;The slides has 90 pages. Need at least 4 hours to cover.&lt;/li&gt;
+          &lt;li&gt;The slides are not polished.&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;Experiments and Quasi-Experiments (Chapter 13)&lt;/li&gt;
@@ -266,8 +267,21 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
         <description>&lt;ul&gt;
   &lt;li&gt;Week 4
     &lt;ul&gt;
-      &lt;li&gt;Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14) (56 pages, 2 hrs)  (&lt;a href=&quot;2021/Theory/8_panel_regression.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-      &lt;li&gt;Threats to (Internal / External) Validity (SW, Ch. 9)  (&lt;a href=&quot;2021/Theory/6_extermal_validity.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+      &lt;li&gt;Theoretical Model
+        &lt;ul&gt;
+          &lt;li&gt;Threats to (Internal / External) Validity (SW, Ch. 9)  (&lt;a href=&quot;2021/Theory/6_extermal_validity.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+          &lt;li&gt;Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)  (&lt;a href=&quot;2021/Theory/8_panel_regression.pdf&quot;&gt;Slides&lt;/a&gt;)
+            &lt;ul&gt;
+              &lt;li&gt;the slides are not yet polished&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Coding Practice
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plm&lt;/code&gt; (need to install the library &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;install.packages(&quot;plm&quot;)&lt;/code&gt;)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -288,12 +302,21 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
     &lt;ul&gt;
       &lt;li&gt;Theoretical Model
         &lt;ul&gt;
-          &lt;li&gt;Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) (&lt;a href=&quot;2021/Theory/5_nonlinear_regression.pdf&quot;&gt;Slides&lt;/a&gt;) (55 pages, 2 hrs)&lt;/li&gt;
-          &lt;li&gt;Regressions with binary dependent variables (SW, Ch. 11) (&lt;a href=&quot;2021/Theory/7_binary_regression.pdf&quot;&gt;Slides&lt;/a&gt;) (55 pages, 2 hrs)&lt;/li&gt;
+          &lt;li&gt;Nonlinear Regression models: Quadratic and Logarithms (SW, Ch. 8) (&lt;a href=&quot;2021/Theory/5_nonlinear.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+          &lt;li&gt;Regressions with binary dependent variables (SW, Ch. 11) (&lt;a href=&quot;2021/Theory/7_binary.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;u&gt;Potentially Midterm? (1 hour, need discussion)&lt;/u&gt;&lt;/li&gt;
-      &lt;li&gt;Programming Exercisess&lt;/li&gt;
+      &lt;li&gt;Programming Exercisess
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/5_nonlinear_regression.html&quot;&gt;Nonlinear Regression&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/11-2-palr.html&quot;&gt;Binary Regression&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glm(deny ~ pirat, family = binomial(link = &quot;probit&quot;),...)&lt;/code&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glm(deny ~ pirat, family = binomial(link = &quot;logit&quot;),...)&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -325,13 +348,14 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
               &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)(46 pages, 2hrs)&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/4_regression_multiple_regressor.html&quot;&gt;Using R for multi-variate regression (Econometrics with R, CH 6 - 7)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;Multivariate Regression I &amp;amp; II (SW Ch. 6 - 7)(&lt;a href=&quot;2021/Theory/4_regression_multiple_regressor.pdf&quot;&gt;Slides&lt;/a&gt;)(46 pages, 2hrs)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;Programming Exercises
         &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/4-2-estimating-the-coefficients-of-the-linear-regression-model.html&quot;&gt;R tutorial for CA school example&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;2021/Coding/3_regression_with_single_regressor.nb.html&quot;&gt;Using R for bivariate regression (Econometrics with R, CH 4-5)&lt;/a&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/3_regression_with_single_regressor.html&quot;&gt;Using R for bivariate regression (Econometrics with R, CH 4-5)&lt;/a&gt;
             &lt;ul&gt;
               &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lm&lt;/code&gt;&lt;/li&gt;
               &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;summary&lt;/code&gt;&lt;/li&gt;
@@ -339,7 +363,11 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
               &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;conftest&lt;/code&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;2021/Coding/4_regression_multiple_regressor.nb.html&quot;&gt;Using R for multi-variate regression (Econometrics with R, CH 6 - 7)&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/4_regression_multiple_regressor.html&quot;&gt;Using R for multi-variate regression (Econometrics with R, CH 6 - 7)&lt;/a&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stargazer&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
