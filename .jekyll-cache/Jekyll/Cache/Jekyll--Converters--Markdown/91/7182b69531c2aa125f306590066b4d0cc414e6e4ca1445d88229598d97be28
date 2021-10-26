@@ -1,0 +1,20 @@
+I"I<ul>
+  <li>
+    <p>Week 6</p>
+
+    <ul>
+      <li>
+        <p>Times series regressions and forecasting (SW, Ch. 15)(<a href="2021/Theory/11_time_series.pdf">Slides</a>)</p>
+
+        <ul>
+          <li>AR model (<a href="https://www.econometrics-with-r.org/14.3-autoregressions.html">R code</a>)</li>
+          <li>Lag length selection (<a href="https://www.econometrics-with-r.org/14.6-llsuic.html">AIC,BIC</a>)</li>
+        </ul>
+      </li>
+      <li>
+        <p>Machine Learning (SW, Ch. 15)(<a href="2021/Theory/12_big_data.pdf">Slides</a>)</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET

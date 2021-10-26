@@ -5,8 +5,8 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Sep 2021 18:51:51 +0800</pubDate>
-    <lastBuildDate>Tue, 14 Sep 2021 18:51:51 +0800</lastBuildDate>
+    <pubDate>Tue, 26 Oct 2021 13:35:57 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Oct 2021 13:35:57 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -25,9 +25,9 @@ function. Arguments are the values included within the parenthesis of a function
 the function uses for producing the result. In the following statement, “Hello!” is the
 argument to the print function.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&apos;&apos;&apos;Today is a lovely day.
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'''Today is a lovely day.
 It will be warm and sunny.
-It is ideal for hiking.&apos;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+It is ideal for hiking.'''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
@@ -218,17 +218,62 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       </item>
     
       <item>
+        <title>IO Seminars</title>
+        <description>&lt;p&gt;Some seminar series to follow:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Consumer Search Digital Seminar Series &lt;a href=&quot;https://sites.google.com/view/consumersearchseminar/&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TSE Online seminar on the Economics of Platforms &lt;a href=&quot;https://www.tse-fr.eu/online-seminar-economics-platforms&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mannheim Virtual IO Seminar &lt;a href=&quot;https://sites.google.com/view/macci-epos-virtual-io-seminar&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MIT IO workshops &lt;a href=&quot;https://economics.mit.edu/events/iowork&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stanford IO workshops &lt;a href=&quot;https://www.gsb.stanford.edu/faculty-research/faculty/seminars/io&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(IO)^2 (Finalized) &lt;a href=&quot;https://web.stanford.edu/~leinav/teaching/IOIOspring2020.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 01 Jul 2021 08:00:00 +0800</pubDate>
+        <link>/about/related_seminars</link>
+        <guid isPermaLink="true">/about/related_seminars</guid>
+        
+        
+        <category>IndustrialOrganization</category>
+        
+      </item>
+    
+      <item>
         <title>Week 6 Material</title>
         <description>&lt;ul&gt;
-  &lt;li&gt;Week 6
+  &lt;li&gt;
+    &lt;p&gt;Week 6&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;Times series regressions and forecasting (SW, Ch. 14)&lt;/li&gt;
-      &lt;li&gt;Machine Learning (material will be distributed by instructor)&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Times series regressions and forecasting (SW, Ch. 15)(&lt;a href=&quot;2021/Theory/11_time_series.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;AR model (&lt;a href=&quot;https://www.econometrics-with-r.org/14.3-autoregressions.html&quot;&gt;R code&lt;/a&gt;)&lt;/li&gt;
+          &lt;li&gt;Lag length selection (&lt;a href=&quot;https://www.econometrics-with-r.org/14.6-llsuic.html&quot;&gt;AIC,BIC&lt;/a&gt;)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Machine Learning (SW, Ch. 15)(&lt;a href=&quot;2021/Theory/12_big_data.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/p&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <pubDate>Thu, 01 Jul 2021 08:00:00 +0800</pubDate>
         <link>/about/week6</link>
         <guid isPermaLink="true">/about/week6</guid>
         
@@ -240,20 +285,30 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       <item>
         <title>Week 5 Material</title>
         <description>&lt;ul&gt;
-  &lt;li&gt;Week 5
+  &lt;li&gt;
+    &lt;p&gt;Week 5&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15)(98 pages, 4-5 hours)  (&lt;a href=&quot;2021/Theory/9_IV_regression.pdf&quot;&gt;Slides&lt;/a&gt;)
+      &lt;li&gt;
+        &lt;p&gt;Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15) (&lt;a href=&quot;2021/Theory/9_IV_regression.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/p&gt;
+
         &lt;ul&gt;
-          &lt;li&gt;The slides has 90 pages. Need at least 4 hours to cover.&lt;/li&gt;
-          &lt;li&gt;The slides are not polished.&lt;/li&gt;
+          &lt;li&gt;J test (&lt;a href=&quot;https://www.econometrics-with-r.org/12-3-civ.html&quot;&gt;R code&lt;/a&gt;)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Experiments and Quasi-Experiments (Chapter 13)&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Experiments and Quasi-Experiments (Chapter 13) (&lt;a href=&quot;2021/Theory/10_experiments.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;Diff-in-diffs (&lt;a href=&quot;https://www.econometrics-with-r.org/13.4-qe.html#the-differences-in-differences-estimator&quot;&gt;R code&lt;/a&gt;)&lt;/li&gt;
+          &lt;li&gt;RD (&lt;a href=&quot;https://www.econometrics-with-r.org/13.4-qe.html#regression-discontinuity-estimators&quot;&gt;R code&lt;/a&gt;)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <pubDate>Thu, 01 Jul 2021 08:00:00 +0800</pubDate>
         <link>/about/week5</link>
         <guid isPermaLink="true">/about/week5</guid>
         
@@ -265,20 +320,23 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       <item>
         <title>Week 4 Material</title>
         <description>&lt;ul&gt;
-  &lt;li&gt;Week 4
+  &lt;li&gt;
+    &lt;p&gt;Week 4&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;Theoretical Model
+      &lt;li&gt;
+        &lt;p&gt;Theoretical Model&lt;/p&gt;
+
         &lt;ul&gt;
-          &lt;li&gt;Threats to (Internal / External) Validity (SW, Ch. 9)  (&lt;a href=&quot;2021/Theory/6_extermal_validity.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-          &lt;li&gt;Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14)  (&lt;a href=&quot;2021/Theory/8_panel_regression.pdf&quot;&gt;Slides&lt;/a&gt;)
-            &lt;ul&gt;
-              &lt;li&gt;the slides are not yet polished&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
+          &lt;li&gt;Threats to (Internal / External) Validity (SW, Ch. 9) (&lt;a href=&quot;2021/Theory/6_extermal_validity.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+          &lt;li&gt;Regressions with panel data (SW Ch. 10; Wooldridge Ch.13-14) (&lt;a href=&quot;2021/Theory/8_panel_regression.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;Coding Practice
+      &lt;li&gt;
+        &lt;p&gt;Coding Practice&lt;/p&gt;
+
         &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/9-4-etsacs.html&quot;&gt;External Validity: An Example&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plm&lt;/code&gt; (need to install the library &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;install.packages(&quot;plm&quot;)&lt;/code&gt;)&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -286,7 +344,7 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
+        <pubDate>Thu, 01 Jul 2021 08:00:00 +0800</pubDate>
         <link>/about/week4</link>
         <guid isPermaLink="true">/about/week4</guid>
         
@@ -308,11 +366,24 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       &lt;/li&gt;
       &lt;li&gt;Programming Exercisess
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;2021/Coding/5_nonlinear_regression.html&quot;&gt;Nonlinear Regression&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/11-2-palr.html&quot;&gt;Binary Regression&lt;/a&gt;
+          &lt;li&gt;&lt;a href=&quot;2021/Coding/5_nonlinear_regression.html&quot;&gt;Nonlinear Regression&lt;/a&gt;
             &lt;ul&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glm(deny ~ pirat, family = binomial(link = &quot;probit&quot;),...)&lt;/code&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glm(deny ~ pirat, family = binomial(link = &quot;logit&quot;),...)&lt;/code&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/8-2-nfoasiv.html#polynomials&quot;&gt;Polynomial Regression&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/8-2-nfoasiv.html#logarithms&quot;&gt;Logarithm Regression&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Binary Dependent Variable Regression
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/11-2-palr.html#probit-regression&quot;&gt;Probit Regression&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glm(deny ~ pirat, family = binomial(link = &quot;probit&quot;),...)&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/11-2-palr.html#logit-regression&quot;&gt;Logit Regression&lt;/a&gt;
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;glm(deny ~ pirat, family = binomial(link = &quot;logit&quot;),...)&lt;/code&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
@@ -501,63 +572,6 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
         <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
         <link>/about/week1</link>
         <guid isPermaLink="true">/about/week1</guid>
-        
-        
-        <category>AppliedEconometrics</category>
-        
-      </item>
-    
-      <item>
-        <title>Course Information</title>
-        <description>&lt;p&gt;&lt;strong&gt;THE UNIVERSITY OF HONG KONG&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;FACULTY OF BUSINESS AND ECONOMICS&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;School of Economics and Finance&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ECON6001A/B – Applied Econometrics&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;Fall 2020&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;information-on-instructor-and-tutor&quot;&gt;&lt;strong&gt;Information on Instructor and Tutor&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;Lecture Days: Wednesday &amp;amp; Saturday&lt;br /&gt;
-Lecture Dates: Sept 1, 4, 8, 11, 15, 18, 25, 29, Oct 2, 6, 9, 13&lt;br /&gt;
-Lecture Time: 9:30am – 12:30noon (Session A); 2:00pm – 5:00pm (Session B)&lt;/p&gt;
-
-&lt;p&gt;Venue: Cyberport Campus&lt;/p&gt;
-
-&lt;p&gt;Instructor: Dr. Yu Hao&lt;br /&gt;
-Email: haoyu@hku.hk&lt;br /&gt;
-Office: TBA&lt;br /&gt;
-Office hours: TBA&lt;/p&gt;
-
-&lt;p&gt;Tutor: TBA&lt;br /&gt;
-Email: TBA&lt;br /&gt;
-Tutor office: TBA&lt;br /&gt;
-Tutor office hours: TBA&lt;/p&gt;
-
-&lt;p&gt;Course website: A Moodle course on the HKU portal. Students are encouraged to visit the course website at least once a week.&lt;/p&gt;
-
-&lt;p&gt;To get started with this course, we need to set up the environment for data analysis on your PC/Mac.
-We mainly use two languages for this course, R and Python. You can pick one favorate language to use.&lt;/p&gt;
-
-&lt;h2 id=&quot;course-description&quot;&gt;Course Description&lt;/h2&gt;
-
-&lt;p&gt;This course studies how practical problems can be solved by applying econometric methods.
-The emphasis is on the application of econometric methods to the analysis of real world economic data using advanced statistical software.
-Topics include multilinear regressions, limited dependent variable, panel data, experiments and quasi-experiments, instrumental variables, time series and forecasting, and basics of machine learning.&lt;/p&gt;
-
-&lt;p&gt;Pre-requisites:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Solid knowledge of statistics&lt;/li&gt;
-  &lt;li&gt;Introductory level econometric methods&lt;/li&gt;
-  &lt;li&gt;Linear algebra&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Students are encouraged to check out student resources the publisher provides on the Internet. Lecture slides will be posted on the course website. Additional handouts will be distributed when needed to supplement the textbook.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 02 Jun 2021 00:00:00 +0800</pubDate>
-        <link>/about/0-info</link>
-        <guid isPermaLink="true">/about/0-info</guid>
         
         
         <category>AppliedEconometrics</category>

@@ -1,0 +1,24 @@
+I"<ul>
+  <li>
+    <p>Week 5</p>
+
+    <ul>
+      <li>
+        <p>Instrumental variables methods (SW, Ch. 12; Wooldridge, Ch. 15) (<a href="2021/Theory/9_IV_regression.pdf">Slides</a>)</p>
+
+        <ul>
+          <li>J test (<a href="https://www.econometrics-with-r.org/12-3-civ.html">R code</a>)</li>
+        </ul>
+      </li>
+      <li>
+        <p>Experiments and Quasi-Experiments (Chapter 13) (<a href="2021/Theory/10_experiments.pdf">Slides</a>)</p>
+
+        <ul>
+          <li>Diff-in-diffs (<a href="https://www.econometrics-with-r.org/13.4-qe.html#the-differences-in-differences-estimator">R code</a>)</li>
+          <li>RD (<a href="https://www.econometrics-with-r.org/13.4-qe.html#regression-discontinuity-estimators">R code</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+:ET
