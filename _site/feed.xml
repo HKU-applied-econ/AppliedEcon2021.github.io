@@ -5,9 +5,63 @@
     <description></description>
     <link>/about/</link>
     <atom:link href="/about/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Oct 2021 13:35:57 +0800</pubDate>
-    <lastBuildDate>Tue, 26 Oct 2021 13:35:57 +0800</lastBuildDate>
+    <pubDate>Tue, 26 Oct 2021 13:40:26 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Oct 2021 13:40:26 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>IO Seminars</title>
+        <description>&lt;p&gt;Some seminar series to follow:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Consumer Search Digital Seminar Series &lt;a href=&quot;https://sites.google.com/view/consumersearchseminar/&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TSE Online seminar on the Economics of Platforms &lt;a href=&quot;https://www.tse-fr.eu/online-seminar-economics-platforms&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mannheim Virtual IO Seminar &lt;a href=&quot;https://sites.google.com/view/macci-epos-virtual-io-seminar&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;MIT IO workshops &lt;a href=&quot;https://economics.mit.edu/events/iowork&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stanford IO workshops &lt;a href=&quot;https://www.gsb.stanford.edu/faculty-research/faculty/seminars/io&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(IO)^2 (Finalized) &lt;a href=&quot;https://web.stanford.edu/~leinav/teaching/IOIOspring2020.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 26 Oct 2021 08:00:00 +0800</pubDate>
+        <link>/about/related_seminars</link>
+        <guid isPermaLink="true">/about/related_seminars</guid>
+        
+        
+        <category>IndustrialOrganization</category>
+        
+      </item>
+    
+      <item>
+        <title>IO related paper</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://web.stanford.edu/~bjlarsen/consumer_bargaining_bounds.pdf&quot;&gt;Consumer Bargaining Bounds&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.anderson.ucla.edu/documents/areas/fac/marketing/honka/CarSearch_YavorskyHonka_Dec2019-2.pdf&quot;&gt;Consumer Search in the U.S. Auto Industry: The Value of Dealership Visits&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 26 Oct 2021 08:00:00 +0800</pubDate>
+        <link>/about/paper_to_read</link>
+        <guid isPermaLink="true">/about/paper_to_read</guid>
+        
+        
+        <category>IndustrialOrganization</category>
+        
+      </item>
     
       <item>
         <title>Python Basics</title>
@@ -218,40 +272,6 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
       </item>
     
       <item>
-        <title>IO Seminars</title>
-        <description>&lt;p&gt;Some seminar series to follow:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Consumer Search Digital Seminar Series &lt;a href=&quot;https://sites.google.com/view/consumersearchseminar/&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TSE Online seminar on the Economics of Platforms &lt;a href=&quot;https://www.tse-fr.eu/online-seminar-economics-platforms&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Mannheim Virtual IO Seminar &lt;a href=&quot;https://sites.google.com/view/macci-epos-virtual-io-seminar&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;MIT IO workshops &lt;a href=&quot;https://economics.mit.edu/events/iowork&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Stanford IO workshops &lt;a href=&quot;https://www.gsb.stanford.edu/faculty-research/faculty/seminars/io&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(IO)^2 (Finalized) &lt;a href=&quot;https://web.stanford.edu/~leinav/teaching/IOIOspring2020.pdf&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 01 Jul 2021 08:00:00 +0800</pubDate>
-        <link>/about/related_seminars</link>
-        <guid isPermaLink="true">/about/related_seminars</guid>
-        
-        
-        <category>IndustrialOrganization</category>
-        
-      </item>
-    
-      <item>
         <title>Week 6 Material</title>
         <description>&lt;ul&gt;
   &lt;li&gt;
@@ -453,125 +473,6 @@ For instance, it holds supply fixed, the prices of other goods fixed, income fix
         <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
         <link>/about/week2</link>
         <guid isPermaLink="true">/about/week2</guid>
-        
-        
-        <category>AppliedEconometrics</category>
-        
-      </item>
-    
-      <item>
-        <title>Week 1 Material</title>
-        <description>&lt;ul&gt;
-  &lt;li&gt;Lecture (6 hours course)
-    &lt;ul&gt;
-      &lt;li&gt;Lecture 1: Review of Theory
-        &lt;ul&gt;
-          &lt;li&gt;Logistics (&lt;a href=&quot;2021/Theory/0_logistics.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-          &lt;li&gt;Introduction: Evidence and Policy (&lt;a href=&quot;2021/Theory/0_introduction.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-          &lt;li&gt;Probability(&lt;a href=&quot;2021/Theory/1_probability.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Lecture 2: Review of Theory and Programming
-        &lt;ul&gt;
-          &lt;li&gt;Statistics (&lt;a href=&quot;2021/Theory/2_statistics.pdf&quot;&gt;Slides&lt;/a&gt;)&lt;/li&gt;
-          &lt;li&gt;R basics
-            &lt;ul&gt;
-              &lt;li&gt;Reference book: &lt;a href=&quot;https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf&quot;&gt;R for beginners&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;R studio/ Rmarkdown (&lt;a href=&quot;2021/Coding/R%20and%20Rstudio.pdf&quot;&gt;Handouts&lt;/a&gt;)
-                &lt;ul&gt;
-                  &lt;li&gt;how to write blocks&lt;/li&gt;
-                  &lt;li&gt;ctrl + shift + enter to run blocks&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;2021/Coding/0_intro.html&quot;&gt;Basics&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;variable, vectors, functions, matrix&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plot&lt;/code&gt;/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hist&lt;/code&gt;/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;curve&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;help(rnorm)&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;integrate&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;install.packages(&quot;readxl&quot;)&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;set.seed()&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;head&lt;/code&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Probability
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/2-1-random-variables-and-probability-distributions.html#the-normal-distribution&quot;&gt;Normal distribution&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dnorm&lt;/code&gt;:  density for normal distribution, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dnorm(x = c(-1.96, 0, 1.96))&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pnorm&lt;/code&gt; : compute the p value. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pnorm(0) = 0.5&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;qnorm&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;qnorm(0.5) = 0&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rnorm&lt;/code&gt;: draw random number,&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dchisq&lt;/code&gt;: density for chi-square distribution&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/2-2-RSATDOSA.html#mean-and-variance-of-the-sample-mean&quot;&gt;Compute Mean and Variance&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;replicate&lt;/code&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;samples &amp;lt;- replicate(reps, rnorm(n)) # 10 x 10000 sample matrix&lt;/code&gt;, n = 10, reps = 10000&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colMeans(samples)&lt;/code&gt;: sum a 2D vector by rows&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/2-2-RSATDOSA.html#large-sample-approximations-to-sampling-distributions&quot;&gt;Large Sample Approximation*&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;show the convergence in probability(LLN)&lt;/li&gt;
-                  &lt;li&gt;show the convergence in distribution(CLT)&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Statistics
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-2-potsm.html&quot;&gt;Properties of the sample mean&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;The shape of the distribution&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lines&lt;/code&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;Application Example: &lt;a href=&quot;https://www.econometrics-with-r.org/3-6-aattggoe.html&quot;&gt;Gender Wage Equality&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;dplyr&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;Hypothesis Testing with Bournoulli Variable
-                &lt;ul&gt;
-                  &lt;li&gt;how to compute and how to understand p-value&lt;/li&gt;
-                  &lt;li&gt;distribution of t-statistics&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;https://www.econometrics-with-r.org/3-7-scatterplots-sample-covariance-and-sample-correlation.html&quot;&gt;Scatter plot&lt;/a&gt;
-                &lt;ul&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cov&lt;/code&gt;&lt;/li&gt;
-                  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cor&lt;/code&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Tutorial
-    &lt;ul&gt;
-      &lt;li&gt;Technical Toolsets
-        &lt;ul&gt;
-          &lt;li&gt;How to use Rstudio.&lt;/li&gt;
-          &lt;li&gt;How to use R markdown.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Probability Exercise Intro2Metrics exercise 2.1 - 2.6, 2.11 - 2.15&lt;/li&gt;
-      &lt;li&gt;Statistics Exercise Intro2Metrics(Pick 3 questions) exercise 13.5 - 13.6, 13.11, SW 3.1 - 3.4&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Assignment: Due on Sep 12th.
-&lt;a href=&quot;2021/Assignment/Assignment1.pdf&quot;&gt;Assignment(due Sep 14th)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 01 Jul 2021 00:00:00 +0800</pubDate>
-        <link>/about/week1</link>
-        <guid isPermaLink="true">/about/week1</guid>
         
         
         <category>AppliedEconometrics</category>

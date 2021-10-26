@@ -1,7 +1,7 @@
 ---
 layout: post
 title: IO Seminars
-date: 2021-07-01T00:00:00.000Z
+date: 2021-10-26T00:00:00.000Z
 categories: IndustrialOrganization
 author_name: Jasmine Hao
 author_url: /author/jasmine
